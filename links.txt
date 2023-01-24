@@ -1,0 +1,34 @@
++Figma link
+ -https://www.figma.com/file/K6LZMqXN44s0KEDLliXDPv/my-brand?t=7N2bAW4uQP8veoMi-0
++reference link
+ -https://rainbowit.net/themes/inbio/developer/#contacts
+ -https://rainbowit.net/themes/inbio/designer/
+ another reference:
+ -https://mybrandphazo.netlify.app/
++mybrand-colors
+ navigation bar:2C3034
+ background:#212428
+ font-color in grey:#c3cedd
+ font-color in black:#9fa7b2
+ font-color in red:#ff014f
+ box background color:#212428
+ crossing line color:#131416;
+ humberger icon back color:#1a1c20
+ back to top icon back color:#212428;
+ hire me back color:#222529
+                text fields:
+ text boxes back color:#191b1f or #191b1e
+ text box border color:#0f1012 or #0e1011
+                icon above name:
+ icon above name 1st circle:#4d1d30
+ icon abpve name 2nd circle:#c90a46
+ icon inside color:#c90a46
+#242429 
++beutiful imaeges
+ -https://depositphotos.com/stock-photos/science.html?sh=6b3c6d3d56b2602e9e86f5ac913548d582d95034
+====================figma tutorials=======================================
+
++figma scroll to top button
+ -https://www.youtube.com/watch?v=7wL_ZcX_jW0
++add scroll to your one page design
+ -https://www.youtube.com/watch?v=KSEZCyro8T8
