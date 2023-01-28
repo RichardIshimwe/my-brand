@@ -46,12 +46,6 @@ h1 {
 #home_nav ul.active {
   left: 0;
 }
-#logo_color{
- font-size: 27px;
- color:white;
- font-weight:bolder;
-}
-/* ====================  home section  ========================= */
 #home{
   height: 570px;
   width: 100%;
@@ -146,7 +140,7 @@ color:#27AE60;
 }
 #para{
   height:auto;
-  width:100%;
+  /* width:100%; */
   border-top-left-radius:20px;
   border-top-right-radius:20px;
   background-color: #2A2A2A;
@@ -203,6 +197,11 @@ input:focus,input:active{
   bottom:30px;
   left:50px;
 }
+#logo_color{
+  font-size: 27px;
+  color:white;
+  font-weight:bolder;
+ }
  /* ===========================end of home section====================================== */
  /* ++++++++++++++++++++++++++++about section+++++++++++++++++++++++++++++++++++++++++++ */
  #about{
