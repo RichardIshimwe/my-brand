@@ -46,9 +46,9 @@ h1 {
 #home_nav ul.active {
   left: 0;
 }
-#home{
-  height: 570px;
-  width: 100%;
+#replace{
+  /* height: ; */
+  /* width: 100%; */
   display:flex;
 }
 .containers{
@@ -201,6 +201,10 @@ input:focus,input:active{
   font-size: 27px;
   color:white;
   font-weight:bolder;
+ }
+ #home{
+  height:100vh;
+  /* background-color: #238A53; */
  }
  /* ===========================end of home section====================================== */
  /* ++++++++++++++++++++++++++++about section+++++++++++++++++++++++++++++++++++++++++++ */
