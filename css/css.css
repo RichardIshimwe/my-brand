@@ -1,7 +1,7 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 body{
   background-color: #191D2B;
@@ -10,31 +10,30 @@ html {
   /* font-size: 62.5%; */
   color: white;
 }
-nav {
+#home_nav {
   position: relative;
-  width: 100%;
   background-color: #2A2E35;
   padding: 17px 17px;
 }
-nav {
+#home_nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-nav ul {
+#home_nav ul {
   list-style: none;
   display: flex;
   gap: 2rem;
 }
-nav a {
+#home_nav a {
   font-size: 20px;
   text-decoration: none;
 }
-nav ul a {
+#home_nav ul a {
   color:#9FA7B2;
   font-weight: bolder;
 }
-nav ul a:hover {
+#home_nav ul a:hover {
   font-size:22px;
   color:white;
 }
@@ -44,7 +43,7 @@ h1 {
 #ham-menu {
   display: none;
 }
-nav ul.active {
+#home_nav ul.active {
   left: 0;
 }
 #logo_color{
@@ -54,7 +53,7 @@ nav ul.active {
 }
 /* ====================  home section  ========================= */
 #home{
-  height:552px;
+  height: 570px;
   width: 100%;
   display:flex;
 }
@@ -208,109 +207,72 @@ input:focus,input:active{
  /* ++++++++++++++++++++++++++++about section+++++++++++++++++++++++++++++++++++++++++++ */
  #about{
   width:100%;
-  height:630px;
-  display:flex;
+  height:605px;
+  /* height:auto; */
+  background:brown;
  }
-.container{
-  width:50%;
-  height:630px;
-  background-color: gold;
+.about_cont{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  grid-template-rows: 0.2fr 1fr 0.1fr;
+  /* grid-gap:1em; */
+  height:100vh;
+  grid-template-areas: "nav nav nav nav"
+                       "content2 content2 content3 content3"
+                       "footer footer footer footer";
+  text-align: center;
+  grid-gap: 1em;
 }
-.cont_a{
-  width:50%;
-  height:630px;
-  background-color:green;
-}
-.header{
-  width:100%;
-  position:absolute;
-  /* background-color: green; */
+.about_cont > #about_nav{
+  grid-area:nav;
+  background: green;
+  display:grid;
+  align-items: center;
+  font-size:45px;
+  font-weight:bolder;
   color:#C4CFDE;
-  font-size: 45px;
-  font-weight: bolder;
-  display:flex;
-  justify-content:center;
-  padding: 30px 0px;
+  position: relative;
 }
-.header>p{
-  height:47px;
-  border-bottom: 4px solid #238A53;
-}
-.about_line{
-  width:90%;
+.about_cont > #about_nav > .line{
+  width:10%;
   height:2px;
-  position:absolute;
-  background-color:#D9D9D9;
-  left:50px;
-  bottom:-590px;
-}
-.line{
-  width:40px;
-  height:2px;
-  background:#27AE60;
-}
-.about_cont,.about_image{
-margin-top:140px;
-margin-left:30px;
+  background-color: #238A53;
+  position: absolute;
+  top: 70%;
+  left: 45%;
+  /* transform: translate(-50%, -50%); */
+
 }
 .about_image{
-  width: 507px;
-  height:404.9px;
+  grid-area:content2;
+  background: dodgerblue;
+  display:grid;
+  align-items: center;
+}
+.about_content{
+  grid-area:content3;
+  background: darkgoldenrod;
+}
+.abouts > img{
   border-radius: 20px;
   border-top: 2px solid white;
-  background-color: white;
+  border-right: 2px solid white;
 }
-.about_cont{
-  width: 701px;
-  height:auto;
-  background-color:brown;
-  display:grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  /* grid-template-rows: minmax(auto,auto); */
-  grid-gap:1em;
-  justify-content: center;
-  /* align-items:stretch; */
-
-
-  /* display:grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-gap:1em; */
-  /* grid-auto-rows:100px; */
-  /* grid-auto-rows: minmax(100px,auto); */
+.about_cont > footer{
+  grid-area:footer;
+  background: darkkhaki;
 }
-.about_cont > div{
-  background:dodgerblue;
-  /* padding:20px; */
-  text-align:center;
+.cont1{
+ background-color: magenta;
+ padding: 20px 0px;
 }
-.about_cont > div:nth-child(odd){
-  background-color:rgb(43, 117, 117);
+.cont2{
+  background-color: burlywood;
 }
-.box1{
-   height:auto;
-  grid-column: 1/4;
-  /* grid-row:auto; */
+.cont2 > p{
+  padding: 5px 12.2px;
+  font-size:20px;
 }
-
-.box2{
-  
-  grid-column: 1/3;
-  /* grid-row:auto; */
-}
-.none{
-  grid-column: 3;
-  /* grid-row:auto; */
-}
-.box3{
-  grid-column:1/3;
-  /* grid-row: auto; */
-}
-
-
-
-
-
-
 
 
 
