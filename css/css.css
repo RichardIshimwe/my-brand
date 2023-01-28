@@ -209,7 +209,7 @@ input:focus,input:active{
   width:100%;
   height:605px;
   /* height:auto; */
-  background:brown;
+  /* background:brown; */
  }
 .about_cont{
   display:grid;
@@ -220,18 +220,18 @@ input:focus,input:active{
   grid-template-areas: "nav nav nav nav"
                        "content2 content2 content3 content3"
                        "footer footer footer footer";
-  text-align: center;
   grid-gap: 1em;
 }
 .about_cont > #about_nav{
   grid-area:nav;
-  background: green;
+  /* background: green; */
   display:grid;
   align-items: center;
   font-size:45px;
   font-weight:bolder;
   color:#C4CFDE;
   position: relative;
+  text-align: center;
 }
 .about_cont > #about_nav > .line{
   width:10%;
@@ -244,42 +244,86 @@ input:focus,input:active{
 
 }
 .about_image{
+  text-align: center;
   grid-area:content2;
-  background: dodgerblue;
+  /* background: dodgerblue; */
   display:grid;
   align-items: center;
 }
 .about_content{
   grid-area:content3;
-  background: darkgoldenrod;
+  /* background: darkgoldenrod; */
 }
 .abouts > img{
   border-radius: 20px;
   border-top: 2px solid white;
   border-right: 2px solid white;
 }
-.about_cont > footer{
+.about_cont > .footer{
   grid-area:footer;
-  background: darkkhaki;
+  /* background: darkkhaki; */
 }
 .cont1{
- background-color: magenta;
+  text-align: center;
+ /* background-color: magenta; */
  padding: 20px 0px;
 }
 .cont2{
-  background-color: burlywood;
+  /* background-color: burlywood; */
 }
 .cont2 > p{
-  padding: 5px 12.2px;
+  padding: 0px 15px;
   font-size:20px;
 }
-
-
-
-
-
-
-
+.cont3{
+  /* background-color: blueviolet; */
+  padding: 20px 40px;
+}
+.cont3 > p{
+  padding-top:5px;
+}
+.cont3 > p > #name{
+  font-size:22px;
+  font-weight:bolder;
+  color:#9FA7B2;
+}
+.cont3 > p > #name > #underline{
+  border-bottom:2px solid #27AE60;
+}
+#response{
+  font-size:20px;
+  font-weight:bolder;
+}
+.cont4{
+  /* background-color: greenyellow */
+}
+.cont4 > button{
+  border:none;
+  border-radius: 10px;
+  padding: 10px 10px;
+  background-color: #27AE60;
+  color:white;
+  font-size: 25px;
+  font-weight: bolder;
+  margin:20px 20px;
+}
+.cont4 > button:hover{
+  background-color: #128141;
+  color:rgb(194, 159, 159);
+}
+.footer{
+position:relative;
+}
+.hr{
+  position: absolute;
+  top:50%;
+  left:5%;
+  width:90%;
+  height:2px;
+  background-color:#D9D9D9;
+  /* background-color:green; */
+  border:none;
+}
 
 
 
