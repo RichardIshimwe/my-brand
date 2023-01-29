@@ -34,7 +34,7 @@ html {
   font-weight: bolder;
 }
 #home_nav ul a:hover {
-  font-size:22px;
+  /* font-size:21px; */
   color:white;
 }
 h1 {
@@ -206,13 +206,25 @@ input:focus,input:active{
   height:100vh;
   /* background-color: #238A53; */
  }
+ #scroll-to-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  cursor: pointer;
+  font-size:50px;
+  font-weight:bolder;
+  color:#27AE60;
+  /* background-color: #238A53; */
+  display: none;
+}
  /* ===========================end of home section====================================== */
  /* ++++++++++++++++++++++++++++about section+++++++++++++++++++++++++++++++++++++++++++ */
  #about{
   width:100%;
-  height:605px;
+  height:100vh;
+
   /* height:auto; */
-  /* background:brown; */
+  /* background:green; */
  }
 .about_cont{
   display:grid;
@@ -225,7 +237,7 @@ input:focus,input:active{
                        "footer footer footer footer";
   grid-gap: 1em;
 }
-.about_cont > #about_nav{
+#about_nav{
   grid-area:nav;
   /* background: green; */
   display:grid;
@@ -236,7 +248,7 @@ input:focus,input:active{
   position: relative;
   text-align: center;
 }
-.about_cont > #about_nav > .line{
+#about_nav > .line{
   width:10%;
   height:2px;
   background-color: #238A53;
@@ -297,9 +309,6 @@ input:focus,input:active{
   font-size:20px;
   font-weight:bolder;
 }
-.cont4{
-  /* background-color: greenyellow */
-}
 .cont4 > button{
   border:none;
   border-radius: 10px;
@@ -316,6 +325,7 @@ input:focus,input:active{
 }
 .footer{
 position:relative;
+/* padding-bottom: 20%; */
 }
 .hr{
   position: absolute;
@@ -327,9 +337,160 @@ position:relative;
   /* background-color:green; */
   border:none;
 }
-
-
-
-
-
-
+/* ==========================================end of about section================================== */
+/* +++++++++++++++++++++++++++++++++++++skills section+++++++++++++++++++++++++++++++++++++++++++++ */
+#skills{
+  height:100vh;
+  width:100%;
+  /* background-color:brown; */
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows:0.2fr 1fr 0.1fr;
+  grid-template-areas:"skills_nav skills_nav skills_nav skills_nav"
+                      "skills_content skills_content skills_content skills_content"
+                      "skills_footer skills_footer skills_footer skills_footer";
+}
+.skills_nav{
+  /* background-color:hotpink; */
+  grid-area:skills_nav;
+  text-align:center;
+  display: grid;
+  align-self: flex-end;
+  position:relative;
+}
+.skills_nav > p{
+  font-size:45px;
+  font-weight:bolder;
+  color:#C4CFDE;
+}
+.skills_line{
+  position:absolute;
+  top:80%;
+  left:44%;
+  width:12%;
+  height:2px;
+  /* background-color:#27AE60; */
+}
+.skills_content{
+  /* background-color: peru; */
+  grid-area:skills_content;
+  display:grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: auto;
+  padding: 5% 3%;
+}
+.skills_content > div{
+  background-color: #2A2E35;
+}
+.skill {
+  width:300px;
+  height:155px;
+  /* border: 2px solid white; */
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+/* .skills_content > div:nth-child(odd){
+  background-color: coral;
+} */
+.skills_footer{
+  /* background-color:blueviolet; */
+  grid-area:skills_footer;
+  text-align:center;
+  display:grid;
+  align-items: center;
+}
+.skills_footer > p{
+  margin-left:4.5%;
+  width:90%;
+  height:2px;
+  background-color: #C4CFDE;
+}
+/* =========================================end of skill section================================ */
+/* +++++++++++++++++++++++++++++++++++++++++++++portfolio section+++++++++++++++++++++++++++++++ */
+#portfolio{
+  height: 100vh;
+  width:100%;
+  /* background-color: brown; */
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  grid-template-rows:0.1fr 1fr 0.02fr;
+  grid-template-areas: "port_nav port_nav port_nav port_nav"
+                       "port_content port_content port_content port_content"
+                       "port_footer port_footer port_footer port_footer";
+ 
+}
+.port_nav{
+  text-align:center;
+  /* background-color: hotpink; */
+  grid-area: port_nav;
+}
+.port_content{
+  /* background-color:grey; */
+  grid-area:port_content;
+  display: grid;
+  grid-template-columns:repeat(3,1fr);
+  margin:0px 0px 0px 35px;
+}
+.box{
+  width:400px;
+  border-radius:20px;
+  padding-top: 5px;
+  margin-top:8px;
+  display:grid;
+  justify-content: center;
+  background-color: #2A2E35;
+  /* border-radius: 20px; */
+}
+.image > img{
+  width:360px;
+  height: 177px;
+}
+.image{
+  width:360px;
+  height: 177px;
+  /* background-color: burlywood; */
+  /* border-radius: 20px; */
+}
+#store > p{
+  font-size: 10px;
+  font-weight: bolder;
+  color:#FF4D05;
+}
+#store {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+}
+#heart{
+  display:flex;
+  justify-content: end;
+  font-weight:bolder;
+  color:white;
+  font-size: 15px;
+}
+#heart > i{
+  color:#C4CFDE;
+}
+#portfolio_cont{
+  color:#C4CFDE;
+  font-size:28px;
+  font-weight:bolder;
+}
+/* .box:nth-child(odd){
+background-color: khaki;
+} */
+.port_footer{
+  /* background-color:blueviolet; */
+  grid-area:port_footer;
+  text-align:center;
+  display:grid;
+  align-items: center;
+}
+.port_footer > p{
+  margin-left:4.5%;
+  width:90%;
+  height:2px;
+  background-color: #C4CFDE;
+}
+/* ================================================end of portfolio======================================= */
