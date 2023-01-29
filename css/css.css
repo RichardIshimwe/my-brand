@@ -354,8 +354,8 @@ position:relative;
   /* background-color:hotpink; */
   grid-area:skills_nav;
   text-align:center;
-  display: grid;
-  align-self: flex-end;
+  /* display: grid; */
+  /* align-self: flex-end; */
   position:relative;
 }
 .skills_nav > p{
@@ -494,3 +494,45 @@ background-color: khaki;
   background-color: #C4CFDE;
 }
 /* ================================================end of portfolio======================================= */
+/* ++++++++++++++++++++++++++++++++++++++++++++start of my blog page++++++++++++++++++++++++++++++++++++++ */
+#blogs{
+  height:100vh;
+  width:100%;
+  background-color: brown;
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-areas:"blog_nav blog_nav blog_nav"
+                      "blog_cont blog_cont blog_cont"
+                      "blog_footer blog_footer blog_footer";
+  grid-template-rows:0.2fr 1fr 0.1fr; 
+}
+  
+.blog_nav{
+  background-color: khaki;
+  grid-area: blog_nav;
+}
+.blog_content{
+  background-color: fuchsia;
+  grid-area:blog_cont;
+}
+.blog_footer{
+  background-color:olivedrab;
+  grid-area:blog_footer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
