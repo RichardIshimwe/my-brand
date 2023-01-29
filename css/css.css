@@ -356,21 +356,26 @@ position:relative;
   text-align:center;
   /* display: grid; */
   /* align-self: flex-end; */
-  position:relative;
+  /* position:relative; */
+  display: flex;
+  justify-content: center;
+
 }
 .skills_nav > p{
+  align-self: center;
+  /* background-color: green; */
   font-size:45px;
   font-weight:bolder;
   color:#C4CFDE;
 }
-.skills_line{
-  position:absolute;
-  top:80%;
-  left:44%;
+/* .skills_line{
+  position:absolute; */
+  /* top:80%; */
+  /* left:44%;
   width:12%;
-  height:2px;
+  height:2px; */
   /* background-color:#27AE60; */
-}
+/* } */
 .skills_content{
   /* background-color: peru; */
   grid-area:skills_content;
@@ -510,16 +515,64 @@ background-color: khaki;
 .blog_nav{
   background-color: khaki;
   grid-area: blog_nav;
+  /* display: grid; */
+  display: flex;
+  justify-content: center;
+
 }
+.blogs_nav{
+  align-self: flex-end;
+  background-color:hotpink;
+  grid-area:skills_nav;
+  text-align:center;
+  /* display: grid; */
+  /* align-self: flex-end; */
+  position:relative;
+
+}
+
+.blogs_nav > p{
+
+  font-size:45px;
+  font-weight:bolder;
+  color:#C4CFDE;
+}
+
+.blog_image{
+  background-color: rgb(27, 41, 6);
+  grid-area:blog_image;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+}
+.blog_image > div > img{
+  width:300px;
+  height:200px;
+}
+
+#blog_logo{
+  color:#27AE60;
+  font-size: 15px;
+  font-weight:bolder;
+}
+
 .blog_content{
-  background-color: fuchsia;
+  background-color: darkolivegreen;
   grid-area:blog_cont;
 }
+
 .blog_footer{
   background-color:olivedrab;
   grid-area:blog_footer;
+  text-align:center;
+  display:grid;
+  align-items: center;
 }
-
+.blog_footer > p{
+  margin-left:4.5%;
+  width:90%;
+  height:2px;
+  background-color: #C4CFDE;
+}
 
 
 
