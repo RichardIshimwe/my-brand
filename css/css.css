@@ -186,7 +186,10 @@ font-size:15px;
   font-size:20px;
   font-weight:500;
 }
-input:focus,input:active{
+input,textarea{
+  padding-left:5px;
+}
+input:focus,input:active,textarea:active,textarea:focus{
   outline:none
 }
 .absolute{
@@ -672,14 +675,134 @@ height:40px;
 .get_in{
   background-color: coral;
   grid-area:getin;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+.get_container{
+  background-color:gray;
+  width:60%;
+  height:75%;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  grid-template-areas:"get_tittle get_tittle get_tittle get_tittle"
+                      "get_address get_address get_address get_space"
+                      "get_address get_address get_address get_space";
+  grid-template-rows: 1fr 1fr 1fr ;
+}                     
+.get_title{
+  background-color:darkgoldenrod;
+  grid-area:get_tittle;
+}
+#get_text{
+  padding: 8px 0px;
+}
+#get_sub{
+  text-align: center;
+  font-size: 25px;
+  color:#E1E1E1;
+  font-weight:bold;
+}
+.get_address{
+  text-align: center;
+  background-color:#191D2B;
+  grid-area: get_address;
+}
+#address_tit{
+  font-size: 22px;
+  font-weight: bolder;
+  color:white;
+}
+#address_subtit{
+  font-size:19px;
+  color:#CDCDCE;
+  padding-bottom:10px;
+}
+.follow_cont > i{
+  font-size: 20px;
+  color: #27AE60;
+  font-weight:bolder;
+  padding:10px 4px;
+}
+
+.get_space{
+  background-color:slateblue;
+  grid-area:get_space;
 }
 .contactform{
   background-color: cornflowerblue;
   grid-area:contactform;
+  display:flex;
+ justify-content: center;
+ align-items: center;
 }
+.git{
+  width:487px;
+  height:310px;
+}
+.git > div{
+  padding: 5px 0px;
+}
+.hold_names{
+  display:flex;
+}
+.form_container{
+  width:554px;
+  height:350px;
+  background:#2A2E35;
+  border-radius:20px;
+display:flex;
+justify-content: center;
+align-items: center;
 
-
-
+}                    
+input,textarea{
+  font-size: 25px;
+  font-weight:300;
+  color:#C4CFDE;
+  background-color: #191D2B;
+}
+#first_name > input{
+  width:200px;
+  height:35px;
+  border:none;
+  border-radius: 10px;
+}
+#second_name > input{
+  margin-left:5px;
+  width:268px;
+  height:35px;
+  border:none;
+  border-radius: 10px;
+}
+#email > input{
+width: 478px;
+height: 35px;
+border: none;
+border-radius:10px;
+}
+#message > textarea{
+  width:478px;
+  height:168px;
+  background-color: #191D2B;
+  border:none;
+  border-radius: 10px;
+}
+#thisis{
+  grid-area:button;
+  display: flex;
+  justify-content: center;
+}
+#thisis > button{
+  color: #27AE60;
+  border:2px solid #27AE60;
+  width: 145px;
+  height:35px;
+  background-color: transparent;
+  border-radius: 10px;
+  font-size:17px;
+  font-weight:600;
+}
 .contact_footer{
   background-color:forestgreen;
   grid-area:contact_footer;
@@ -699,11 +822,48 @@ height:40px;
   background-color: #C4CFDE;
 }
 
-
-
-
-
-
-
-
+/* ==============================end of contact page===================================== */
+#login{
+  height:100vh;
+  width:100%;
+  background-color: salmon;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "login_nav login_nav "
+                       "login_content login_content"
+                       "login_footer login_footer";
+  grid-template-rows: 0.1fr 1fr 0.1fr;
+}
+.login_nav{
+  background-color: slateblue;
+  grid-area:login_nav;
+}
+.login_content{
+  background-color:saddlebrown;
+  grid-area:login_content;
+  display:flex;
+  align-items: center;
+  justify-content:center;
+}
+.login_footer{
+background-color: #2A2E35;
+grid-area:login_footer;
+font-size: 30px;
+color:#CDCDCE;
+text-align: center;
+padding: 2px 0px;
+}
+#login_footer > i{
+  color: #27AE60;
+  padding: 4px 4px;
+}
+.login_form{
+  width:554px;
+  height:350px;
+  background-color:#191D2B;
+  border-radius:20px;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+}
 
