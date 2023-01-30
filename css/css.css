@@ -215,6 +215,7 @@ input:focus,input:active{
   font-weight:bolder;
   color:#27AE60;
   /* background-color: #238A53; */
+  z-index: 10;
   display: none;
 }
  /* ===========================end of home section====================================== */
@@ -558,6 +559,75 @@ background-color: khaki;
 .blog_content{
   background-color: darkolivegreen;
   grid-area:blog_cont;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "image_blog image_blog" 
+                        "blog_btn blog_btn";
+  grid-template-rows: 1fr 0.1fr;
+}
+.blog_image{
+  margin-top: 3%;
+  background-color: #FF4D05;
+  grid-area:image_blog;
+  display: grid;
+  grid-template-columns:repeat(3,1fr);
+  text-align: center;
+  /* display: flex; */
+  /* justify-content: center; */
+}
+.image1{
+  background-color: rgb(59, 18, 18);
+  display:flex;
+  justify-content: center;
+}
+.imaged{
+
+  width:340px;
+  height:355px;
+  background-color:#2A2E35;
+  border-radius: 20px;
+  border-top-right-radius:30px;
+  border-top-left-radius:30px;
+}
+.image2{
+  background-color:wheat;
+  display:flex;
+  justify-content: center;
+}
+.image3{
+  background-color:aqua;
+  display:flex;
+  justify-content: center;
+}
+#blog_text{
+  font-size:20px;
+  font-weight:500;
+  color:#E1E1E1;
+  padding: 20px 0px;
+}
+#blog_btn{
+  background-color: transparent;
+  border:2px solid #27AE60;
+  color:#27AE60;
+  font-weight:bolder;
+  padding:10px 20px;
+  border-radius: 10px;
+}
+.blog_button{
+  background-color:#238A53;
+  grid-area:blog_btn;
+  display: flex;
+  justify-content: center;
+}
+.blog_button > button{
+  font-size:20px;
+  font-weight:bolder;
+  color:white;
+  background: #27AE60;
+  border:none;
+  border-radius:10px;
+width:150px;
+height:40px;
 }
 
 .blog_footer{
@@ -573,13 +643,61 @@ background-color: khaki;
   height:2px;
   background-color: #C4CFDE;
 }
+/* ==================================end of blog content============================================= */
+#contact{
+  height:100vh;
+  width:100%;
+  background-color:brown;
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-areas:"contact_nav contact_nav contact_nav"
+                      "contact_content contact_content contact_content"
+                      "contact_footer contact_footer contact_footer";
+  grid-template-rows: 0.2fr 1fr 0.1fr;
+}
+.contact_nav{
+  background-color:darkcyan;
+  grid-area: contact_nav;
+  display: flex;
+  justify-content: center;
+}
+.contact_content{
+  background-color:#2A2E35;
+  grid-area:contact_content;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "getin contactform"
+                       "getin contactform";
+}
+.get_in{
+  background-color: coral;
+  grid-area:getin;
+}
+.contactform{
+  background-color: cornflowerblue;
+  grid-area:contactform;
+}
 
 
 
+.contact_footer{
+  background-color:forestgreen;
+  grid-area:contact_footer;
+}
 
-
-
-
+.contact_footer{
+  background-color:olivedrab;
+  grid-area:contact_footer;
+  text-align:center;
+  display:grid;
+  align-items: center;
+}
+.contact_footer > p{
+  margin-left:4.5%;
+  width:90%;
+  height:2px;
+  background-color: #C4CFDE;
+}
 
 
 
