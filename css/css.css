@@ -616,6 +616,12 @@ background-color: khaki;
   padding:10px 20px;
   border-radius: 10px;
 }
+#blog_btn:hover{
+  background-color: #27AE60;
+  color:white;
+  font-weight:bolder;
+  padding:11px 21px;
+}
 .blog_button{
   background-color:#238A53;
   grid-area:blog_btn;

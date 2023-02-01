@@ -136,16 +136,50 @@ body{
                         "more_image1 more_image1 more_image1 more_image1"
                         "more_image2 more_image2 more_image2 more_image2"
                         "more_image3 more_image3 more_image3 more_image3";
+    grid-template-rows: 0.2fr 1fr 1fr 1fr;
 }
-.more_title > p{
+.more_title{
     color:#27AE60;
     font-size:25px;
+    padding: 10px 0px;
     grid-area: more_title;
 }
-.more_imge1{
+.more_image1{
     background-color: saddlebrown;
     grid-area:more_image1;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "imagef imagef contentf contentf"
+                        "imagef imagef contentf contentf"
+                        "footerf footerf footerf footerf";
+ grid-template-rows: 1fr 1fr 0.2fr
+                        
 }
+.imagef{
+    grid-area:imagef;
+    background-color:forestgreen;
+}
+.contentf{
+    grid-area:contentf;
+    background-color:seagreen;
+}
+.contentf > #p{
+    font-size:25px;
+    font-weight:bolder;
+    color:white;
+}
+.contentf > #pp{
+    font-size:20px;
+    color:#E1E1E1;
+}
+.contentf > p{
+    padding:10px;
+}
+.footerf{
+    grid-area: footerf;
+    background-color: hotpink;
+}
+
 .more_image2{
     background-color:aqua;
     grid-area: more_image2;
