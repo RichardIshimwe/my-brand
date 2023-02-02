@@ -665,6 +665,12 @@ height:40px;
                       "contact_footer contact_footer contact_footer";
   grid-template-rows: 0.2fr 1fr 0.1fr;
 }
+.contact_nav > .i{
+  /* background-color: brown; */
+  position: absolute;
+  margin-right: 83rem;
+  /* width: 30%; */
+}
 .contact_nav{
   /* background-color:darkcyan; */
   grid-area: contact_nav;

@@ -559,7 +559,12 @@ justify-content: center;
     background-color: #CDCDCE;
 }
 /* =================================================signup page============================================ */
-
+#sigup{
+    width:100%;
+    height:100vh;
+    background-color: brown;
+    display: grid;
+}
 
 
 
