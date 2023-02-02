@@ -173,7 +173,7 @@ body{
     color:#E1E1E1;
 }
 .contentf > p{
-    padding:10px;
+    padding:30px;
 }
 .footerf{
     grid-area: footerf;
@@ -188,4 +188,281 @@ body{
     background-color:khaki;
     grid-area:more_image3;
 }
+
+
+/* ==================================dashboard================================= +++++++++++++++++++++++++++++*/
+#dashboard{
+    background-color: #191D2B;
+    width:100%;
+    height:100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "dash_header dash_header dash_header dash_header"
+                         "dash_side dash_content dash_content dash_content"
+                         "dash_side dash_content dash_content dash_content"
+                         "dash_footer dash_footer dash_footer dash_footer";
+    grid-template-rows: 0.2fr 1fr 1fr 0.1fr;
+}
+.dash_header{
+    background-color: salmon;
+    grid-area: dash_header;
+    display: flex;
+    align-items: center;
+    
+}
+.fa-circle-left{
+    margin-left: 10px;
+    font-size: 40px;
+    color: #27AE60;
+}
+ #peso{
+    /* background-color: brown; */
+    width: 100%;
+    text-align: center;
+    font-size: 45px;
+    color:#CDCDCE;
+    font-weight: bolder;
+}
+
+
+
+.dash_content{
+    background-color: green;
+    grid-area:dash_content;
+}
+.dash_side{
+    grid-area:dash_side;
+    background-color: lawngreen;
+    display: flex;
+    align-items: center;
+}
+.side_cont{
+    width: 90%;
+    height:70%;
+    background-color: brown;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    align-items: center;
+}
+.side_cont_inside > p{
+    font-size: 35px;
+    font-weight:bolder;
+    padding: 10px 0px 10px 20px;
+}
+.side_cont_inside > #active > a{
+    font-weight:bolder;
+    color: #27AE60;
+}
+.side_cont_inside{
+    background-color: gold;
+}
+.fa-gauge ,.fa-ellipsis,.fa-list-check{
+    font-size:45px;
+    color: #27AE60;
+}
+
+.dash_footer{
+    grid-area:dash_footer;
+    background-color: crimson;
+    display:flex;
+    justify-content: center;
+}
+.dash_footer > .line{
+    width:90%;
+    height:2px;
+    background-color: #CDCDCE;
+}
+.content_dash{
+    /* background-color: blueviolet; */
+    margin:20px 40px 20px 30px;
+    display: grid;
+    grid-template-columns: 1fr 0.6fr;
+}
+.div1,.div2{
+    border-radius:10px;
+}
+.div1{
+    background-color: seagreen;
+    margin-right: 20px;
+}
+.div2{
+    background-color: rebeccapurple;
+}
+#cont_dash{
+font-size: 35px;
+color:#898B91;
+font-weight:bolder;
+padding: 10px;
+}
+#white{
+    color:white;
+}
+.content_dash > #pro{
+    color:#27AE60;
+    font-size: 30px;
+    padding: 15px;
+    font-weight:bolder;
+}
+#recent_comments{
+    margin-left: 40px;
+    font-size: 20px;
+    background-color: #313236;
+    padding:20px;
+    border-radius: 10px;
+    margin-right:40px;
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+}
+/* =================================================add blog======================================== */
+#add_blog{
+    width:100%;
+    height:100vh;
+    background-color: brown;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:"add_nav add_content add_content add_content"
+                        "add_space add_content add_content add_content"
+                        "add_space add_content add_content add_content"
+                        "add_footer add_footer add_footer add_footer";
+    grid-template-rows: 0.2fr 1fr 1fr 0.1fr;
+}
+.add_nav{
+    background-color: wheat;
+    grid-area:add_nav;
+}
+.add_content{
+    background-color:fuchsia;
+    grid-area:add_content;
+}
+.add_side{
+    background-color:forestgreen;
+    grid-area:add_space;
+    display: flex;
+    align-items: center;
+}
+.add_footer{
+    background-color:rebeccapurple;
+    grid-area:add_footer;
+}
+
+/* ===========================add blog section========================================== */
+#addsblog{
+    width:100%;
+    height:100vh;
+    background-color: brown;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-template-areas:"adds_nav adds_nav adds_nav adds_nav"
+                    "adds_side adds_content adds_content adds_content"
+                    "adds_side adds_content adds_content adds_content"
+                    "adds_footer adds_footer adds_footer adds_footer";
+grid-template-rows:0.2fr 1fr 1fr 0.1fr;
+
+}
+.adds_nav{
+    background-color: goldenrod;
+    grid-area:adds_nav;
+    display:flex;
+    align-items: center;
+}
+.adds_space{
+    background-color: coral;
+    grid-area:adds_side;
+    display:flex;
+    align-items: center;
+}
+.adds_content{
+    background-color: darkmagenta;
+    grid-area:adds_content;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:"holder_title holder_title holder_title holder_title"
+                        "holder_content holder_content holder_content holder_content";
+    grid-template-rows: 0.15fr 1fr;
+}
+.holder_title{
+    grid-area: holder_title;
+    background-color: #27AE60;
+}
+.holder_content{
+    grid-area: holder_content;
+    background-color: green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ .contents_holders{
+     background-color:#313236;
+     /* width:43%; */
+     height:70%;
+     border-radius: 20px;
+     padding: 15px;
+} 
+.contents_holders > input{
+    border-radius: 10px;
+    width: 400px;
+    height: 35px;
+    border:none;
+    background-color: #191D2B;
+}
+.contents_holders > textarea{
+    margin-top: 10px;
+    border-radius: 10px;
+    width: 400px;
+    height: 148px;
+    border:none;
+    background-color: #191D2B;
+}
+.contents_holders > #btn{
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 7px 10px;
+    color: #27AE60;
+    font-size: 15px;
+    font-weight: bolder;
+    border: 2px solid #27AE60;
+    background-color: transparent;
+}
+.contents_holders > #btn:hover{
+    font-size: 17px;
+    color: white;
+    background-color: #27AE60;
+}
+.contents_holders > #btnsave{
+display: flex;
+justify-content: center;
+}
+.contents_holders > #btnsave > button{
+    font-size: 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 7px 10px;
+    font-weight: bolder;
+    color: white;
+    border: 2px solid #27AE60;
+    background-color: #27AE60;
+}
+.contents_holders > #btnsave > button:hover{
+    font-size: 17px;
+    border: none;
+    background-color: #068b3d;
+}
+
+
+
+
+
+
+.adds_footer{
+    background-color: hotpink;
+    grid-area:adds_footer;
+}
+
+
+
+
+
+
 

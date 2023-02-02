@@ -46,9 +46,10 @@ h1 {
 #home_nav ul.active {
   left: 0;
 }
+a{
+  text-decoration: none;
+}
 #replace{
-  /* height: ; */
-  /* width: 100%; */
   display:flex;
 }
 .containers{

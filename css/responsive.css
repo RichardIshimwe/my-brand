@@ -6,14 +6,18 @@
       padding: 2.2rem 5rem;
     }
   }
+
+
   @media only screen and (max-width: 767px) {
     html {
       font-size: 50%;
     }
+  
     #ham-menu {
       display: block;
       color: #ffffff;
     }
+  
     nav a#logo,
     #ham-menu {
       font-size: 3.2rem;
@@ -27,12 +31,36 @@
       height: calc(100vh - 73.6px);
       display: flex;
       flex-direction: column;
+      z-index: 2;
       align-items: center;
-      justify-content: space-around;
-      transition: 1s;
-      gap: 0;
+      /* justify-content: space-around; */
+      transition: 0.5s;
+      gap: 2rem;
     }
+  
+  /* ==========================================home page========================================== */
+  .container_b{
+display:none;
   }
+  .containers{
+    width:90%;
+    background-color: green;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  }
+
+
   @media only screen and (max-width: 575px) {
     html {
       font-size: 46.87%;
