@@ -132,12 +132,22 @@ color:#27AE60;
   width: 40%;
   height: 630px;
 }
+.home_profile{
+  height: 100%;
+ margin-top: 60px;
+}
+#profile > img{
+  border-radius:20px;
+  border-top: 2px solid white;
+  border-right: 2px solid white;
+}
 .terminal{
   margin-top: 125px;
   border-radius:20px;
   width: 500px;
   height: 370px;
   background-color: #202020;
+  display: none;
 }
 #para{
   height:auto;

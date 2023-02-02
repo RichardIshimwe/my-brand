@@ -1,8 +1,7 @@
+
 let hamMenuIcon = document.getElementById("ham-menu");
 let navBar = document.getElementById("nav-bar");
 let navLinks = navBar.querySelectorAll("li");
-
-// window.alert("java script is ready");
 
 hamMenuIcon.addEventListener("click", () => {
   navBar.classList.toggle("active");
@@ -14,8 +13,6 @@ navLinks.forEach((navLinks) => {
     hamMenuIcon.classList.toggle("fa-times");
   });
 });
-
-
 const scrollToTopBtn = document.getElementById('scroll-to-top-btn');
 
 window.onscroll = function() {
@@ -35,9 +32,6 @@ scrollToTopBtn.onclick = function() {
 
 let redirect = () =>{
   window.location.href = '../html/dashboard.html';
-}
-let edit = () =>{
-  window.alert("edit button clicked");
 }
 
 
