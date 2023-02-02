@@ -639,7 +639,7 @@ background-color: khaki;
   display: flex;
   justify-content: center;
 }
-.blog_button > button{
+.blog_button > a> button{
   font-size:20px;
   font-weight:bolder;
   color:white;
@@ -648,6 +648,10 @@ background-color: khaki;
   border-radius:10px;
 width:150px;
 height:40px;
+}
+.blog_button > a> button:hover{
+  font-size:22px;
+  background: #14703a;
 }
 
 .blog_footer{

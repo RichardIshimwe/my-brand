@@ -562,10 +562,78 @@ justify-content: center;
 #sigup{
     width:100%;
     height:100vh;
-    background-color: brown;
+    /* background-color: brown; */
     display: grid;
 }
+/* ===============================================all blogs=============================================== */
+#allblogs{
+    width: 100%;
+    height:100vh;
+    background-color: brown;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "all_nav all_nav all_nav all_nav"
+                         "all_content1 all_content1 all_content2 all_content2"  
+                         "all_footer all_footer all_footer all_footer";
+     grid-template-rows: 0.1fr 1fr 0.03fr;
+}
+.all_nav{
+    background-color: fuchsia;
+    grid-area: all_nav;
+    display: flex;
+}
+.all_nav > .blogs_nav{
+    padding-left: 30px;
+}
+.all_content2{
+    background-color: darkgoldenrod;
+    grid-area: all_content2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "contentall1"
+                         "contentall2"  
+                         "contentall3"
+                         "contentall4";
+     grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+.contentall1{
+    background-color: cyan;
+    grid-area: contentall1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "contents1"
+                         "contents2"  ;
+     grid-template-rows: 1fr 1fr;
+}
+.contents{
+    background-color: gold;
+    grid-area: contents1;
+}
+.allfooter{
+    background-color: rgb(53, 48, 21);
+    grid-area: contents2;  
+}
 
+.contentall2{
+    background-color: rgb(111, 119, 119);
+    grid-area: contentall2;
+}
+.contentall3{
+    background-color: rgb(16, 218, 49);
+    grid-area: contentall3;
+}
+.contentall4{
+    background-color: rgb(95, 107, 53);
+    grid-area: contentall4;
+}
+.all_content1{
+    background-color: rgb(99, 90, 67);
+    grid-area: all_content1;
+}
+.all_footer{
+    background-color: rgb(28, 153, 76);
+    grid-area: all_footer;
+}
 
 
 
