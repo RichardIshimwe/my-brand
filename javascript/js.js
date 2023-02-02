@@ -2,6 +2,8 @@ let hamMenuIcon = document.getElementById("ham-menu");
 let navBar = document.getElementById("nav-bar");
 let navLinks = navBar.querySelectorAll("li");
 
+// window.alert("java script is ready");
+
 hamMenuIcon.addEventListener("click", () => {
   navBar.classList.toggle("active");
   hamMenuIcon.classList.toggle("fa-times");
@@ -34,4 +36,8 @@ scrollToTopBtn.onclick = function() {
 let redirect = () =>{
   window.location.href = '../html/dashboard.html';
 }
+let edit = () =>{
+  window.alert("edit button clicked");
+}
+
 

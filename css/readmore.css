@@ -341,7 +341,7 @@ padding: 10px;
 #add_blog{
     width:100%;
     height:100vh;
-    background-color: brown;
+    /* background-color: brown; */
     display:grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas:"add_nav add_content add_content add_content"
@@ -351,13 +351,13 @@ padding: 10px;
     grid-template-rows: 0.2fr 1fr 1fr 0.1fr;
 }
 .add_nav{
-    background-color: wheat;
+    /* background-color: wheat; */
     grid-area:add_nav;
     display: flex;
     align-items: center;
 }
 .add_content{
-    background-color:rgb(145, 97, 145);
+    /* background-color:rgb(145, 97, 145); */
     grid-area:add_content;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -365,39 +365,82 @@ padding: 10px;
                         "img4 img5 img6";
     grid-template-rows: 1fr 1fr;
 }
+.img1,.img2,.img3,.img4,.img5,.img6{
+    margin:10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.imagew1,.imagew2,.imagew3,.imagew4,.imagew5,.imagew6{
+    width: 94%;
+    height:95%;
+    background-color: #2A2E35;
+    border:none;
+    border-radius:20px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+.imagew1 > img,.imagew2 > img,.imagew3 > img,.imagew4 > img,.imagew5 > img,.imagew6 > img{
+    width: 100%;
+}
 .img1{
-    background-color: chartreuse;
+    /* background-color: chartreuse; */
     grid-area: img1;
 }
+.imgcont12,.imgcont13{
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+}
+.imgcont13 > p{
+    font-size: 35px;
+    color:#298F55;
+    padding: 5px 4px;
+}
+.fa-trash-can{
+    color:red;
+}
+.imgcont12 > #p{
+    font-size: 20px;
+    font-weight:500;
+    color:#E1E1E1;
+}
 .img2{
-    background-color: rgb(63, 58, 143);
+    /* background-color: rgb(63, 58, 143); */
     grid-area: img2;
 }
 .img3{
-    background-color: chartreuse;
+    /* background-color: saddlebrown; */
     grid-area: img3;
 }
 .img4{
-    background-color: chartreuse;
+    /* background-color: salmon; */
     grid-area: img4;
 }
 .img5{
-    background-color: chartreuse;
+    /* background-color: aqua; */
     grid-area: img5;
 }
 .img6{
-    background-color: chartreuse;
+    /* background-color: rgb(11, 19, 4); */
     grid-area: img6;
 }
 .add_side{
-    background-color:forestgreen;
+    /* background-color:forestgreen; */
     grid-area:add_space;
     display: flex;
     align-items: center;
 }
 .add_footer{
-    background-color:rebeccapurple;
+    /* background-color:rebeccapurple; */
     grid-area:add_footer;
+    display: flex;
+    justify-content: center;
+}
+.add_footer > .line{
+    width:90%;
+    height:2px;
+    background-color: #CDCDCE;
 }
 
 /* ===========================add blog section========================================== */
@@ -515,7 +558,7 @@ justify-content: center;
     height:2px;
     background-color: #CDCDCE;
 }
-
+/* =================================================signup page============================================ */
 
 
 
