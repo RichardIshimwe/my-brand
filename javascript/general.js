@@ -34,7 +34,7 @@ window.location.href = 'editblog.html';
 }
 
 document.addEventListener('keydown',function(event){
-    if(event.key === 'Enter'){
+    if(event.key === 'Enter' && command.value != ""){
         if(command.value === "login"){
             window.location.href = '#login';
             terminalResult.innerHTML = "";

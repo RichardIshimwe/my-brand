@@ -696,13 +696,17 @@ justify-content: center;
     font-weight: 700;
     font-size: 20px;
 }
-.pbtn > button{
+.pbtn > button {
     background-color: transparent;
     color: #27AE60;
     font-weight: bolder;
     font-size: 20px;
     border: none;
 }
+.pbtn > button > a{
+    color: #27AE60;
+}
+
 .pbtn{
     margin-top: 20px;
     /* background-color: #191D2B; */
