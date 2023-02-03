@@ -895,6 +895,12 @@ border-radius:10px;
   font-size:17px;
   font-weight:600;
 }
+#thisis > button:hover{
+  color: white;
+  background-color: #27AE60;
+  font-size:19px;
+  font-weight:bolder;
+}
 .contact_footer{
   /* background-color:forestgreen; */
   grid-area:contact_footer;

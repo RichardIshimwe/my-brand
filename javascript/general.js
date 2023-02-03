@@ -2,6 +2,9 @@
 // let title = document.getElementById("edit_title");
 let terminal = document.getElementById("home_terminal");
 let closed = document.querySelector(".fa-xmark");
+let command = document.getElementById("command");
+let terminalResult = document.getElementById("terminal_result");
+
 // ======================================================social medias=====================================
 function linkedin(){
     window.open('https://www.linkedin.com/in/ishimwe-richard-40175a24a/','_blank');
@@ -24,10 +27,33 @@ document.querySelector(".home_profile").style.display = "none";
 
 })
 
-document.getElementById("edit_title").value = 'Node mcu Lol1n v3 details.';
-document.getElementById("edit_textarea").value = 'Every device that is going to be invented need to pass in almost every  stage of production needed in industrial zone for the producrtion process so asto make the perfect product  perfect product the following are needed the design ,coding and manufacturing process for it to be used as a final product.This was an agricultural based project implemented using hardware and software.'
 
 function edit(){
 let edit = document.getElementById("edit_click");
 window.location.href = 'editblog.html';
 }
+
+document.addEventListener('keydown',function(event){
+    if(event.key === 'Enter'){
+        if(command.value === "login"){
+            window.location.href = '#login';
+            terminalResult.innerHTML = "";
+        }
+        else if(command.value === "help"){
+            terminalResult.innerHTML = "terminal is underconstruction";
+        }
+        
+        else{
+            terminalResult.innerHTML = "invalid command try -help- command";
+        }
+        command.value = "";
+    }
+});
+
+
+
+
+
+
+
+
