@@ -2,7 +2,15 @@
 // let title = document.getElementById("edit_title");
 let terminal = document.getElementById("home_terminal");
 let closed = document.querySelector(".fa-xmark");
-
+// ======================================================social medias=====================================
+function linkedin(){
+    window.open('https://www.linkedin.com/in/ishimwe-richard-40175a24a/','_blank');
+    // window.alert("linledin is clicked");
+}
+function github(){
+    window.open('https://github.com/rich26638','_blank');
+}
+// ===================================================end of socialmedia===================================
 closed.addEventListener('click', () =>{
     document.querySelector(".terminal").style.display = "none";
     document.querySelector(".home_profile").style.display = "flex";
@@ -21,6 +29,5 @@ document.getElementById("edit_textarea").value = 'Every device that is going to 
 
 function edit(){
 let edit = document.getElementById("edit_click");
-// window.alert("helloooooooo");
 window.location.href = 'editblog.html';
 }
