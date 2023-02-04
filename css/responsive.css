@@ -48,7 +48,7 @@ display:none;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas: "nav nav nav nav"
                          "replaced replaced replaced replaced";
-    grid-template-rows: 0.2fr 1fr;
+    grid-template-rows: 0.1fr 1fr;
    }
    #home_nav {
     grid-area: nav;
@@ -57,30 +57,34 @@ display:none;
   }
   #replace{
     grid-area: replaced;
-    background-color: rgb(62, 122, 211);
+    background-color: rgb(211, 62, 62);
     display: grid;
     grid-template-columns: 1fr 0.7fr 0.11fr;
-    grid-template-areas: "section1 section2 section3"
-                        "section1 section2 section3"
+    grid-template-areas:"section1 section1 section1"
+                        "section1 section1 section1"
                         "section4 section4 section4";
-    grid-template-rows: 1fr 1fr 0.2fr;
+    grid-template-rows: 1fr 1fr 0.1fr;
   }
   .section1{
-    background-color: #128141;
+    /* display:none; */
+    background-color: #3d1281;
     grid-area: section1;
-    margin:6% 3%;
+    margin: 0%;
+    /* padding: 3%; */
+    margin:3% 3% 0% 3%;
+    /* width: 95%; */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas: "section1Head section1Head section1Head section1Head"
                          "text text text text"
                          "descript descript descript descript"
-                         "cv cv cv cv"
+                         "cv cv cv cv" 
     ;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.8fr 1fr 1fr 0.3fr;
   }
   .section1Head{
     grid-area: section1Head;
-    background-color: #2f7ca8;
+    background-color: #474437;
   }
   .text{
     grid-area: text;
@@ -88,34 +92,40 @@ display:none;
   }
   .descript{
     grid-area: descript;
-    background-color: #293015;
+    background-color: #151830;
   }
   .cvs{
     grid-area: cv;
-    background-color: #e20aa1;
-    display: flex;
+    background-color:brown;
+    display: none;
     /* justify-content: center; */
   
+  }
+  #cv{
+    width: 300px;
+    height:100px;
+    background-color: #13e251;
+    border-radius:8px;
+    /* margin-top: 22px; */
   }
   
   .section2{
     display:none;
-    background-color: #db2ba0;
-    grid-area: section2;
-    display: flex;
-    align-items: center;
   }
   .section3{
-    background-color: #13c9c9;
-    grid-area: section3;
-    display: flex;
-  align-items: center;
-  justify-content: center;
+  display: none;
   }
   .section4{
-    background-color: #a9e20a;
+    background-color: #e26b0a;
     grid-area: section4;
   }
+
+
+
+
+
+
+
 
 
 
@@ -143,3 +153,16 @@ display:none;
       height: calc(100vh - 65.18px);
     }
   }
+
+
+
+
+
+
+
+
+
+
+  /* Meeting ID: 831 7462 2727
+  Passcode: 123 */
+  /* https://us05web.zoom.us/j/83174622727?pwd=TEtSUDNpeXlUWEVHTGVPTUdmVWMvdz09 */
