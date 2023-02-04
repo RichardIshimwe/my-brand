@@ -95,15 +95,14 @@ a{
 }
 
 .section2{
-  /* background-color: #db2ba0; */
   grid-area: section2;
   display: flex;
   align-items: center;
 }
 .section3{
-  /* background-color: #13c9c9; */
-  grid-area: section3;
-  display: flex;
+/* background-color: #13c9c9; */
+grid-area: section3;
+display: flex;
 align-items: center;
 justify-content: center;
 }
