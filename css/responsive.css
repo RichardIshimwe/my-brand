@@ -42,35 +42,87 @@
   #login,#about,#skills,#portfolio,#contact,#blogs{
 display:none;
   }
-  .container_b{
-display:none;
+  #home{
+    background-color: rgb(224, 115, 26);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "nav nav nav nav"
+                         "replaced replaced replaced replaced";
+    grid-template-rows: 0.2fr 1fr;
+   }
+   #home_nav {
+    grid-area: nav;
+    position: relative;
+    background-color: #1ac298;
   }
-  .containers{
-    width:90%;
-    background-color: green;
+  #replace{
+    grid-area: replaced;
+    background-color: rgb(62, 122, 211);
+    display: grid;
+    grid-template-columns: 1fr 0.7fr 0.11fr;
+    grid-template-areas: "section1 section2 section3"
+                        "section1 section2 section3"
+                        "section4 section4 section4";
+    grid-template-rows: 1fr 1fr 0.2fr;
   }
-  .containers{
-    width: 80%;
-    height:630px;
-    background-color:rgb(73, 65, 49);
+  .section1{
+    background-color: #128141;
+    grid-area: section1;
+    margin:6% 3%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "section1Head section1Head section1Head section1Head"
+                         "text text text text"
+                         "descript descript descript descript"
+                         "cv cv cv cv"
+    ;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
   }
-  .container_a{
-    margin-top: 4%;
-    margin-left: 4%;
-    background-color: rgb(117, 79, 7);
-    }
-    .text{
-      /* width: 700px;
-      height: 98px;
-      margin-top:32px;
-      font-weight:800px;
-      font-size:20px; */
-      display: none;
-      }
+  .section1Head{
+    grid-area: section1Head;
+    background-color: #2f7ca8;
+  }
+  .text{
+    grid-area: text;
+    background-color: #a9e20a;
+  }
+  .descript{
+    grid-area: descript;
+    background-color: #293015;
+  }
+  .cvs{
+    grid-area: cv;
+    background-color: #e20aa1;
+    display: flex;
+    /* justify-content: center; */
   
+  }
   
-  
-  
+  .section2{
+    display:none;
+    background-color: #db2ba0;
+    grid-area: section2;
+    display: flex;
+    align-items: center;
+  }
+  .section3{
+    background-color: #13c9c9;
+    grid-area: section3;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+  .section4{
+    background-color: #a9e20a;
+    grid-area: section4;
+  }
+
+
+
+
+
+
+
   
   
   
