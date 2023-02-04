@@ -806,6 +806,14 @@ font-weight: bold;
 .image__description{
     font-size: 1.25em;
 }
+/* ====================validation=========== */
+.res_nav{
+    height: 19px;
+    width: 95%;
+    color: red;
+    /* background-color: saddlebrown; */
+}
+
 
 
 

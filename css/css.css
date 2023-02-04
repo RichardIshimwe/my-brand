@@ -11,14 +11,18 @@ html {
   color: white;
 }
 #home_nav {
+  grid-area: nav;
   position: relative;
+  /* margin: 0px 10px; */
   background-color: #2A2E35;
-  padding: 17px 17px;
+  /* padding: 17px 17px; */
 }
 #home_nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* background-color: #128141; */
+  padding-right: 10px;
 }
 #home_nav ul {
   list-style: none;
@@ -50,17 +54,76 @@ a{
   text-decoration: none;
 }
 #replace{
-  display:flex;
+  grid-area: replaced;
+  /* background-color: darkgoldenrod; */
+  display: grid;
+  grid-template-columns: 1fr 0.7fr 0.11fr;
+  grid-template-areas: "section1 section2 section3"
+                      "section1 section2 section3"
+                      "section4 section4 section4";
+  grid-template-rows: 1fr 1fr 0.2fr;
 }
+.section1{
+  /* background-color: #128141; */
+  grid-area: section1;
+  margin:6% 3%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "section1Head section1Head section1Head section1Head"
+                       "text text text text"
+                       "descript descript descript descript"
+                       "cv cv cv cv"
+  ;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+.section1Head{
+  grid-area: section1Head;
+  /* background-color: #2f7ca8; */
+}
+.text{
+  grid-area: text;
+  /* background-color: #a9e20a; */
+}
+.descript{
+  grid-area: descript;
+  /* background-color: #293015; */
+}
+.cvs{
+  grid-area: cv;
+  /* background-color: #e20aa1; */
+  display: flex;
+  /* justify-content: center; */
+
+}
+
+.section2{
+  /* background-color: #db2ba0; */
+  grid-area: section2;
+  display: flex;
+  align-items: center;
+}
+.section3{
+  /* background-color: #13c9c9; */
+  grid-area: section3;
+  display: flex;
+align-items: center;
+justify-content: center;
+}
+.section4{
+  /* background-color: #a9e20a; */
+  grid-area: section4;
+}
+
 .containers{
+  grid-area: containers;
   width: 55%;
-  height:630px;
+  height:100%;
   /* background-color:wheat; */
 }
 
 .container_a{
-margin-top:70px;
-margin-left:30px;
+  margin-top:70px;
+  margin-left:30px;
 }
 #hi{
 font-weight:bolder;
@@ -74,16 +137,18 @@ font-weight:bolder;
 font-size:25px;
 }
 .text{
-width: 700px;
+/* width: 700px;
 height: 98px;
-margin-top:32px;
+background-color: #a9e20a;
+margin-top:32px; */
 font-weight:800px;
 font-size:20px;
 }
-.descript{
+/* .descript{
 width:443px;
 height:240px;
-}
+background-color: #a9e20a;
+} */
 .descript_a>i{
 width:16.5px;
 height:22px;
@@ -100,7 +165,7 @@ color:#27AE60;
   height:100px;
   background-color: #2A2E35;
   border-radius:8px;
-  margin-top: 22px;
+  /* margin-top: 22px; */
 }
 #my_cv{
   padding:6px 0px;
@@ -134,15 +199,25 @@ color:#27AE60;
 }
 .home_profile{
   height: 100%;
- margin-top: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+ /* margin-top: 60px; */
+}
+#profile{
+  width:97%;
+  height:79%;
+  /* background-color: gold; */
 }
 #profile > img{
+  width:100%;
+  height:100%;
   border-radius:20px;
   border-top: 2px solid white;
   border-right: 2px solid white;
 }
 .terminal{
-  margin-top: 125px;
+  /* margin-top: 125px; */
   border-radius:20px;
   width: 500px;
   height: 370px;
@@ -168,11 +243,6 @@ color:#27AE60;
 .fa-xmark:hover{
   font-size:22px;
   color:red;
-}
-.container_c{
-  width:5%;
-  height: 630px;
- margin-top: 220px;
 }
 .container_c>ul>li{
   list-style:none;
@@ -213,13 +283,22 @@ input:focus,input:active,textarea:active,textarea:focus{
 }
 #logo_color{
   font-size: 27px;
+  margin-left: 10px;
   color:white;
   font-weight:bolder;
  }
  #home{
   height:100vh;
-  /* background-color: #238A53; */
+  width:100%;
+  /* background-color: darkgoldenrod; */
+  /* background-color: rgb(224, 115, 26); */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "nav nav nav nav"
+                       "replaced replaced replaced replaced";
+  grid-template-rows: 0.1fr 1fr;
  }
+
  #scroll-to-top-btn {
   position: fixed;
   bottom: 20px;
@@ -986,7 +1065,7 @@ padding: 2px 0px;
 }
 .login_form_cont > i{
  font-size:60px;
- padding: 10px;
+ /* padding-bottom: 22px; */
  color: #9FA7B2;
 }
 .login_form_cont > button{

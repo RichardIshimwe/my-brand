@@ -39,6 +39,9 @@
     }
   
   /* ==========================================home page========================================== */
+  #login,#about,#skills,#portfolio,#contact,#blogs{
+display:none;
+  }
   .container_b{
 display:none;
   }
@@ -46,9 +49,24 @@ display:none;
     width:90%;
     background-color: green;
   }
-  
-  
-  
+  .containers{
+    width: 80%;
+    height:630px;
+    background-color:rgb(73, 65, 49);
+  }
+  .container_a{
+    margin-top: 4%;
+    margin-left: 4%;
+    background-color: rgb(117, 79, 7);
+    }
+    .text{
+      /* width: 700px;
+      height: 98px;
+      margin-top:32px;
+      font-weight:800px;
+      font-size:20px; */
+      display: none;
+      }
   
   
   

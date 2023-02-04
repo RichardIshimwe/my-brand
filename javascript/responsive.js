@@ -30,8 +30,5 @@ scrollToTopBtn.onclick = function() {
     document.documentElement.scrollTop = 0;
 };
 
-let redirect = () =>{
-  window.location.href = '../html/dashboard.html';
-}
 
 
