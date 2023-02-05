@@ -39,7 +39,7 @@
     }
   
   /* ==========================================home page========================================== */
-  #login,#portfolio,#contact,#blogs{
+  #login,#contact{
 display:none;
   }
   #home{
@@ -152,7 +152,7 @@ font-size: 15px;
 /* ======================================about section============================================ */
 #about{
   /* background-color: brown; */
-  height:80vh;
+  height:70vh;
 }
 .about_image,.line{
   display:none;
@@ -194,14 +194,14 @@ font-size: 15px;
 
 .about_cont > .footer{
   grid-area:footer;
-  /* backgroun/d: darkkhaki; */
+  /* background: darkkhaki; */
 }
 /* ==============================================end of about page====================================== */
 /* =========================================skill section */
 #skills{
   height:100vh;
   width:100%;
-  background-color:brown;
+  /* background-color:brown; */
   display: grid;
   grid-template-columns: repeat(4,1fr);
   grid-template-rows:0.2fr 1fr 0.1fr;
@@ -210,7 +210,7 @@ font-size: 15px;
                       "skills_footer skills_footer skills_footer skills_footer";
 }
 .skills_nav{
-  background-color:hotpink;
+  /* background-color:hotpink; */
   grid-area:skills_nav;
   text-align:center;
   display: flex;
@@ -218,29 +218,122 @@ font-size: 15px;
 
 }
 .skills_content{
-  background-color: peru;
+  /* background-color: peru; */
   grid-area:skills_content;
   display:grid;
-  grid-template-columns: repeat(4,1fr);
-  grid-template-rows: auto;
-  padding: 5% 3%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:"skill1 skill2"
+                     "skill3 skill4"
+                     "skill5 skill6"
+                     "skill7 skill8";
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  padding: 0% 0%;
+  padding-left: 2%;
+  align-items: center;
+  
+}
+.img1{
+  grid-area:skill1;
+}
+.img2{
+  grid-area:skill2;
+}
+.img3{
+  grid-area:skill3;
+}
+.img4{
+  grid-area:skill4;
+}
+.img5{
+
+  grid-area:skill5;
+}
+.img6{
+
+  grid-area:skill6;
+}
+.img7{
+
+  grid-area:skill7;
+}
+.img8{
+  grid-area:skill8;
 }
 .skills_footer{
-  background-color:blueviolet;
+  /* background-color:blueviolet; */
   grid-area:skills_footer;
   text-align:center;
   display:grid;
   align-items: center;
 }
+.image__overlay{
+  border-radius: 10px;
+}
+
 .skill {
-  background-color: hotpink;
-  width:300px;
-  height:155px;
-  border: 2px solid white;
+  width:90%;
+  height:70%;
+  border: 6px solid #2A2E35;
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content:center;
+}
+.skill > img{
+  width: 100%;
+  height: 100%;
+}
+/* ==============================================end of skill section================================= */
+/* ===========================================my prtfolio============================================= */
+#portfolio{
+  height: auto;
+  /* background-color: green; */
+  grid-template-rows:auto auto auto;
+}
+.port_content{
+  grid-area:port_content;
+  display: grid;
+  grid-template-columns:1fr;
+  grid-template-areas:"box1" "box2" "box3"
+                      "box4" "box5" "box6";
+  grid-template-rows:auto;
+}
+.boxed{
+  background-color: #2A2E35;
+  margin: 5px 10px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* ========================================end of portfolio section================================== */
+/* ================================blog section============================================== */
+#blogs{
+  padding:10px 0px;
+}
+.blog_image{
+  grid-area:image_blog;
+  display: grid;
+  grid-template-columns:1fr;
+  text-align: center;
+}
+#blog_btn{
+display:none;
+}
+.blogAll{
+  margin: 7px 18px;
+  border-radius: 20px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2A2E35;
+}
+.imaged{
+  width:75%;
+  height:85%;
+}
+.blog_content{
+  grid-template-rows: auto auto;
 }
 
 
@@ -249,12 +342,14 @@ font-size: 15px;
 
 
 
-  
-  
-  
-  
-  
-  }
+
+
+
+
+
+
+
+}
 
 
   @media only screen and (max-width: 575px) {
