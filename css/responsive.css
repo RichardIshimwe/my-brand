@@ -39,7 +39,7 @@
     }
   
   /* ==========================================home page========================================== */
-  #login,#about,#skills,#portfolio,#contact,#blogs{
+  #login,#portfolio,#contact,#blogs{
 display:none;
   }
   #home{
@@ -148,14 +148,100 @@ justify-content: center;
   .descript_a>i{
 font-size: 15px;
     } 
-      
+      /* ========================================end of home of home page========================= */
+/* ======================================about section============================================ */
+#about{
+  /* background-color: brown; */
+  height:80vh;
+}
+.about_image,.line{
+  display:none;
+}
+.about_cont{
+  /* background-color: rgb(58, 53, 53); */
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  grid-template-rows: 0.2fr 1fr 0.1fr;
+  height:70vh;
+  grid-template-areas: "nav nav nav nav"
+                       "content3 content3 content3 content3"
+                       "footer footer footer footer";
+  grid-gap: 0em;
+}
+.cont4{
+  display: flex;
+  justify-content: center;
+  /* background-color: blue; */
+}
+.cont1 > h2{
+  font-size: 25px;
+}
+#about_nav{
+  grid-area:nav;
+  /* background: green; */
+  display:grid;
+  align-items: center;
+  font-size:45px;
+  font-weight:bolder;
+  color:#C4CFDE;
+  position: relative;
+  text-align: center;
+}
+.about_content{
+  grid-area:content3;
+  /* background: darkgoldenrod; */
+}
 
+.about_cont > .footer{
+  grid-area:footer;
+  /* backgroun/d: darkkhaki; */
+}
+/* ==============================================end of about page====================================== */
+/* =========================================skill section */
+#skills{
+  height:100vh;
+  width:100%;
+  background-color:brown;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows:0.2fr 1fr 0.1fr;
+  grid-template-areas:"skills_nav skills_nav skills_nav skills_nav"
+                      "skills_content skills_content skills_content skills_content"
+                      "skills_footer skills_footer skills_footer skills_footer";
+}
+.skills_nav{
+  background-color:hotpink;
+  grid-area:skills_nav;
+  text-align:center;
+  display: flex;
+  justify-content: center;
 
-
-
-
-
-
+}
+.skills_content{
+  background-color: peru;
+  grid-area:skills_content;
+  display:grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: auto;
+  padding: 5% 3%;
+}
+.skills_footer{
+  background-color:blueviolet;
+  grid-area:skills_footer;
+  text-align:center;
+  display:grid;
+  align-items: center;
+}
+.skill {
+  background-color: hotpink;
+  width:300px;
+  height:155px;
+  border: 2px solid white;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
 
 
 
