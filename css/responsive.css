@@ -38,8 +38,11 @@
     }
   
   /* ==========================================home page========================================== */
-  #login,#contact{
-display:none;
+  .home_profile{
+    display: flex;
+  }
+  .terminal{
+    display:none;
   }
   #home{
     display: grid;
@@ -284,6 +287,8 @@ font-size: 15px;
 /* ================================blog section============================================== */
 #blogs{
   padding:10px 0px;
+  height: auto;
+  grid-template-rows: auto auto auto;
 }
 .blog_image{
   grid-area:image_blog;
@@ -309,19 +314,60 @@ display:none;
 .blog_content{
   grid-template-rows: auto auto;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
+.blog_button>a>button {
+margin-bottom: 4px;
+}
+/* ===================================end of blog section======================================= */
+/* ================================contact me page============================================ */
+#contact{
+  height: auto;
+}
+.contact_content{
+  grid-template-areas:"contactform contactform"
+                       "getin getin";
+}
+.form_container {
+  height: 90%;
+}
+.get_title > #get_text{
+ font-size: 15px;
+}
+.get_container {
+  width: 98%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "get_tittle get_tittle get_tittle get_tittle"
+                       "get_address get_address get_address get_address"
+                       "get_address get_address get_address get_address";
+  grid-template-rows: auto auto auto;
+}
+#contact {
+  grid-template-rows: auto auto auto;
+}
+.blogs_nav > span{
+  display: none;
+}
+#address_subtit {
+  padding-bottom: 5px;
+}
+/* ==============================================end of contacct================================*/
+/* ====================================login page======================================== */
+#login{
+  height: 80vh;
+}
+.login_form {
+  width: 90%;
+  height:70%;
+}
+.login_footer {
+  font-size: 20px;
+  padding: 2px 0px;
+}
+.login_form_cont {
+  width: 100%;
+}
+/* ====================================end of login page==================================== */
 
 }
 
