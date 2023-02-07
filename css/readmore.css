@@ -208,7 +208,6 @@ justify-content: center;
     grid-area: more_image2;
 }
 .more_image3{
-    /* background-color:khaki; */
     grid-area:more_image3;
 }
 
@@ -228,9 +227,16 @@ justify-content: center;
 }
 .dash_header{
     grid-area: dash_header;
-    display: flex;
-    align-items: center;
 }
+#home_nav{
+    display:none
+  }
+
+.navAnother{
+    display: flex;
+    align-items: center; 
+}
+
 .fa-circle-left{
     margin-left: 10px;
     font-size: 40px;
@@ -253,7 +259,6 @@ justify-content: center;
 
 .dash_content{
     grid-area:dash_content;
-    /* background-color: greenyellow; */
     display: grid;
     grid-template-rows: 0.2fr 1fr;
 }
@@ -342,6 +347,13 @@ padding: 10px;
     display: grid;
     grid-template-columns:1fr 1fr 1fr;
 }
+.navAnother{
+    width: 100%;
+}
+
+
+
+
 /* =================================================add blog======================================== */
 #add_blog{
     width:100%;

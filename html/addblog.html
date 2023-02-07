@@ -22,42 +22,49 @@
     <section id="addsblog">
 
  <div class="adds_nav">
-    <a href="../index.html"><i class="fa-solid fa-circle-left"></i></a>
+    <div class="navAnother">
+      <a href="./manage.html"><i class="fa-solid fa-circle-left"></i></a>
+    <div id="peso">
+    <p>Add<span id="logo">blog</span>.</p>
+  </div>
+  </div>
  </div>
 <div class="adds_content">
-        <div class="holder_title">       
-          <nav id="home_nav">
-            <a href="#home" id="logo_color">
-              <h2>Add<span id="logo">blog</span>.</h2>
-            </a>
-            <i class="fas fa-bars" id="ham-menu"></i>
-            <ul id="nav-bar">
-              <li>
-                <a href="../index.html">Home</a>
-              </li>
-              <li>
-                <a href="./dashboard.html">Dashboard</a>
-              </li>
-              <li>
-                <a href="./addblog.html">Add blog</a>
-              </li>
-              <li>
-                <a href="./manage.html">Manage blog</a>
-              </li>
-            </ul>
-          </nav>
+        <div class="holder_title">            
+            <div id="peso">
+                <nav id="home_nav">
+                  <a href="./dashboard.html" id="logo_color">
+                    <h2>Edit<span id="logo">blog</span>.</h2>
+                  </a>
+                  <i class="fas fa-bars" id="ham-menu"></i>
+                  <ul id="nav-bar">
+                    <li>
+                      <a href="../index.html">Home</a>
+                    </li>
+                    <li>
+                      <a href="./dashboard.html">Dashboard</a>
+                    </li>
+                    <li>
+                      <a href="./addblog.html">Add blog</a>
+                    </li>
+                    <li>
+                      <a href="./manage.html">Manage blogs</a>
+                    </li>
+                  </ul>
+                </nav>
+        </div>
     </div>
         <div class="holder_content"> 
         <div class="holderContent"> 
               <div class="contents_holders">
                 <div class="contOne">
-                <input type="text" name="" id="" placeholder="Blog title"><br/>
+                <input type="text" name="" id="add_title" placeholder="add blog title"><br/>
                 </div>
               <div class="contTwo">
-                <textarea name="" id="" cols="0" rows="0" placeholder="blog description"></textarea><br/>
+                <textarea name="" id="add_textarea" cols="0" rows="0" placeholder="enter the blog content"></textarea><br/>
             </div>
             <div class="contThree">
-                <button id="btn">choose image</button><br/>
+                <button id="btn">choose blog image</button><br/>
             </div>
                 <div class="contSave">
                 <button>Save blog</button>
@@ -87,7 +94,7 @@
       </div>
 </div>
     </section>
-
+    <script src="../javascript/editblog.js"></script>
     <script src="../javascript/responsive.js"></script>
 </body>
 </html>

@@ -54,6 +54,7 @@
    #home_nav {
     grid-area: nav;
     position: relative;
+    display: flex;
   }
   #replace{
     grid-area: replaced;
@@ -134,7 +135,6 @@ font-size: 15px;
 /* ======================================about section============================================ */
 #about{
   height:74vh;
-  background-color: green;
 }
 .about_image,.line{
   display:none;
@@ -159,7 +159,6 @@ font-size: 15px;
 }
 #about_nav{
   grid-area:nav;
-  /* background: green; */
   display:grid;
   align-items: center;
   font-size:45px;
@@ -421,9 +420,9 @@ grid-template-rows:0.2fr 1fr 1fr 0.2fr;
   display: block;
   margin-right: 20px;
 }
-.adds_nav{
+/* .adds_nav{
   display:none;
-}
+} */
 /*==============================================manage blog======================================= */
 #add_blog{
   width:100%;
@@ -492,9 +491,20 @@ grid-template-rows:0.2fr 1fr 1fr 0.2fr;
     justify-content: center;
     overflow: auto;
 }
-.dash_header > nav,.add_nav > nav,#peso > nav{
+/* .dash_header > nav, */
+.add_nav > nav,#peso > nav{
   width: 100%;
 }
+.navAnother{
+  background-color: rgb(30, 153, 210);
+  display: none;
+}
+
+
+
+
+
+
 
 
 

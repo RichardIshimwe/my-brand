@@ -11,28 +11,27 @@ html {
   color: white;
 }
 
-#home_nav ,#dash_nav{
+#home_nav {
   grid-area: nav;
   position: relative;
   background-color: #2A2E35;
   padding: 10px 5px;
 }
 
-#home_nav ,#dash_nav{
+#home_nav{
   grid-area: nav;
   position: relative;
   background-color: #2A2E35;
 }
 
 
-#home_nav ,#dash_nav{
+#home_nav{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* padding-right: 10px; */
 }
 
-#home_nav ul ,#dash_nav ul{
+#home_nav ul {
   list-style: none;
   display: flex;
   gap: 2rem;
@@ -43,12 +42,12 @@ html {
   text-decoration: none;
 }
 
-#home_nav ul a ,#dash_nav ul a{
+#home_nav ul a{
   color: #9FA7B2;
   font-weight: bolder;
 }
 
-#home_nav ul a:hover ,#dash_nav ul a:hover{
+#home_nav ul a:hover{
   color: white;
 }
 
@@ -60,7 +59,7 @@ h1 {
   display: none;
 }
 
-#home_nav ul.active ,#dash_nav ul.active{
+#home_nav ul.active{
   left: 0;
 }
 
@@ -345,6 +344,10 @@ textarea:focus {
   width: 100%;
   height: 100vh;
 }
+
+
+
+
 
 .about_cont {
   display: grid;
