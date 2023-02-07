@@ -374,6 +374,57 @@ margin-bottom: 4px;
   right: 10px;
   font-size: 40px;
 }
+/* ====================================sigup page=========================================== */
+.contact_nav>.i {
+  margin-right: 43rem;
+}
+#responseNav{
+  font-size: 15px;
+}
+/* ===============read more page================== */
+.readmore_more,.readmore_nav{
+  display: none;
+}
+/* =====================================dashboard================================ */
+
+/* =============================================add blog================================== */
+.adds_space{
+  display: none;
+}
+#addsblog{
+  width:100%;
+  height:100vh;
+  /* background-color: brown; */
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-template-areas:"adds_content adds_content adds_content adds_content"
+                  "adds_content adds_content adds_content adds_content"
+                  "adds_content adds_content adds_content adds_content"
+                  "adds_footer adds_footer adds_footer adds_footer";
+grid-template-rows:0.2fr 1fr 1fr 0.2fr;
+
+}
+.responsive_dash_nav{
+  display: grid;
+}
+.fa-gauge,.fa-ellipsis,.fa-list-check{
+  font-size: 20px;
+}
+.adds_footer > .login_footer{
+  display: block;
+}
+.holderContent{
+  width: 95%;
+  height: 70%;
+}
+#peso > a{
+  display: block;
+  margin-right: 20px;
+}
+.adds_nav{
+  display:none;
+}
+
 
 
 

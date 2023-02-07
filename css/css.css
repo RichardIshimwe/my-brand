@@ -820,7 +820,7 @@ textarea:focus {
   grid-area: blogThree;
 }
 
-#blog_text {
+#blog_text > a{
   font-size: 20px;
   font-weight: 500;
   color: #E1E1E1;
@@ -896,6 +896,7 @@ textarea:focus {
 }
 
 .contact_nav {
+  
   grid-area: contact_nav;
   display: flex;
   justify-content: center;

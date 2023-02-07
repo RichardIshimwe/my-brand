@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="../css/css.css">
     <link rel="stylesheet" href="../css/readmore.css">
     <link rel="stylesheet" href="../css/responsive.css">
-    <title>edit blog</title>
+    <title>add blog</title>
 </head>
 <body>
     <section id="addsblog">
@@ -25,20 +25,36 @@
     <a href="../index.html"><i class="fa-solid fa-circle-left"></i></a>
  </div>
 <div class="adds_content">
-        <div class="holder_title">    
+        <div class="holder_title">            
             <div id="peso">
+                <a href="../index.html"><i class="fa-solid fa-circle-left"></i></a> 
                 <p>Edit blog<span id="logo">here</span>.</p>
+          
         </div>
+        <div class="responsive_dash_nav">
+            <p><i class="fa-solid fa-gauge"></i><a href="dashboard.html"  id="white">Dashboard</a></p>
+            <p id="active"><i class="fa-solid fa-ellipsis"></i> <a href="addblog.html">Add blog</a></p>
+            <p><i class="fa-solid fa-list-check"></i> <a href="manage.html" id="white">Manage blog</a></p>
     </div>
-        <div class="holder_content">
-            <div class="contents_holders">
+    </div>
+        <div class="holder_content"> 
+        <div class="holderContent"> 
+              <div class="contents_holders">
+                <div class="contOne">
                 <input type="text" name="" id="edit_title"><br/>
-                <textarea name="" id="edit_textarea" cols="30" rows="10"></textarea><br/>
+                </div>
+              <div class="contTwo">
+                <textarea name="" id="edit_textarea" cols="0" rows="0"></textarea><br/>
+            </div>
+            <div class="contThree">
                 <button id="btn">Replace blog image</button><br/>
-                <div id="btnsave">
-                <button>Save change</button>
+            </div>
+                <div class="contSave">
+                <button>Save blog</button>
                 </div>
             </div>
+         </div> 
+        </div>
         </div>
 </div>
 <div class="adds_space">
@@ -51,9 +67,16 @@
         </div>
 </div>
 <div class="adds_footer">
-    <div class="lie"></div>
+    <div class="login_footer">
+        <p>Copy right <i class="fa-regular fa-copyright"></i> ishimwerichard2023</p>
+        <div id="login_footer">
+          <i class="fa-brands fa-github" onclick="github()"></i>
+          <i class="fa-brands fa-linkedin" onclick="linkedin()"></i>
+          <i class="fa-brands fa-twitter"></i>
+        </div>
+      </div>
 </div>
     </section>
- <script src="../javascript/editblog.js"></script>
+    <script src="../javascript/editblog.js"></script>
 </body>
 </html>

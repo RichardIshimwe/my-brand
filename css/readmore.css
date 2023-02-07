@@ -27,12 +27,12 @@ body{
 }
 .readmore_nav{
     grid-area:readmore_nav;
-    /* background-color: darkgoldenrod; */
+    background-color: darkgoldenrod;
     margin:10px;
 }
 .readmore_content{
     grid-area:readmore_content;
-    /* background-color: slateblue; */
+    background-color: slateblue;
     display: flex;
     justify-content:center;
     align-items:center;
@@ -130,6 +130,7 @@ background-color:#27AE60;
 }
 .readmore_more{
     background-color: #191D2B;
+    background-color: #192b1c;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas:"more_title more_title more_title more_title"
@@ -237,10 +238,15 @@ justify-content: center;
     font-size: 40px;
     color: #27AE60;
 }
+#peso > a{
+    display: none;
+}
  #peso{
     /* background-color: brown; */
+    display: flex;
     width: 100%;
     text-align: center;
+    justify-content: center;
     font-size: 45px;
     color:#CDCDCE;
     font-weight: bolder;
@@ -272,7 +278,7 @@ justify-content: center;
     font-weight:bolder;
     padding: 10px 0px 10px 20px;
 }
-.side_cont_inside > #active > a{
+#active > a{
     font-weight:bolder;
     color: #27AE60;
 }
@@ -447,7 +453,6 @@ padding: 10px;
 #addsblog{
     width:100%;
     height:100vh;
-    /* background-color: brown; */
     display:grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 grid-template-areas:"adds_nav adds_nav adds_nav adds_nav"
@@ -462,6 +467,21 @@ grid-template-rows:0.2fr 1fr 1fr 0.1fr;
     grid-area:adds_nav;
     display:flex;
     align-items: center;
+}
+.responsive_dash_nav{
+background-color: #313236;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+text-align: center;
+padding: 4px 0px;
+border-radius: 10px;
+margin:0px 2px;
+display: none;
+
+}
+.responsive_dash_nav{
+    font-size: 20px;
+    font-weight: bolder;
 }
 .adds_space{
     /* background-color: coral; */
@@ -480,7 +500,7 @@ grid-template-rows:0.2fr 1fr 1fr 0.1fr;
 }
 .holder_title{
     grid-area: holder_title;
-    /* background-color: #27AE60; */
+    /* background-color: #2927ae; */
 }
 .holder_content{
     grid-area: holder_content;
@@ -489,22 +509,123 @@ grid-template-rows:0.2fr 1fr 1fr 0.1fr;
     align-items: center;
     justify-content: center;
 }
- .contents_holders{
+.holderContent{
+    width: 45%;
+    height: 85%;
+    background-color:#313236;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+.contents_holders{
+    width: 89%;
+    height: 80%;
+    display: grid;
+    /* background-color:#313236; */
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "addOne addOne"
+                        "addTwo addTwo"
+                        "addThree addThree"
+                        "addSave addSave";
+    grid-template-rows: 1fr 3fr 1fr 1fr;
+}
+.contOne{
+    grid-area:addOne;
+}
+.contOne > input{
+    width: 97%;
+    border: none;
+    padding:6px;
+    border-radius: 10px;
+}
+.contTwo{
+    grid-area:addTwo;
+}
+.contTwo > textarea{
+  width: 99%; 
+  height: 100%;
+  border: none; 
+  border-radius: 10px;
+}
+.contThree{
+    grid-area:addThree;
+    display: flex;
+    align-items: center;
+}
+.contSave{
+    grid-area:addSave;
+    display: flex;
+    align-items: center;
+    justify-content: center;}
+
+.contents_holders > input{
+    border: none;
+    width: 99%;
+}
+
+
+
+.contThree > #btn{
+    border-radius: 10px;
+    padding: 7px 10px;
+    color: #27AE60;
+    font-size: 15px;
+    font-weight: bolder;
+    border: 2px solid #27AE60;
+    background-color: transparent;
+}
+.contThree > #btn:hover{
+    font-size: 17px;
+    color: white;
+    background-color: #27AE60;
+}
+.contSave > button{
+    font-size: 15px;
+    border-radius: 10px;
+    padding: 7px 10px;
+    font-weight: bolder;
+    color: white;
+    border: 2px solid #27AE60;
+    background-color: #27AE60;
+}
+.contSave button:hover{
+    font-size: 17px;
+    border: none;
+    background-color: #068b3d;
+} 
+
+
+
+
+
+
+
+
+
+
+ /* .contents_holders{
      background-color:#313236;
-     /* width:43%; */
+     background-color:#e0960c;
+     width:44%;
      height:70%;
      border-radius: 20px;
-     padding: 15px;
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     grid-template-areas: "addOne addOne"
+                         "addTwo addTwo"
+                         "addThree addThree"
+                         "addFour addFour";
 } 
 .contents_holders > input{
     border-radius: 10px;
     width: 400px;
-    height: 35px;
+    width: 90%;
+    padding: 4px;
     border:none;
     background-color: #191D2B;
 }
 .contents_holders > textarea{
-    margin-top: 10px;
     border-radius: 10px;
     width: 400px;
     height: 148px;
@@ -512,7 +633,6 @@ grid-template-rows:0.2fr 1fr 1fr 0.1fr;
     background-color: #191D2B;
 }
 .contents_holders > #btn{
-    margin-top: 10px;
     border-radius: 10px;
     padding: 7px 10px;
     color: #27AE60;
@@ -527,12 +647,12 @@ grid-template-rows:0.2fr 1fr 1fr 0.1fr;
     background-color: #27AE60;
 }
 .contents_holders > #btnsave{
+background-color: burlywood;
 display: flex;
 justify-content: center;
 }
 .contents_holders > #btnsave > button{
     font-size: 15px;
-    margin-top: 10px;
     border-radius: 10px;
     padding: 7px 10px;
     font-weight: bolder;
@@ -544,10 +664,13 @@ justify-content: center;
     font-size: 17px;
     border: none;
     background-color: #068b3d;
+} */
+
+.adds_footer > .login_footer{
+    display: none;
+    width: 100%;
 }
-
-
-.adds_footer{
+.adds_footer {
     /* background-color: hotpink; */
     grid-area:adds_footer;
     display: flex;
@@ -814,8 +937,17 @@ font-weight: bold;
     /* background-color: saddlebrown; */
 }
 
-
-
+/* ==========================================sigup==================================== */
+#sighup {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "login_nav login_nav "
+                         "login_content login_content"
+                         "login_footer login_footer";
+    grid-template-rows: 0.1fr 1fr 0.1fr;
+  }
 
 
 
