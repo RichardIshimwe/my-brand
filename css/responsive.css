@@ -37,21 +37,6 @@
       transition: 0.5s;
       gap: 2rem;
     }
-    /* .dash_header > nav ul {
-      background-color: black;
-      position: fixed;
-      left: -100vw;
-      top: 52px;
-      width: 100vw;
-      height: auto;
-      display: flex;
-      flex-direction: column;
-      z-index: 2;
-      align-items: center;
-      transition: 0.5s;
-      gap: 2rem;
-    } */
-  
   /* ==========================================home page========================================== */
   .home_profile{
     display: flex;
@@ -148,7 +133,8 @@ font-size: 15px;
       /* ========================================end of home of home page========================= */
 /* ======================================about section============================================ */
 #about{
-  height:70vh;
+  height:74vh;
+  background-color: green;
 }
 .about_image,.line{
   display:none;
