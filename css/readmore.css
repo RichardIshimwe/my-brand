@@ -347,7 +347,6 @@ padding: 10px;
 #add_blog{
     width:100%;
     height:100vh;
-    /* background-color: brown; */
     display:grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas:"add_nav add_content add_content add_content"
@@ -357,13 +356,12 @@ padding: 10px;
     grid-template-rows: 0.2fr 1fr 1fr 0.1fr;
 }
 .add_nav{
-    /* background-color: wheat; */
     grid-area:add_nav;
     display: flex;
     align-items: center;
 }
 .add_content{
-    /* background-color:rgb(145, 97, 145); */
+    background-color:rgb(145, 97, 145);
     grid-area:add_content;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -371,74 +369,89 @@ padding: 10px;
                         "img4 img5 img6";
     grid-template-rows: 1fr 1fr;
 }
-.img1,.img2,.img3,.img4,.img5,.img6{
-    margin:10px;
+.manage{
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.imagew1,.imagew2,.imagew3,.imagew4,.imagew5,.imagew6{
-    width: 94%;
-    height:95%;
+.imagew{
+    width: 90%;
+    height:92%;
     background-color: #2A2E35;
     border:none;
     border-radius:20px;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "imgcont imgcont"
+                         "imgcont12 imgcont12"
+                         "imgcont13 imgcont13";
+     grid-template-rows: 4fr 0.8fr 1.2fr;
 }
-.imagew1 > img,.imagew2 > img,.imagew3 > img,.imagew4 > img,.imagew5 > img,.imagew6 > img{
-    width: 100%;
+.imgcont{
+    grid-area: imgcont;
+    border-radius: 20px;
 }
-.img1{
-    /* background-color: chartreuse; */
-    grid-area: img1;
+.imgcont > img{
+    width:100%;
+    height: 100%;
 }
-.imgcont12,.imgcont13{
-    /* background-color: blue; */
+.imgcont12{
+    grid-area: imgcont12;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+.imgcont12 > p{
+  font-size: 20px;
+}
+.imgcont13{
+    grid-area: imgcont13;
+    display: flex;
+    justify-content: center;
+}
+.imagew > img{
+    width: 100%;
+}
+.image1{
+    grid-area: img1;
 }
 .imgcont13 > p{
     font-size: 35px;
     color:#298F55;
-    padding: 5px 4px;
 }
 .fa-trash-can{
     color:red;
 }
-.imgcont12 > #p{
-    font-size: 20px;
-    font-weight:500;
-    color:#E1E1E1;
-}
-.img2{
-    /* background-color: rgb(63, 58, 143); */
+.image2{
+    background-color: rgb(63, 58, 143);
     grid-area: img2;
 }
-.img3{
-    /* background-color: saddlebrown; */
+.image3{
+    background-color: saddlebrown;
     grid-area: img3;
 }
-.img4{
-    /* background-color: salmon; */
+.image4{
+    background-color: salmon;
     grid-area: img4;
 }
-.img5{
-    /* background-color: aqua; */
+.image5{
+    background-color: aqua;
     grid-area: img5;
 }
-.img6{
-    /* background-color: rgb(11, 19, 4); */
+.image6{
+    background-color: rgb(11, 19, 4);
     grid-area: img6;
 }
 .add_side{
-    /* background-color:forestgreen; */
+    background-color:forestgreen;
     grid-area:add_space;
     display: flex;
     align-items: center;
 }
 .add_footer{
-    /* background-color:rebeccapurple; */
+    background-color:rebeccapurple;
     grid-area:add_footer;
     display: flex;
     justify-content: center;
@@ -463,7 +476,6 @@ grid-template-rows:0.2fr 1fr 1fr 0.1fr;
 
 }
 .adds_nav{
-    /* background-color: goldenrod; */
     grid-area:adds_nav;
     display:flex;
     align-items: center;
@@ -484,13 +496,11 @@ display: none;
     font-weight: bolder;
 }
 .adds_space{
-    /* background-color: coral; */
     grid-area:adds_side;
     display:flex;
     align-items: center;
 }
 .adds_content{
-    /* background-color: darkmagenta; */
     grid-area:adds_content;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -500,11 +510,9 @@ display: none;
 }
 .holder_title{
     grid-area: holder_title;
-    /* background-color: #2927ae; */
 }
 .holder_content{
     grid-area: holder_content;
-    /* background-color: green; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -522,7 +530,6 @@ display: none;
     width: 89%;
     height: 80%;
     display: grid;
-    /* background-color:#313236; */
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "addOne addOne"
                         "addTwo addTwo"
@@ -563,9 +570,6 @@ display: none;
     border: none;
     width: 99%;
 }
-
-
-
 .contThree > #btn{
     border-radius: 10px;
     padding: 7px 10px;
@@ -594,84 +598,11 @@ display: none;
     border: none;
     background-color: #068b3d;
 } 
-
-
-
-
-
-
-
-
-
-
- /* .contents_holders{
-     background-color:#313236;
-     background-color:#e0960c;
-     width:44%;
-     height:70%;
-     border-radius: 20px;
-     display: grid;
-     grid-template-columns: 1fr 1fr;
-     grid-template-areas: "addOne addOne"
-                         "addTwo addTwo"
-                         "addThree addThree"
-                         "addFour addFour";
-} 
-.contents_holders > input{
-    border-radius: 10px;
-    width: 400px;
-    width: 90%;
-    padding: 4px;
-    border:none;
-    background-color: #191D2B;
-}
-.contents_holders > textarea{
-    border-radius: 10px;
-    width: 400px;
-    height: 148px;
-    border:none;
-    background-color: #191D2B;
-}
-.contents_holders > #btn{
-    border-radius: 10px;
-    padding: 7px 10px;
-    color: #27AE60;
-    font-size: 15px;
-    font-weight: bolder;
-    border: 2px solid #27AE60;
-    background-color: transparent;
-}
-.contents_holders > #btn:hover{
-    font-size: 17px;
-    color: white;
-    background-color: #27AE60;
-}
-.contents_holders > #btnsave{
-background-color: burlywood;
-display: flex;
-justify-content: center;
-}
-.contents_holders > #btnsave > button{
-    font-size: 15px;
-    border-radius: 10px;
-    padding: 7px 10px;
-    font-weight: bolder;
-    color: white;
-    border: 2px solid #27AE60;
-    background-color: #27AE60;
-}
-.contents_holders > #btnsave > button:hover{
-    font-size: 17px;
-    border: none;
-    background-color: #068b3d;
-} */
-
 .adds_footer > .login_footer{
     display: none;
     width: 100%;
 }
 .adds_footer {
-    /* background-color: hotpink; */
     grid-area:adds_footer;
     display: flex;
     justify-content: center;
