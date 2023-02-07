@@ -5,9 +5,12 @@ let closed = document.querySelector(".fa-xmark");
 let command = document.getElementById("command");
 let terminalResult = document.getElementById("terminal_result");
 let responseNav = document.getElementById("responseNav");
-//=========================== login=============================
 let email_login = document.getElementById("form_input");
 let passcode_login = document.getElementById("login_passcode");
+
+
+//=========================== login=============================
+
 // ===========================end of login=======================
 
 // +++++++++++++++++++++++++++validate email++++++++++++++++++++++++++++
