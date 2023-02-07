@@ -63,7 +63,7 @@ let signup = () => {
 }
 // ++++++++++++++++++++++++++login functions++++++++++++++++++++++++++++
 let login = () => {
-    if (email_login.value === "rich") {
+    if (email_login.value != "") {
         window.location.href = './html/dashboard.html';
     }else {
         window.alert("invalid email")

@@ -26,9 +26,10 @@
       background-color: black;
       position: fixed;
       left: -100vw;
-      top: 73.6px;
+      top: 52px;
       width: 100vw;
-      height: calc(100vh - 73.6px);
+      /* height: calc(100vh - 73.6px); */
+      height: 100vh;
       display: flex;
       flex-direction: column;
       z-index: 2;
@@ -491,7 +492,9 @@ grid-template-rows:0.2fr 1fr 1fr 0.2fr;
     justify-content: center;
     overflow: auto;
 }
-
+.dash_header > nav,.add_nav > nav,#peso > nav{
+  width: 100%;
+}
 
 
 

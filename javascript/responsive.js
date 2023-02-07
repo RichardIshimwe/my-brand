@@ -5,14 +5,25 @@ let navLinks = navBar.querySelectorAll("li");
 
 hamMenuIcon.addEventListener("click", () => {
   navBar.classList.toggle("active");
+  // window.alert("nav button is clicked");
   hamMenuIcon.classList.toggle("fa-times");
 });
+
 navLinks.forEach((navLinks) => {
   navLinks.addEventListener("click", () => {
     navBar.classList.remove("active");
+    // window.alert("one of the nav button is clicked");
     hamMenuIcon.classList.toggle("fa-times");
   });
 });
+
+
+
+
+
+
+
+
 const scrollToTopBtn = document.getElementById('scroll-to-top-btn');
 
 window.onscroll = function() {

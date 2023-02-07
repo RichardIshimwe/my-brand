@@ -230,7 +230,6 @@ justify-content: center;
     grid-area: dash_header;
     display: flex;
     align-items: center;
-    
 }
 .fa-circle-left{
     margin-left: 10px;
