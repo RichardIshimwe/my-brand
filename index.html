@@ -548,10 +548,10 @@
       <div class="login_form">
         <div class="login_form_cont">
           <i class="fa-regular fa-user"></i>
-          <form action="">
+          <form class="fromContainer" onsubmit=" return checkLogin()">
         <div class="loginEmail">
           <input type="text" name="" id="form_input" placeholder="Enter your email">
-          <i class="fa-sharp fa-solid fa-check-double"></i>
+          <i class="fa-sharp fa-solid fa-check-double" id="emailCheckLogin"></i>
           <i class="fa-sharp fa-solid fa-xmark"></i>
         </div>
         <div class="loginEmail">
@@ -559,8 +559,9 @@
           <i class="fa-sharp fa-solid fa-check-double"></i>
           <i class="fa-sharp fa-solid fa-xmark"></i>
         </div>
-        <button onclick="login()">LOGIN</button>
-          <!-- <button onclick="login()">LOGIN</button> -->
+        <div class="btns">
+        <input type="submit" value="LOGIN" id="login_btn">
+      </div>
         </form>
           <p id="anchor"><a href="./html/signup.html"><span id="logo">Sign up</span> | if you don't heave account</a>
           </p>

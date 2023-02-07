@@ -7,10 +7,14 @@ let terminalResult = document.getElementById("terminal_result");
 let responseNav = document.getElementById("responseNav");
 let email_login = document.getElementById("form_input");
 let passcode_login = document.getElementById("login_passcode");
-
+let emailCheck_login = document.getElementById("emailCheckLogin");
 
 //=========================== login=============================
-
+function checkLogin(){
+emailCheck_login.style.display = "block";
+    // window.alert("button clicked");
+    return false;
+}
 // ===========================end of login=======================
 
 // +++++++++++++++++++++++++++validate email++++++++++++++++++++++++++++

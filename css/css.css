@@ -1154,54 +1154,12 @@ input,textarea {
   color: green;
   top: 30%;
   right: 0%;
+  display: none;
 }
 .loginEmail > .fa-xmark{
  color: red;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.login_form_cont> .fa-user{
-  font-size: 60px;
-  color: #9FA7B2;
-}
-.login_form_cont>button {
+#login_btn{
   border-radius: 5px;
   width: 130px;
   height: 35px;
@@ -1212,9 +1170,16 @@ input,textarea {
   background-color: transparent;
   margin: 10px 0px;
 }
-.login_form_cont>button:hover {
+#login_btn:hover {
   color: white;
   background-color: #27AE60;
+}
+.btns{
+  text-align: center;
+}
+.login_form_cont> .fa-user{
+  font-size: 60px;
+  color: #9FA7B2;
 }
 #anchor>a {
   font-size: 18px;
