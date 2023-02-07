@@ -55,23 +55,16 @@ let signup = () => {
     //     email_signup.style.border = "2px solid red";
     //    }
     // }
-
-
-
-
-
 }
 // ++++++++++++++++++++++++++login functions++++++++++++++++++++++++++++
 let login = () => {
     if (email_login.value != "") {
         window.location.href = './html/dashboard.html';
     }else {
-        window.alert("invalid email")
+        window.alert("please enter something")
     }
 
 }
-
-
 
 // ======================================================social medias=====================================
 function linkedin() {
