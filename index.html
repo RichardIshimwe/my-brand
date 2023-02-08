@@ -105,8 +105,7 @@
                 </div>
               </div>
               <div class="help">
-                <p style="margin-left: 15px;font-size: 20px;color: rgb(247, 10, 10);" id="terminal_result">
-                </p>
+           <p style="margin-left: 15px;font-size: 20px;color: rgb(247, 10, 10);" id="terminal_result">outcome of the codes</p>
               </div>
             </div>
           </div> 
@@ -548,16 +547,16 @@
       <div class="login_form">
         <div class="login_form_cont">
           <i class="fa-regular fa-user"></i>
-          <form class="fromContainer" onsubmit=" return checkLogin()">
+        <form class="fromContainer" action="./html/dashboard.html" onsubmit="return checkLogin()">
         <div class="loginEmail">
-          <input type="text" name="" id="form_input" placeholder="Enter your email">
-          <i class="fa-sharp fa-solid fa-check-double" id="emailCheckLogin"></i>
-          <i class="fa-sharp fa-solid fa-xmark"></i>
+          <p id="emailLogin_error"></p>
+          <input type="text" name="" id="emailf_login" placeholder="Enter your email">
+          <i class="fa-sharp fa-solid fa-check-double" id="checkEmail_login"></i>
         </div>
         <div class="loginEmail">
-          <input type="password" name="" id="login_passcode" placeholder="enter your password">
-          <i class="fa-sharp fa-solid fa-check-double"></i>
-          <i class="fa-sharp fa-solid fa-xmark"></i>
+          <p id="errorPasscode_login"></p>
+          <input type="password" name="" id="passcodef_login" placeholder="enter your password">
+          <i class="fa-sharp fa-solid fa-xmark" id="xpasscode_login"></i>
         </div>
         <div class="btns">
         <input type="submit" value="LOGIN" id="login_btn">
@@ -579,6 +578,7 @@
     </div>
   </section>
   <script src="./javascript/general.js"></script>
+  <script src="./javascript/editblog.js"></script>
   <script src="./javascript/responsive.js"></script>
 </body>
 
