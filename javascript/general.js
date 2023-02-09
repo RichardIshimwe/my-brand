@@ -1,7 +1,5 @@
 // window.alert("this is general javascript");
 // let title = document.getElementById("edit_title");
-// let terminal = document.getElementById("home_terminal");
-// let closed = document.querySelector(".fa-xmark");
 let command = document.getElementById("command");
 let terminalResult = document.getElementById("terminal_result");
 let responseNav = document.getElementById("responseNav");
@@ -67,29 +65,36 @@ function checkLogin() {
             if (passcode_login.value == "") {
                 passcodeError_login.innerHTML = "*please enter the password";
                 passcode_login.style.border = "2px solid red";
+                return false;
             } 
         }
     }
-    // console.log("i have reached here");
 login_object = {
     email: emailf_login.value,
     passcode: passcode_login.value
 };
 signup_array = JSON.parse(localStorage.getItem('signupFormdata'));
-
+let checkmail =signup_array.find(obj => obj.email === login_object.email)
 let hold = signup_array.find(object => object.email === login_object.email && object.passcode === login_object.passcode);
 if(hold){
     // console.log("most welcome to the dashboard");
     return true;
 }else{
-    console.log("please do a signup");
+    if(checkmail){
+        passcode_login.style.border = "none";
+        checkEmail_login.style.display = "none";
+        emailError_login.innerHTML = "";
+        emailf_login.border = "none";
+        passcodeError_login.innerHTML = "";
+        emailError_login.innerHTML = "*email or password is incorrect";
+    }else{
     passcode_login.style.border = "none";
     checkEmail_login.style.display = "none";
     emailError_login.innerHTML = "";
     emailf_login.border = "none";
-    passcodeError_login.style.border = "";
+    passcodeError_login.innerHTML = "";
     emailError_login.innerHTML = "*do a signup with the below link";
-}
+}}
 
 
 console.log(signup_array);
@@ -208,36 +213,7 @@ return true;
 // ============================end of signup=====================
 // ++++++++++++++++++++++++++login functions++++++++++++++++++++++++++++
 
-closed.addEventListener('click', () => {
-    document.querySelector(".terminal").style.display = "none";
-    document.querySelector(".home_profile").style.display = "flex";
-})
-terminal.addEventListener('click', () => {
 
-    document.querySelector(".terminal").style.display = "block";
-    document.querySelector(".home_profile").style.display = "none";
-
-})
-function edit() {
-    let edit = document.getElementById("edit_click");
-    window.location.href = 'editblog.html';
-}
-document.addEventListener('keydown', function (event) {
-    if (event.key === 'Enter' && command.value != "") {
-        if (command.value === "login") {
-            window.location.href = '#login';
-            terminalResult.innerHTML = "";
-        }
-        else if (command.value === "help") {
-            terminalResult.innerHTML = "terminal is underconstruction";
-        }
-
-        else {
-            terminalResult.innerHTML = "invalid command try -help- command";
-        }
-        command.value = "";
-    }
-});
 // ====================================validation========================================
 
 
@@ -248,5 +224,8 @@ document.addEventListener('keydown', function (event) {
 
 
 
+// let array =[345346];
+// let array =[345346];
+// let array =[345346];
 
 

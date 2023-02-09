@@ -12,7 +12,6 @@ hamMenuIcon.addEventListener("click", () => {
 navLinks.forEach((navLinks) => {
   navLinks.addEventListener("click", () => {
     navBar.classList.remove("active");
-    // window.alert("one of the nav button is clicked");
     hamMenuIcon.classList.toggle("fa-times");
   });
 });
