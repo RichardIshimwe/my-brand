@@ -4,19 +4,20 @@ let commandDivision = document.querySelector(".commands");
 let inputCommand = document.getElementById("command");
 // let command = document.getElementById("command");
 
-let terminalCommands = {
-command:"login",
-output:"#login"
-};
-
 let executeCommands ={
   open:function(parameter1){
     let hold = parameter1;
-    // window.alert("parameter1:${hold}")
   window.location.href = "#"+parameter1
          }
 }; 
-
+document.addEventListener("keydown", function(event) {
+  if (event.keyCode === 13) { // 13 is the keyCode for the Enter key
+    let commandHolder = inputCommand.value.split(" ");
+    executeCommands.open(commandHolder[1]);
+    inputCommand.value = "";
+    // checkTerminal();
+  }
+});
 
 closed.addEventListener('click', () => {
     document.querySelector(".terminal").style.display = "none";
@@ -28,22 +29,8 @@ terminal.addEventListener('click', () => {
     document.querySelector(".home_profile").style.display = "none";
 
 })
-document.addEventListener("keydown", function(event) {
-  if (event.keyCode === 13) { // 13 is the keyCode for the Enter key
-    let commandHolder = inputCommand.value.split();
-    window.alert(commandHolder);
-    executeCommands.open("${commandHolder[1]}");
-    inputCommand.value = "";
-    // checkTerminal();
-  }
-});
 
-function checkTerminal() {
-if(inputCommand.value != ""){
-if(inputCommand.value === "open login"){
-  window.location.href = "#login"; 
-}}
-}
+
 // document.addEventListener('keydown', function(event) {
 //   if (event.key === 'Enter') {
 //     window.alert("enter is pressed");  

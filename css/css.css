@@ -995,6 +995,9 @@ textarea:focus {
   justify-content: center;
   align-items: center;
 }
+#error_contact{
+  color:red;
+}
 .git {
   width: 87%;
   height: 87%;

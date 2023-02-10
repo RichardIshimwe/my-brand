@@ -23,16 +23,13 @@ body{
 }
 .readmore_more{
     grid-area:readmore_more;
-    background-color: yellow;
 }
 .readmore_nav{
     grid-area:readmore_nav;
-    background-color: darkgoldenrod;
     margin:10px;
 }
 .readmore_content{
     grid-area:readmore_content;
-    background-color: slateblue;
     display: flex;
     justify-content:center;
     align-items:center;
@@ -70,12 +67,10 @@ body{
     padding: 3px 0px;
 }
 .readmore_content_container > button:hover{
-background-color:#27AE60;
  color:white;
 }
 .readmore_footer{
     grid-area:readmore_footer;
-    background-color: green;
     display:flex;
     justify-content: center;
 }
@@ -99,8 +94,8 @@ background-color:#27AE60;
 }
 .hrwe{
     width:95%;
-    height:5px;
-    background-color:black;
+    height:4px;
+    background-color:white;
     border:none;
   }
 .coment{
@@ -130,7 +125,6 @@ background-color:#27AE60;
 }
 .readmore_more{
     background-color: #191D2B;
-    background-color: #192b1c;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas:"more_title more_title more_title more_title"
@@ -608,6 +602,9 @@ display: none;
     color: white;
     border: 2px solid #27AE60;
     background-color: #27AE60;
+}
+.contSave > button > a{
+    color: white;
 }
 .contSave button:hover{
     font-size: 17px;

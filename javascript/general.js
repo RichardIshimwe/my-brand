@@ -30,6 +30,10 @@ let checkEmail_signup = document.getElementById("checkEmail_signup");
 let checkUsername_signup = document.getElementById("checkUsername_signup");
 let checkPasscode_signup = document.getElementById("checkPasscode_signup");
 let checkConfirm_signup = document.getElementById("checkConfirm_signup");
+let emailf_contact = document.getElementById("emailf_contact");
+let namesf_conatct = document.getElementById("namesf_conatct");
+let textareaf_contact = document.getElementById("textareaf_contact");
+let error_contact = document.getElementById("error_contact");
 let signup_array = [];
 let signup_object ={email:"",username:"",passcode:"",confirmp:""};
 let login_object = {email:"",username:""};
@@ -124,7 +128,7 @@ function addblog() {
         }
         if (add_textarea.value.length < 5) {
             add_textarea.style.border = "2px solid red"
-            error_addblog.innerHTML = "*blog description must be greter than 40 character";
+            error_addblog.innerHTML = "*blog description must have more than 40 character";
         }
     }
     return false;
@@ -212,9 +216,24 @@ return true;
 }
 // ============================end of signup=====================
 // ++++++++++++++++++++++++++login functions++++++++++++++++++++++++++++
-
-
-// ====================================validation========================================
+// =================================conatct page========================
+function chaeckContact(){
+    // window.alert("hellooo")
+    if (emailf_contact.value == "" && namesf_conatct.value == "" && textareaf_contact.value == "" ) {
+    // if (emailf_contact.value == "") {
+        emailf_contact.style.border = "2px solid red";
+        namesf_conatct.style.border = "2px solid red"
+        textareaf_contact.style.border = "2px solid red";
+        error_contact.innerHTML = "*please fill out the form";
+        return false;
+    }else if (emailf_contact.value != "" && namesf_conatct.value != "" && textareaf_contact.value != "" ){
+        emailf_contact.style.border = "2px solid green";
+        namesf_conatct.style.border = "2px solid green"
+        textareaf_contact.style.border = "2px solid green";
+        error_contact.innerHTML = "*message sent successful";
+    }
+}
+// =====================================================================
 
 
 
