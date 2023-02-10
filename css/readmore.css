@@ -156,6 +156,10 @@ body{
     align-items: center;
     justify-content: center;
 }
+.contentOne{
+    /* background-color: brown; */
+}
+/* https://mellow-ganache-a03aeb.netlify.app/  */
 .contentf{
     grid-area:contentf;
     /* background-color:brown; */
