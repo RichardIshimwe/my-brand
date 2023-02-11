@@ -162,7 +162,6 @@ function checkSignup() {
             return false;
         }
     }
-
 signup_object ={email: emailf_signup.value, 
                 username: usernamef_signup.value,
                 passcode: passcodef_signup.value,
