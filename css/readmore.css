@@ -481,6 +481,8 @@ padding: 10px;
     width:100%;
     height:100vh;
     display:grid;
+    /* background-color: green; */
+    /* background-image: url('blog1.jpg'); */
     grid-template-columns: 1fr 1fr 1fr 1fr;
 grid-template-areas:"adds_nav adds_nav adds_nav adds_nav"
                     "adds_side adds_content adds_content adds_content"
@@ -542,17 +544,23 @@ display: none;
 }
 .contents_holders{
     width: 89%;
-    height: 80%;
+    height: 90%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "addOne addOne"
+    grid-template-areas: "errorm errorm"
+                        "addOne addOne"
                         "addTwo addTwo"
                         "addThree addThree"
                         "addSave addSave";
-    grid-template-rows: 1fr 3fr 1fr 1fr;
+    grid-template-rows: 0.4fr 1fr 3fr 1fr 1fr;
+}
+.errorm{
+    grid-area:errorm;
+    /* background-color: goldenrod; */
 }
 .contOne{
     grid-area:addOne;
+    /* background-color: green; */
 }
 .contOne > input{
     width: 97%;
@@ -562,6 +570,7 @@ display: none;
 }
 .contTwo{
     grid-area:addTwo;
+    /* background-color: brown; */
 }
 .contTwo > textarea{
   width: 99%; 
@@ -570,6 +579,7 @@ display: none;
   border-radius: 10px;
 }
 .contThree{
+    /* background-color: hotpink; */
     grid-area:addThree;
     display: flex;
     align-items: center;

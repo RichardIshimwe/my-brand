@@ -1,5 +1,3 @@
-// window.alert("this is general javascript");
-// let title = document.getElementById("edit_title");
 let command = document.getElementById("command");
 let terminalResult = document.getElementById("terminal_result");
 let responseNav = document.getElementById("responseNav");
@@ -11,11 +9,6 @@ let passcodeError_login = document.getElementById("errorPasscode_login");
 let checkEmail_login = document.getElementById("checkEmail_login");
 let xpasscode_login = document.getElementById("xpasscode_login");
 var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-// ---------------------------------------------------------------------------------------
-let add_title = document.getElementById("add_title");
-let add_textarea = document.getElementById("add_textarea");
-let error_addblog = document.getElementById("errorAdd_title");
-// --------------------------------------------------------------------------------------
 let emailf_signup = document.getElementById("emailf_signup");
 let usernamef_signup = document.getElementById("usernamef_signup");
 let passcodef_signup = document.getElementById("passcodef_signup");
@@ -37,10 +30,14 @@ let error_contact = document.getElementById("error_contact");
 let signup_array = [];
 let signup_object ={email:"",username:"",passcode:"",confirmp:""};
 let login_object = {email:"",username:""};
-
+// document.querySelector(".hide").style.display = "flex";
 let passcodeError_signup = document.getElementById("errorPasscode_signup");
 let xpasscode_signup = document.getElementById("xpasscode_signup");
-
+// window.alert("heloooo")
+function alerted(){
+    document.querySelector(".hide").style.display = "flex";
+    // window.alert("i am loading");
+  }
 
 //=========================== login=============================
 function checkLogin() {
@@ -103,34 +100,6 @@ if(hold){
 
 console.log(signup_array);
 
-    return false;
-}
-// ===========================end of login=======================
-// +++++++++++++++++++++++++++add blog+++++++++++++++++++++++++++
-function addblog() {
-
-    if (add_title.value == "" && add_textarea.value == "") {
-        add_title.style.border = "2px solid red"
-        add_textarea.style.border = "2px solid red";
-        error_addblog.innerHTML = "*fields can not be empty";
-    } else {
-        if (add_title.value != "") {
-            add_title.style.border = "2px solid green"
-            error_addblog.innerHTML = "";
-        }
-        else {
-            add_title.style.border = "2px solid red"
-            error_addblog.innerHTML = "";
-        }
-        if (add_textarea.value.length > 5) {
-            add_textarea.style.border = "2px solid green"
-            error_addblog.innerHTML = "";
-        }
-        if (add_textarea.value.length < 5) {
-            add_textarea.style.border = "2px solid red"
-            error_addblog.innerHTML = "*blog description must have more than 40 character";
-        }
-    }
     return false;
 }
 // ============================end of blog=======================

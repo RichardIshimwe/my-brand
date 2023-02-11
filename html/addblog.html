@@ -61,15 +61,18 @@
         <!-- <div class="holderContent">  -->
           <form action="./dashboard.html" onsubmit=" return addblog()" class="holderContent">
               <div class="contents_holders">
+                <div class="errorm">
+                <p id="errorAdd_title"></p>
+                </div>
                   <div class="contOne">
-                    <p id="errorAdd_title"></p>
                 <input type="text" name="" id="add_title" placeholder="add blog title"><br/>
                 </div>
               <div class="contTwo">
                 <textarea name="" id="add_textarea" cols="0" rows="0" placeholder="enter the blog content"></textarea><br/>
             </div>
             <div class="contThree">
-                <button id="btn" type="file">choose blog image</button><br/>
+                <!-- <button id="btn" type="file">choose blog image</button><br/> -->
+                <input type="file" name="file" id="add_image" ><br/>
             </div>
                 <div class="contSave">
                 <button type="submit">Save blog</button>
@@ -102,7 +105,7 @@
       </div>
 </div>
     </section>
-    <script src="../javascript/editblog.js"></script>
+    <script src="../javascript/addeditblog.js"></script>
     <script src="../javascript/responsive.js"></script>
     <script src="../javascript/general.js"></script>
 </body>

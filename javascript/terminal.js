@@ -2,21 +2,35 @@ let terminal = document.getElementById("home_terminal");
 let closed = document.querySelector(".fa-xmark");
 let commandDivision = document.querySelector(".commands");
 let inputCommand = document.getElementById("command");
+let terminal_result = document.getElementById("terminal_result");
 // let command = document.getElementById("command");
-
+let allCommands = ["home","about","portfolio","skills","contact","login","blogs"];
 let executeCommands ={
   open:function(parameter1){
-    let hold = parameter1;
   window.location.href = "#"+parameter1
-         }
+         },
+  result:function(){
+    commandDivision.innerHTML += `<p style="margin-left: 15px;font-size: 20px;color: green;"
+    id="terminal_result">use of the following commands</p>`
+  for(let i = 0;i < allCommands.length;i++){
+    commandDivision.innerHTML += `<p style="margin-left: 15px;font-size: 20px;color: green;"
+                                  id="terminal_result">~open ${allCommands[i]}</p>`
+  }
+  }
 }; 
 document.addEventListener("keydown", function(event) {
   if (event.keyCode === 13) { // 13 is the keyCode for the Enter key
+    if(inputCommand.value != "help"){
     let commandHolder = inputCommand.value.split(" ");
+    if(allCommands.includes(commandHolder[1])){
     executeCommands.open(commandHolder[1]);
     inputCommand.value = "";
     // checkTerminal();
-  }
+  }}else{
+    executeCommands.result();
+    terminal_result.innerHTML = "invalid command please try ~help to view more commands"
+     }
+}
 });
 
 closed.addEventListener('click', () => {
