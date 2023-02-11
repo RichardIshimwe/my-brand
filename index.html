@@ -130,7 +130,10 @@
 
       </div>
       <div class="section3">
-
+        <div class="commandLine">
+          <!-- <div class="continer_line"></div> -->
+        </div>
+     <!-- <div class="container_space"><div class="continer_line"></div></div> -->
         <div class="container_c">
           <ul>
            <li><i class="fa-brands fa-linkedin" onclick="linkedin()"></i></li>
@@ -139,7 +142,9 @@
            <li><i class="fa-sharp fa-solid fa-terminal" id="home_terminal"></i></li>
          </ul> 
        </div>
-
+       <div class="commandLine">
+      <div class="continer_line"></div>
+    </div>
       </div>
       <div class="section4">
         <div class="port_footer">
@@ -562,8 +567,10 @@
         <div class="login_form_cont">
           <i class="fa-regular fa-user"></i>
         <form class="fromContainer" action="./html/dashboard.html" onsubmit="return checkLogin()">
+          <div class="loginError">
+            <p id="emailLogin_error"></p>
+          </div>
         <div class="loginEmail">
-          <p id="emailLogin_error"></p>
           <input type="text" name="" id="emailf_login" placeholder="Enter your email">
           <i class="fa-sharp fa-solid fa-check-double" id="checkEmail_login"></i>
         </div>
