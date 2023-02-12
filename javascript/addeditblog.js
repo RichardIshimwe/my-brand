@@ -9,9 +9,6 @@ let blogs = {
     image: ""
 };
 let addImage_holder;
-// let add_image = document.getElementById("")
-
-
 add_image.addEventListener('change', function () {
     let imageHolder = new FileReader();
     imageHolder.readAsDataURL(add_image.files[0]);
@@ -60,16 +57,20 @@ function addblog() {
         description: add_textarea.value,
         image: addImage_holder
         };
-    console.log(blogs);
-    hold_blogs = JSON.parse(localStorage.getItem('hold_blogs'));//find a way to concantinate dummy content in local storage
+if(JSON.parse(localStorage.getItem('hold_blogs')) != null){
+console.log("there is blogs inside");
+hold_blogs = JSON.parse(localStorage.getItem('hold_blogs'));//find a way to concantinate dummy content in local storage
+hold_blogs.unshift(blogs);
+localStorage.setItem('hold_blogs',JSON.stringify(hold_blogs));
+}else{
+    console.log("there is nothing inside the blog");
     hold_blogs.unshift(blogs);
-    console.log(hold_blogs);
     localStorage.setItem('hold_blogs',JSON.stringify(hold_blogs));
+} 
     return false;
 }
 
 function edit() {
-    // let edit = document.getElementById("edit_click");
     window.location.href = 'editblog.html';
 }
 // ======================================================social medias=====================================
