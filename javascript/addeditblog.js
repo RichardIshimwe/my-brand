@@ -28,7 +28,7 @@ add_image.addEventListener('change', function () {
 // ===========================end of login=======================
 // +++++++++++++++++++++++++++add blog+++++++++++++++++++++++++++
 function addblog() {
-
+//  window.alert("add blog button clicked");
     if (add_title.value == "" && add_textarea.value == "") {
         add_title.style.border = "2px solid red"
         add_textarea.style.border = "2px solid red";
