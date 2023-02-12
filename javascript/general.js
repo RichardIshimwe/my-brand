@@ -42,34 +42,34 @@ function alerted(){
 //=========================== login=============================
 function checkLogin() {
 
-    // let state = 0;
-    // if (emailf_login.value == "" && passcode_login.value == "") {
-    //     emailError_login.innerHTML = "*fields can not be empty";
-    //     emailf_login.style.border = "2px solid red"
-    //     passcode_login.style.border = "2px solid red";
-    //     return false;
-    // } else {
-    //     if (regex.test(emailf_login.value)) {
-    //         emailf_login.style.border = "2px solid green"
-    //         checkEmail_login.style.display = "block";
-    //         emailError_login.innerHTML = "";
-    //         passcode_login.style.border = "none";
-    //         state = 10;
-    //     } else {
-    //         emailf_login.style.border = "2px solid red"
-    //         emailError_login.innerHTML = "*please enter the valid email";
-    //         passcodeError_login.innerHTML = "";
-    //         passcode_login.style.border = "none";
-    //         return false;
-    //     }
-    //       if (state == 10){
-    //         if (passcode_login.value == "") {
-    //             passcodeError_login.innerHTML = "*please enter the password";
-    //             passcode_login.style.border = "2px solid red";
-    //             return false;
-    //         } 
-    //     }
-    // }
+    let state = 0;
+    if (emailf_login.value == "" && passcode_login.value == "") {
+        emailError_login.innerHTML = "*fields can not be empty";
+        emailf_login.style.border = "2px solid red"
+        passcode_login.style.border = "2px solid red";
+        return false;
+    } else {
+        if (regex.test(emailf_login.value)) {
+            emailf_login.style.border = "2px solid green"
+            checkEmail_login.style.display = "block";
+            emailError_login.innerHTML = "";
+            passcode_login.style.border = "none";
+            state = 10;
+        } else {
+            emailf_login.style.border = "2px solid red"
+            emailError_login.innerHTML = "*please enter the valid email";
+            passcodeError_login.innerHTML = "";
+            passcode_login.style.border = "none";
+            return false;
+        }
+          if (state == 10){
+            if (passcode_login.value == "") {
+                passcodeError_login.innerHTML = "*please enter the password";
+                passcode_login.style.border = "2px solid red";
+                return false;
+            } 
+        }
+    }
 login_object = {
     email: emailf_login.value,
     passcode: passcode_login.value
@@ -108,32 +108,6 @@ console.log("nothing inside the blog")
     passcodeError_login.innerHTML = "";
     emailError_login.innerHTML = "*do a signup with the below link";
 }
-// signup_array = JSON.parse(localStorage.getItem('signupFormdata'));
-// console.log(signup_array)
-// let checkmail =signup_array.find(obj => obj.email === login_object.email)
-// let hold = signup_array.find(object => object.email === login_object.email && object.passcode === login_object.passcode);
-// if(hold){
-//     return true;
-// }else{
-//     if(checkmail){
-//         passcode_login.style.border = "none";
-//         checkEmail_login.style.display = "none";
-//         emailError_login.innerHTML = "";
-//         emailf_login.border = "none";
-//         passcodeError_login.innerHTML = "";
-//         emailError_login.innerHTML = "*email or password is incorrect";
-//     }else{
-//     passcode_login.style.border = "none";
-//     checkEmail_login.style.display = "none";
-//     emailError_login.innerHTML = "";
-//     emailf_login.border = "none";
-//     passcodeError_login.innerHTML = "";
-//     emailError_login.innerHTML = "*do a signup with the below link";
-// }}
-
-
-// console.log(signup_array);
-
     return false;
 }
 // ============================end of blog=======================
@@ -249,15 +223,6 @@ function chaeckContact(){
 // =====================================================================
 
 
-
-
-
-
-
-
-
 // let array =[345346];
 // let array =[345346];
 // let array =[345346];
-
-
