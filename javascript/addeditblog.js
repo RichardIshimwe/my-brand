@@ -2,16 +2,79 @@ let add_title = document.getElementById("add_title");
 let add_textarea = document.getElementById("add_textarea");
 let add_image = document.getElementById("add_image");
 let error_addblog = document.getElementById("errorAdd_title");
-
 let blog_text1 = document.getElementById("blog_text1");
+
+let manage_paragraph = document.querySelectorAll('.imgcont12')
+let manage_image = document.querySelectorAll('.imgcont');
+let blogNumber = document.getElementById("blogNumber");
+let displayImage1 = document.querySelectorAll('.blogOne');
+let displayParagraph = document.querySelectorAll('.blogTwo')
 let dispalyBlog_array = [];
+
+// ==================================manage blog===========================================
+  function manageBlog(){
+    let manageblog = JSON.parse(localStorage.getItem('hold_blogs'));
+    // for(let i = 0;i < manage_image.length;i++){
+    let manage_image_state,manage_paragraph_state;
+    for(let i = 0;i < manageblog.length;i++){
+        // window.alert(i)
+        let para = document.createElement("p");
+        manage_paragraph_state = manage_paragraph[i];
+        para.innerHTML = manageblog[i].title;
+        manage_paragraph_state.appendChild(para);
+        let imageManage = new Image();
+        imageManage.src = manageblog[i].image;
+        manage_image_state = manage_image[i];
+        manage_image_state.appendChild(imageManage)
+    }
+    // window.alert(manageblog);
+    // window.alert("manage blog")
+  }
+// ========================================================================================
+
 // =====================add blog whenever the new blog is appended==========================
 function displayBlogs(){
 dispalyBlog_array = JSON.parse(localStorage.getItem('hold_blogs'));
 console.log("these are the blogs")
-console.log(dispalyBlog_array[0].title);
-blog_text1.innerHTML = `<a href="./html/readmore.html">${dispalyBlog_array[0].title}</a>`;
+let currentDisplayImage,currentDisplayParagraph;
+console.log("this is the length of selector"+displayImage1.length)
+for(let i = 0;i < displayImage1.length;i++){
+    let displayImage = new Image();
+    // let holdParagraph = ``
+    currentDisplayImage = displayImage1[i];
+    currentDisplayParagraph = displayParagraph[i];
+    displayImage.src = dispalyBlog_array[i].image;
+    currentDisplayImage.appendChild(displayImage);
+    currentDisplayParagraph.innerHTML = `<a href="./html/readmore.html">${dispalyBlog_array[i].title}</a>`
 }
+}
+
+function updateBlog(){
+    window.alert("i am here")
+    document.getElementById("blogNumber").innerHTML = 6;
+}
+
+function displayBlogsa(){
+    displayImage.src = dispalyBlog_array[0].image;
+    currentDisplayImage = displayImage1[0];
+    currentDisplayImage.appendChild(displayImage);
+    displayImage.src = dispalyBlog_array[1].image;
+    currentDisplayImage = displayImage1[1];
+    currentDisplayImage.appendChild(displayImage);
+    dispalyBlog_array = JSON.parse(localStorage.getItem('hold_blogs'));
+    console.log("these are the blogs")
+    console.log(dispalyBlog_array[0].title);
+    const displayImage = new Image();
+    let i = 1;
+    let divisionValue = displayImage[i];
+    // for(let i = 0;i < 1;i++){
+    displayImage.src = dispalyBlog_array[0].image;
+    console.log("this is the value"+divisionValue)
+    displayImage1.appendChild(displayImage);
+    console.log(displayImage)
+    blog_text1.innerHTML = `<a href="./html/readmore.html">${dispalyBlog_array[i].title}</a>`;
+    // }
+    }
 
 // =========================================end=============================================
 
@@ -79,8 +142,10 @@ localStorage.setItem('hold_blogs',JSON.stringify(hold_blogs));
     console.log("there is nothing inside the blog");
     hold_blogs.unshift(blogs);
     localStorage.setItem('hold_blogs',JSON.stringify(hold_blogs));
-} 
-    return false;
+}  
+    add_title.value = "";
+    add_textarea.value = "";
+    return true;
 }
 
 function edit() {

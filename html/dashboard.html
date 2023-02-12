@@ -17,7 +17,7 @@
    <link rel="stylesheet" href="../css/readmore.css">
    <link rel="stylesheet" href="../css/responsive.css">
 </head>
-<body>
+<body onload="updateBlog()">
     <section id="dashboard">
 
    <div class="dash_header">
@@ -56,10 +56,11 @@
 <div class="content_dash">
   <div class="contentsDashes">
     <div class="div1">
-        <p id="cont_dash">Total number of blogs: <span id="white">127</span> </p>
+        <p id="cont_dash">Total number of blogs:</p><p id="blogNumber"></p>
+        <!-- <span id="white">127</span> -->
     </div>
     <div class="div2">
-        <p id="cont_dash">New added blogs: <span id="white">6</span> </p>
+        <p id="cont_dash">New added blogs:</p><p id="newBlog">2</p>
     </div>
     <p id="pro">Recent Commments:</p>
   </div>

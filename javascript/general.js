@@ -79,6 +79,8 @@ console.log(signup_array)
 let checkmail =signup_array.find(obj => obj.email === login_object.email)
 let hold = signup_array.find(object => object.email === login_object.email && object.passcode === login_object.passcode);
 if(hold){
+    emailf_login.value ="";
+    passcode_login.value ="";
     return true;
 }else{
     if(checkmail){

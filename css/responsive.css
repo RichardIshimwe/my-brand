@@ -499,11 +499,32 @@ grid-template-rows:0.2fr 1fr 1fr 0.2fr;
   background-color: rgb(30, 153, 210);
   display: none;
 }
-
-
-
-
-
+/* ====================================all blogs responsive ======================================== */
+#allblogs{
+  width: 100%;
+  height:auto;
+  /* background-color: rgb(58, 54, 54); */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "all_nav all_nav all_nav all_nav"
+                       "all_content1 all_content1 all_content1 all_content1"
+                       "all_content2 all_content2 all_content2 all_content2"              
+                       "all_footer all_footer all_footer all_footer";
+   grid-template-rows: 0.1fr 1fr 1fr 0.03fr;
+}
+.all_nav > .blogs_nav{
+  padding-left: 0px;
+}
+.content_s{
+  padding-left: 2px;
+}
+.content_para,.contentpara{
+  width: 100%;
+  padding-left: 6px;
+}
+.contents{
+  padding-left: 2px;
+}
 
 
 

@@ -303,7 +303,11 @@ a {
   border-top: 2px solid white;
   border-right: 2px solid white;
 }
-
+.help > p{
+  margin-left: 15px;
+  font-size: 20px;
+  color: green;"
+}
 .terminal {
   border-radius: 20px;
   width: 500px;
@@ -892,24 +896,29 @@ textarea:focus {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas: "blogOne blogOne blogOne"
-    "blogTwo blogTwo blogTwo"
-    "blogThree blogThree blogThree";
+                       "blogTwo blogTwo blogTwo"
+                       "blogThree blogThree blogThree";
   grid-template-rows: 1fr 0.2fr 0.25fr;
 }
 
 .imaged>.blogOne>img {
   width: 100%;
   height: 100%;
+  border-radius: 20px;
 }
 
 .blogOne {
   grid-area: blogOne;
+  /* background-color: green; */
 }
 
 .blogTwo {
   grid-area: blogTwo;
 }
-
+.blogTwo > a{
+  color: white;
+  font-size:20px;
+}
 .blogThree {
   grid-area: blogThree;
 }
