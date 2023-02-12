@@ -30,13 +30,10 @@ let error_contact = document.getElementById("error_contact");
 let signup_array = [];
 let signup_object ={email:"",username:"",passcode:"",confirmp:""};
 let login_object = {email:"",username:""};
-// document.querySelector(".hide").style.display = "flex";
 let passcodeError_signup = document.getElementById("errorPasscode_signup");
 let xpasscode_signup = document.getElementById("xpasscode_signup");
-// window.alert("heloooo")
 function alerted(){
     document.querySelector(".hide").style.display = "flex";
-    // window.alert("i am loading");
   }
 
 //=========================== login=============================

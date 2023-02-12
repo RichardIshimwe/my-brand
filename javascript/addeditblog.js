@@ -2,6 +2,21 @@ let add_title = document.getElementById("add_title");
 let add_textarea = document.getElementById("add_textarea");
 let add_image = document.getElementById("add_image");
 let error_addblog = document.getElementById("errorAdd_title");
+
+let blog_text1 = document.getElementById("blog_text1");
+let dispalyBlog_array = [];
+// =====================add blog whenever the new blog is appended==========================
+function displayBlogs(){
+dispalyBlog_array = JSON.parse(localStorage.getItem('hold_blogs'));
+console.log("these are the blogs")
+console.log(dispalyBlog_array[0].title);
+blog_text1.innerHTML = `<a href="./html/readmore.html">${dispalyBlog_array[0].title}</a>`;
+}
+
+// =========================================end=============================================
+
+
+
 let hold_blogs = [];
 let blogs = {
     title: "",
@@ -20,8 +35,6 @@ add_image.addEventListener('change', function () {
         localStorage.setItem('image', url);
     })
 });
-
-
 // ===========================end of login=======================
 // +++++++++++++++++++++++++++add blog+++++++++++++++++++++++++++
 function addblog() {
@@ -82,7 +95,11 @@ function github() {
     window.open('https://github.com/rich26638', '_blank');
 }
 // ===================================================end of socialmedia===================================
+// ===========================================display blogs================================================
 
+
+
+// =========================================end of display blogs===========================================
 
 
 
