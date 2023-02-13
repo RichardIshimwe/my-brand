@@ -35,6 +35,15 @@ let xpasscode_signup = document.getElementById("xpasscode_signup");
 function alerted(){
     document.querySelector(".hide").style.display = "flex";
   }
+// ========================================pre-loader===========
+window.addEventListener('load',function(){
+    let loader = document.querySelector('.holder_wave');
+    // console.log(loader);
+    loader.className += " hidden";
+  });
+// =============================================================
+
+
 
 //=========================== login=============================
 function checkLogin() {

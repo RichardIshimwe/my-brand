@@ -11,87 +11,10 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="./css/css.css">
   <link rel="stylesheet" href="./css/responsive.css">
-
-<style>
-  .centers {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #191D2B;
-  /* background: black; */
-
-}
-.wave {
-  width: 5px;
-  height: 100px;
-  background: linear-gradient(45deg, #023f1c, #fff);
-  margin: 10px;
-  animation: wave 1s linear infinite;
-  border-radius: 20px;
-}
-.wave:nth-child(2) {
-  animation-delay: 0.1s;
-}
-.wave:nth-child(3) {
-  animation-delay: 0.2s;
-}
-.wave:nth-child(4) {
-  animation-delay: 0.3s;
-}
-.wave:nth-child(5) {
-  animation-delay: 0.4s;
-}
-.wave:nth-child(6) {
-  animation-delay: 0.5s;
-}
-.wave:nth-child(7) {
-  animation-delay: 0.6s;
-}
-.wave:nth-child(8) {
-  animation-delay: 0.7s;
-}
-.wave:nth-child(9) {
-  animation-delay: 0.8s;
-}
-.wave:nth-child(10) {
-  animation-delay: 0.9s;
-}
-
-@keyframes wave {
-  0% {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0);
-  }
-}
-.holder{
-  position:fixed;
-  width: 100%;
-  height:100vh;
-  z-index: 66;
-  /* display: none; */
-}
-.holder.hidden{
-  animation: fadeOut 1s;
-  animation-fill-mode: forwards;
-}
-@keyframes fadeOut{
-  100%{
-    opacity:0;
-    visibility:hidden;
-  }
-}
-</style>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"></script>
 </head>
 <body onload="displayBlogs()">
-  <div class="holder">
+  <div class="holder_wave">
     <div class="centers">
       <div class="wave"></div>
       <div class="wave"></div>
@@ -677,13 +600,6 @@
       </div>
     </div>
   </section>
-  <script>
-  window.addEventListener('load',function(){
-    let loader = document.querySelector('.holder');
-    // console.log(loader);
-    loader.className += " hidden";
-  });
-  </script>
   <script src="./javascript/general.js"></script>
   <script src="./javascript/addeditblog.js"></script>
   <script src="./javascript/responsive.js"></script>

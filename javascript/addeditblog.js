@@ -35,6 +35,7 @@ let dispalyBlog_array = [];
 // =====================add blog whenever the new blog is appended==========================
 function displayBlogs(){
 dispalyBlog_array = JSON.parse(localStorage.getItem('hold_blogs'));
+// window.alert(dispalyBlog_array)
 console.log("these are the blogs")
 let currentDisplayImage,currentDisplayParagraph;
 console.log("this is the length of selector"+displayImage1.length)

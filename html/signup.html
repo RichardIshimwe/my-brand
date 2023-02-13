@@ -18,6 +18,20 @@
     <title>Signup page</title>
 </head>
 <body>
+  <div class="holder_wave">
+    <div class="centers">
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+    </div>
+  </div>
   <section id="sighup">
 
     <div class="login_nav">
@@ -70,7 +84,13 @@
     </div>
     
     </section>
-
+<script>
+  window.addEventListener('load',function(){
+    let loader = document.querySelector('.holder_wave');
+    // console.log(loader);
+    loader.className += " hidden";
+  });
+</script>
 <script src="../javascript/general.js"></script>
 
 </body>
