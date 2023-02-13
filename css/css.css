@@ -3,13 +3,24 @@
   margin: 0;
   /* -webkit-appearance: none; */
 }
-
-/* 
-bodY {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-} */
+/* ===============================popup message============================= */
+.popup{
+  width:100%;
+  height:100vh;
+  background-color: brown;
+  position: fixed;
+  z-index:100;
+}
+.popupMessage{
+  position: absolute;
+  top: 10px;
+  right: 37%;
+  width:400px;
+  height: 100px;
+  background-color:green;
+  border-radius: 10px;
+}
+/* ========================================================================= */
 /* =============================pre-loader================================== */
 .centers {
   height: 100vh;
@@ -381,7 +392,7 @@ a {
 .help > p{
   margin-left: 15px;
   font-size: 20px;
-  color: green;"
+  color: green;
 }
 .terminal {
   border-radius: 20px;
@@ -953,12 +964,12 @@ textarea:focus {
 }
 
 .blogAll {
+  background-color: #2A2E35;
   margin: 30px;
   border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #2A2E35;
 }
 
 .imaged {
@@ -1024,6 +1035,7 @@ textarea:focus {
   grid-area: blog_btn;
   display: flex;
   justify-content: center;
+  /* display: none; */
 }
 
 .blog_button>a>button {

@@ -8,13 +8,25 @@ let manage_paragraph = document.querySelectorAll('.imgcont12')
 let manage_image = document.querySelectorAll('.imgcont');
 let blogNumber = document.getElementById("blogNumber");
 let displayImage1 = document.querySelectorAll('.blogOne');
-let displayParagraph = document.querySelectorAll('.blogTwo')
+let displayParagraph = document.querySelectorAll('.blogTwo');
+let allBlogDisplay = document.querySelectorAll('.blogAll');
+let displayButton = document.querySelector('.blog_button');
 let dispalyBlog_array = [];
-
+// displayButton.style.display = "none"
+// for(let j = 0;j < allBlogDisplay.length;j++){
+// let allBlogDisplay_state = allBlogDisplay[j];
+// allBlogDisplay_state.style.display = "none";
+// }
 // ==================================blog number==========================================
 function updateBlog(){
     // window.alert("i am here")
-    document.getElementById("blogNumber").innerHTML = JSON.parse(localStorage.getItem('hold_blogs')).length;
+    let storedBlogs = JSON.parse(localStorage.getItem('hold_blogs')).length;
+    console.log(storedBlogs)
+    if(storedBlogs != null || storedBlogs != undefined || storedBlogs != ""){
+    blogNumber.innerHTML = storedBlogs;
+    }else{
+    blogNumber.innerHTML = 0;
+    }
 }
 // ==================================manage blog===========================================
   function manageBlog(){
@@ -40,13 +52,12 @@ function updateBlog(){
 // =====================add blog whenever the new blog is appended==========================
 function displayBlogs(){
 dispalyBlog_array = JSON.parse(localStorage.getItem('hold_blogs'));
-// window.alert(dispalyBlog_array)
-console.log("these are the blogs")
 let currentDisplayImage,currentDisplayParagraph;
-console.log("this is the length of selector"+displayImage1.length)
 for(let i = 0;i < displayImage1.length;i++){
+    let allBlogDisplay_state = allBlogDisplay[i];
+    // if(i < 3){allBlogDisplay_state.style.display = "flex"}
+    // if(i > 3 ){displayButton.style.display = "flex"}
     let displayImage = new Image();
-    // let holdParagraph = ``
     currentDisplayImage = displayImage1[i];
     currentDisplayParagraph = displayParagraph[i];
     displayImage.src = dispalyBlog_array[i].image;
@@ -91,11 +102,8 @@ let addImage_holder;
 add_image.addEventListener('change', function () {
     let imageHolder = new FileReader();
     imageHolder.readAsDataURL(add_image.files[0]);
-
     imageHolder.addEventListener('load', () => {
         const url = imageHolder.result;
-        // addImage_array.push(url);
-        // console.log(arrays)
         localStorage.setItem('image', url);
     })
 });

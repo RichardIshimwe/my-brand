@@ -182,8 +182,6 @@ signup_object ={email: emailf_signup.value,
                 username: usernamef_signup.value,
                 passcode: passcodef_signup.value,
                 confirmp: confirmf_signup.value};
-//  console.log(signup_object);               
-
 if(JSON.parse(localStorage.getItem('signupFormdata')) != null){
 signup_array = JSON.parse(localStorage.getItem('signupFormdata'));
 let hold = signup_array.find(object => object.username === signup_object.username);
@@ -213,9 +211,7 @@ return true;
 // ++++++++++++++++++++++++++login functions++++++++++++++++++++++++++++
 // =================================conatct page========================
 function chaeckContact(){
-    // window.alert("hellooo")
     if (emailf_contact.value == "" && namesf_conatct.value == "" && textareaf_contact.value == "" ) {
-    // if (emailf_contact.value == "") {
         emailf_contact.style.border = "2px solid red";
         namesf_conatct.style.border = "2px solid red"
         textareaf_contact.style.border = "2px solid red";
@@ -229,8 +225,3 @@ function chaeckContact(){
     }
 }
 // =====================================================================
-
-
-// let array =[345346];
-// let array =[345346];
-// let array =[345346];

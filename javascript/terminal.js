@@ -5,7 +5,7 @@ let inputCommand = document.getElementById("command");
 let terminal_result = document.getElementById("terminal_result");
 let help_terminal = document.querySelector(".help");
 // let command = document.getElementById("command");
-let allCommands = ["home","about","portfolio","skills","contact","login","blogs"];
+let allCommands = ["home","about","skills","portfolio","blogs","contact","login"];
 
 let executeCommands ={
   open:function(parameter1){
@@ -59,53 +59,3 @@ terminal.addEventListener('click', () => {
     document.querySelector(".home_profile").style.display = "none";
 
 })
-
-
-// document.addEventListener('keydown', function(event) {
-//   if (event.key === 'Enter') {
-//     window.alert("enter is pressed");  
-//   }
-// });
-
-// function terminal(){
-//     window.alert(inputCommand.value);
-// }
-
-// document.addEventListener('keydown', function (event) {
-//     window.alert();
-//     if (event.key === 'Enter' && command.value != "") {
-//     // if (event.key === 'Enter') {
-//         // commandDivision.style.background = "green";
-//         if (command.value === "login") {
-//             window.location.href = '#login';
-//             terminalResult.innerHTML = "";
-//         }
-//         else if (command.value === "help") {
-//             terminalResult.innerHTML = "terminal is underconstruction";
-//         }
-
-//         else if (command.value === "d"){
-//             commandDivision.innerHTML += `   <div class="cm1">
-//             <div class="static">
-//               <table>
-//                 <tr>
-//                   <td>
-//                     <p style="font-size: 22px;">richard@portfolio-cl</p>
-//                   </td>
-//                   <td><i class="fa-solid fa-angle-right"></i></td>
-//                 </tr>
-//               </table>
-//             </div>
-//             <div class="command">
-//               <input type="text" name="command" id="command" placeholder="type in a command">
-//             </div>
-//           </div>
-//           <div class="help">
-//         <p style="margin-left: 15px;font-size: 20px;color: rgb(247, 10, 10);" id="terminal_result"></p>
-//           </div>
-//         </div>`;
-//             // terminalResult.innerHTML = "invalid command try -help- command";
-//         }
-//         command.value = "";
-//     }
-// });
