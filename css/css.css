@@ -75,7 +75,7 @@ bodY {
   /* display: none; */
 }
 .holder_wave.hidden{
-  animation: fadeOut 1s;
+  animation: fadeOut 1.5s;
   animation-fill-mode: forwards;
 }
 @keyframes fadeOut{

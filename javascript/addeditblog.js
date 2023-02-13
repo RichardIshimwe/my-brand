@@ -11,6 +11,11 @@ let displayImage1 = document.querySelectorAll('.blogOne');
 let displayParagraph = document.querySelectorAll('.blogTwo')
 let dispalyBlog_array = [];
 
+// ==================================blog number==========================================
+function updateBlog(){
+    // window.alert("i am here")
+    document.getElementById("blogNumber").innerHTML = JSON.parse(localStorage.getItem('hold_blogs')).length;
+}
 // ==================================manage blog===========================================
   function manageBlog(){
     let manageblog = JSON.parse(localStorage.getItem('hold_blogs'));
@@ -48,11 +53,6 @@ for(let i = 0;i < displayImage1.length;i++){
     currentDisplayImage.appendChild(displayImage);
     currentDisplayParagraph.innerHTML = `<a href="./html/readmore.html">${dispalyBlog_array[i].title}</a>`
 }
-}
-
-function updateBlog(){
-    window.alert("i am here")
-    document.getElementById("blogNumber").innerHTML = 6;
 }
 
 function displayBlogsa(){
