@@ -1129,13 +1129,16 @@ textarea:focus {
   height: 87%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-areas: "first_name first_name"
+  grid-template-areas: "errorMessage errorMessage"
+                       "first_name first_name"
                        "email email"
                        "message message"
                        "thisis thisis";
-  grid-template-rows: 1fr 1fr 4fr 1fr;
+  grid-template-rows:0.5fr 1fr 1fr 4fr 1fr;
 }
-
+.errorMessage{
+  grid-area:errorMessage;
+}
 #first_name {
   grid-area: first_name;
 }

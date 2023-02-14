@@ -24,7 +24,7 @@ let checkUsername_signup = document.getElementById("checkUsername_signup");
 let checkPasscode_signup = document.getElementById("checkPasscode_signup");
 let checkConfirm_signup = document.getElementById("checkConfirm_signup");
 let emailf_contact = document.getElementById("emailf_contact");
-let namesf_conatct = document.getElementById("namesf_conatct");
+let namesf_contact = document.getElementById("namesf_contact");
 let textareaf_contact = document.getElementById("textareaf_contact");
 let error_contact = document.getElementById("error_contact");
 let signup_array = [];
@@ -33,7 +33,8 @@ let login_object = {email:"",username:""};
 let passcodeError_signup = document.getElementById("errorPasscode_signup");
 let xpasscode_signup = document.getElementById("xpasscode_signup");
 let popupMessage = document.querySelector('.popupMessage');
-let popup = document.querySelector('.popup')
+let popup = document.querySelector('.popup');
+let contact_array = [],contact_object = {names:"",email:"",message:""};
 function alerted(){
     document.querySelector(".hide").style.display = "flex";
   }
@@ -211,30 +212,39 @@ return true;
 // =================================conatct page========================
 function chaeckContact(){
 
-    if (emailf_contact.value == "" && namesf_conatct.value == "" && textareaf_contact.value == "" ) {
+    if (emailf_contact.value == "" && namesf_contact.value == "" && textareaf_contact.value == "" ) {
         emailf_contact.style.border = "2px solid red";
-        namesf_conatct.style.border = "2px solid red"
+        namesf_contact.style.border = "2px solid red"
         textareaf_contact.style.border = "2px solid red";
         error_contact.innerHTML = "*please fill out the form";
         return false;
-    }else if (emailf_contact.value != "" && namesf_conatct.value != "" && textareaf_contact.value != "" ){
+    }else if (emailf_contact.value != "" && namesf_contact.value != "" && textareaf_contact.value != "" ){
         setTimeout(function(){
             popupMessage.style.display = "none";
             emailf_contact.style.border = "none";
-            namesf_conatct.style.border = "none"
+            namesf_contact.style.border = "none"
             textareaf_contact.style.border = "none";
             error_contact.innerHTML = "";
             emailf_contact.value = "";
-            namesf_conatct.value = "";
+            namesf_contact.value = "";
             textareaf_contact.value = "";
             },2000);
+            contact_object = {
+                names:namesf_contact.value,
+                email:emailf_contact.value,
+                message:textareaf_contact
+            }
+            contact_array.push(contact_object);           
+            // window.alert(contact_array);
+            
+            localStorage.setItem("messages",)
             popupMessage.style.display = "flex";
             emailf_contact.style.border = "2px solid green";
-            namesf_conatct.style.border = "2px solid green"
+            namesf_contact.style.border = "2px solid green"
             textareaf_contact.style.border = "2px solid green";
             error_contact.style.color = "green";
             error_contact.innerHTML = "*message sent successful";
-            return false
     }
+    return true;
 }
 // =====================================================================
