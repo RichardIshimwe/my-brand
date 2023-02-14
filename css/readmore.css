@@ -385,11 +385,13 @@ padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    display: none;
 }
 .imagew{
     width: 90%;
     height:92%;
     background-color: #2A2E35;
+    /* background-color: #2b352a; */
     border:none;
     border-radius:20px;
     border-top-left-radius: 30px;
@@ -400,6 +402,7 @@ padding: 10px;
                          "imgcont12 imgcont12"
                          "imgcont13 imgcont13";
      grid-template-rows: 4fr 0.8fr 1.2fr;
+     /* display: none; */
 }
 .imgcont{
     /* background-color: brown; */

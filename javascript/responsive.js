@@ -16,13 +16,6 @@ navLinks.forEach((navLinks) => {
   });
 });
 
-
-
-
-
-
-
-
 const scrollToTopBtn = document.getElementById('scroll-to-top-btn');
 
 window.onscroll = function() {

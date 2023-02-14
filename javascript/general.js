@@ -80,10 +80,7 @@ login_object = {
     email: emailf_login.value,
     passcode: passcode_login.value
 };
-
-if(JSON.parse(localStorage.getItem('signupFormdata')) != null){
-console.log("there is something in the blog");
-signup_array = JSON.parse(localStorage.getItem('signupFormdata'));
+signup_array = JSON.parse(localStorage.getItem('signupFormdata')) || [];
 console.log(signup_array)
 let checkmail =signup_array.find(obj => obj.email === login_object.email)
 let hold = signup_array.find(object => object.email === login_object.email && object.passcode === login_object.passcode);
@@ -91,7 +88,8 @@ if(hold){
     emailf_login.value ="";
     passcode_login.value ="";
     return true;
-}else{
+}
+else{
     if(checkmail){
         passcode_login.style.border = "none";
         checkEmail_login.style.display = "none";
@@ -107,16 +105,13 @@ if(hold){
     passcodeError_login.innerHTML = "";
     emailError_login.innerHTML = "*do a signup with the below link";
 }}
-}else{
-console.log("nothing inside the blog")
-    passcode_login.style.border = "none";
-    checkEmail_login.style.display = "none";
-    emailError_login.innerHTML = "";
-    emailf_login.border = "none";
-    passcodeError_login.innerHTML = "";
-    emailError_login.innerHTML = "*do a signup with the below link";
-}
-    return false;
+    // passcode_login.style.border = "none";
+    // checkEmail_login.style.display = "none";
+    // emailError_login.innerHTML = "";
+    // emailf_login.border = "none";
+    // passcodeError_login.innerHTML = "";
+    // emailError_login.innerHTML = "*do a signup with the below link";
+   return false;
 }
 // ============================end of blog=======================
 // ==============================signup==========================
@@ -182,10 +177,8 @@ signup_object ={email: emailf_signup.value,
                 username: usernamef_signup.value,
                 passcode: passcodef_signup.value,
                 confirmp: confirmf_signup.value};
-if(JSON.parse(localStorage.getItem('signupFormdata')) != null){
-signup_array = JSON.parse(localStorage.getItem('signupFormdata'));
+signup_array = JSON.parse(localStorage.getItem('signupFormdata')) || [];
 let hold = signup_array.find(object => object.username === signup_object.username);
-signup_array.push(signup_object);
 if(hold){
     errorEmail_signup.style.color = "green";
     errorEmail_signup.innerHTML = "The username is taken";
@@ -194,12 +187,6 @@ if(hold){
 signup_array.push(signup_object);
 localStorage.setItem('signupFormdata',JSON.stringify(signup_array));
 console.log(JSON.parse(localStorage.getItem('signupFormdata')));
-}
-}else{
-    console.log("nothing inside the array")
-    signup_array.push(signup_object);
-    localStorage.setItem('signupFormdata',JSON.stringify(signup_array));
-    console.log(JSON.parse(localStorage.getItem('signupFormdata')));
 }
 emailf_signup.value = ""; 
 usernamef_signup.value = "";
