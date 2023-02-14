@@ -54,9 +54,9 @@ function displayBlogs(){
 dispalyBlog_array = JSON.parse(localStorage.getItem('hold_blogs'));
 let currentDisplayImage,currentDisplayParagraph;
 for(let i = 0;i < displayImage1.length;i++){
-    let allBlogDisplay_state = allBlogDisplay[i];
+    // let allBlogDisplay_state = allBlogDisplay[i];
     // if(i < 3){allBlogDisplay_state.style.display = "flex"}
-    // if(i > 3 ){displayButton.style.display = "flex"}
+    // displayButton.style.display = "flex"
     let displayImage = new Image();
     currentDisplayImage = displayImage1[i];
     currentDisplayParagraph = displayParagraph[i];

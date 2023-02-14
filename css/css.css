@@ -27,15 +27,6 @@
 #p1{
   font-size: 25px;
 }
-/* .popup.hide{
-animation: message 1.5s;
-}
-@keyframes message{
-  100%{
-    opacity:0;
-    visibility:hidden;
-  }
-} */
 /* ========================================================================= */
 /* =============================pre-loader================================== */
 .centers {
@@ -514,10 +505,11 @@ textarea:focus {
 }
 
 .about_image {
+  /* background-color: brown; */
+  margin-top: 50px;
   text-align: center;
   grid-area: content2;
   display: grid;
-  align-items: center;
 }
 
 .about_content {

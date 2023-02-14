@@ -42,9 +42,6 @@ window.addEventListener('load',function(){
     loader.className += " hidden";
   });
 // =============================================================
-
-
-
 //=========================== login=============================
 function checkLogin() {
 
@@ -98,7 +95,7 @@ if(hold){
         emailError_login.innerHTML = "";
         emailf_login.border = "none";
         passcodeError_login.innerHTML = "";
-        emailError_login.innerHTML = "*email or password is incorrect";
+        emailError_login.innerHTML = "*incorrect email or password";
     }else{
     passcode_login.style.border = "none";
     checkEmail_login.style.display = "none";
