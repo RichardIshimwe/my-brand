@@ -5,7 +5,6 @@ let inputCommand = document.getElementById("command");
 let terminal_result = document.getElementById("terminal_result");
 let help_terminal = document.querySelector(".help");
 let p_message = document.createElement("p");
-// let command = document.getElementById("command");
 let allCommands = ["home","about","skills","portfolio","blogs","contact","login"];
 
 let executeCommands ={
@@ -31,8 +30,7 @@ let invalidCommand = () =>{
   help_terminal.appendChild(p_message)
 }
 document.addEventListener("keydown", function(event) {
-  if (event.keyCode === 13) { // 13 is the keyCode for the Enter key
-    // window.alert("enter clicked");
+  if (event.keyCode === 13) {
     if(inputCommand.value.includes("open")){
     let commandHolder = inputCommand.value.split(" ");
     if(allCommands.includes(commandHolder[1])){
@@ -47,7 +45,6 @@ document.addEventListener("keydown", function(event) {
     else{
    return invalidCommand();
   }
-
 }
 });
 
@@ -56,7 +53,6 @@ closed.addEventListener('click', () => {
     document.querySelector(".home_profile").style.display = "flex";
 })
 terminal.addEventListener('click', () => {
-    // window.alert("button clicked ")
     document.querySelector(".terminal").style.display = "block";
     document.querySelector(".home_profile").style.display = "none";
 

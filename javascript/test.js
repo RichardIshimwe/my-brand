@@ -117,6 +117,14 @@
 /*  console.log("a.console.log("2. Api Processing") was the one loged lest it waited for 0.5sec while others were running
                  b.
 */
+let invalidCommandStore = () =>{
+    inputCommand.value = "";
+    setTimeout(function(){
+      help_terminal.innerHTML = "";
+    },5000);
+    p_message.innerHTML = "invalid command please try ~help to view more commands";
+    help_terminal.appendChild(p_message)
+  }
 
 
 

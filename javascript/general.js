@@ -32,6 +32,8 @@ let signup_object ={email:"",username:"",passcode:"",confirmp:""};
 let login_object = {email:"",username:""};
 let passcodeError_signup = document.getElementById("errorPasscode_signup");
 let xpasscode_signup = document.getElementById("xpasscode_signup");
+let popupMessage = document.querySelector('.popupMessage');
+let popup = document.querySelector('.popup')
 function alerted(){
     document.querySelector(".hide").style.display = "flex";
   }
@@ -208,6 +210,7 @@ return true;
 // ++++++++++++++++++++++++++login functions++++++++++++++++++++++++++++
 // =================================conatct page========================
 function chaeckContact(){
+
     if (emailf_contact.value == "" && namesf_conatct.value == "" && textareaf_contact.value == "" ) {
         emailf_contact.style.border = "2px solid red";
         namesf_conatct.style.border = "2px solid red"
@@ -215,10 +218,23 @@ function chaeckContact(){
         error_contact.innerHTML = "*please fill out the form";
         return false;
     }else if (emailf_contact.value != "" && namesf_conatct.value != "" && textareaf_contact.value != "" ){
-        emailf_contact.style.border = "2px solid green";
-        namesf_conatct.style.border = "2px solid green"
-        textareaf_contact.style.border = "2px solid green";
-        error_contact.innerHTML = "*message sent successful";
+        setTimeout(function(){
+            popupMessage.style.display = "none";
+            emailf_contact.style.border = "none";
+            namesf_conatct.style.border = "none"
+            textareaf_contact.style.border = "none";
+            error_contact.innerHTML = "";
+            emailf_contact.value = "";
+            namesf_conatct.value = "";
+            textareaf_contact.value = "";
+            },2000);
+            popupMessage.style.display = "flex";
+            emailf_contact.style.border = "2px solid green";
+            namesf_conatct.style.border = "2px solid green"
+            textareaf_contact.style.border = "2px solid green";
+            error_contact.style.color = "green";
+            error_contact.innerHTML = "*message sent successful";
+            return false
     }
 }
 // =====================================================================
