@@ -36,7 +36,12 @@ function updateBlog(){
 // ========================================================================================
 
 // =====================add blog whenever the new blog is appended==========================
+let loged = document.getElementById("logedin");
+
 function displayBlogs(){
+    let hold_logedin = localStorage.getItem('logedIn') || "";
+    if(hold_logedin != ""){loged.innerHTML = `<a href="#login"><i class="fa-solid fa-user"></i>${hold_logedin}</a>`}
+    else{loged.innerHTML = `<a href="#login">login</a>`}
 let currentDisplayImage,currentDisplayParagraph;
 for(let i = 0;i < displayImage1.length;i++){
     let displayImage = new Image();
@@ -48,6 +53,10 @@ for(let i = 0;i < displayImage1.length;i++){
     currentDisplayParagraph.innerHTML = `<a href="./html/readmore.html">${storedBlogs[i].title}</a>`
 }
 }
+function logMeout(){
+    localStorage.setItem('logedIn',"")
+}
+
 
 // =========================================end=============================================
 let hold_blogs = [];

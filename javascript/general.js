@@ -35,6 +35,8 @@ let xpasscode_signup = document.getElementById("xpasscode_signup");
 let popupMessage = document.querySelector('.popupMessage');
 let popup = document.querySelector('.popup');
 let contact_array = [],contact_object = {names:"",email:"",message:""};
+
+
 function alerted(){
     document.querySelector(".hide").style.display = "flex";
   }
@@ -81,10 +83,13 @@ login_object = {
     passcode: passcode_login.value
 };
 signup_array = JSON.parse(localStorage.getItem('signupFormdata')) || [];
+let logedIn = {};
 console.log(signup_array)
 let checkmail =signup_array.find(obj => obj.email === login_object.email)
 let hold = signup_array.find(object => object.email === login_object.email && object.passcode === login_object.passcode);
 if(hold){
+    console.log(hold.username);
+    localStorage.setItem('logedIn',hold.username);
     emailf_login.value ="";
     passcode_login.value ="";
     return true;
@@ -105,12 +110,6 @@ else{
     passcodeError_login.innerHTML = "";
     emailError_login.innerHTML = "*do a signup with the below link";
 }}
-    // passcode_login.style.border = "none";
-    // checkEmail_login.style.display = "none";
-    // emailError_login.innerHTML = "";
-    // emailf_login.border = "none";
-    // passcodeError_login.innerHTML = "";
-    // emailError_login.innerHTML = "*do a signup with the below link";
    return false;
 }
 // ============================end of blog=======================
