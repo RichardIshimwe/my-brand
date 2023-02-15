@@ -9,6 +9,3 @@ readmoreCont.appendChild(readmoreImage);
 readmoreDescription.innerHTML = storedReadmore.description;
 readmore_title.innerHTML = storedReadmore.title;
 console.log(storedReadmore);
-
-// window.alert("i am reached")
-

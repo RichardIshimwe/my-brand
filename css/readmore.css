@@ -434,13 +434,23 @@ padding: 10px;
 .image1{
     grid-area: img1;
 }
-.imgcont13 > p{
-    font-size: 35px;
+.imgcont13 > .fa-pen-to-square{
+    font-size: 30px;
     color:#298F55;
 }
-.fa-trash-can{
+.imgcont13 > .fa-pen-to-square:hover{
+    font-size: 32px;
+    cursor: pointer;
+}
+.imgcont13 > .fa-trash-can{
+    font-size: 30px;
     color:red;
 }
+.imgcont13 > .fa-trash-can:hover{
+    font-size: 32px;
+    cursor: pointer;
+}
+
 .image2{
     grid-area: img2;
 }

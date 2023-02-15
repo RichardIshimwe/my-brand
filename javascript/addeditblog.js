@@ -27,24 +27,38 @@ function updateBlog(){
 // ==================================manage blog===========================================
   function manageBlog(){
     let manage_image_state,manage_paragraph_state;
+    let get_icondiv = document.querySelectorAll('.imgcont13');
+    let alledit = document.querySelectorAll('#heloo');
+
     for(let i = 0;i < storedBlogs.length;i++){
+        let icon = document.createElement("i");
         let para = document.createElement("p");
+        icon.className = "fa-solid fa-pen-to-square";
+        icon.setAttribute("id","heloo");
         manage_paragraph_state = manage_paragraph[i];
         para.innerHTML = storedBlogs[i].title;
-        manage_paragraph_state.appendChild(para);
         let imageManage = new Image();
         imageManage.src = storedBlogs[i].image;
         manage_image_state = manage_image[i];
-        manage_image_state.appendChild(imageManage)
         blogsDisplay[i].style.display = "flex";
-    }
-  }
+        manage_image_state.appendChild(imageManage)
+        manage_paragraph_state.appendChild(para);
+        get_icondiv[i].appendChild(icon);
+        
+    }}
+    // console.log("everything is workin")
 // ========================================================================================
 
 // =====================add blog whenever the new blog is appended==========================
-let loged = document.getElementById("logedin");
-    // let hold_logedin = localStorage.getItem('logedIn') || "";
-    // if(hold_logedin != ""){loged.innerHTML = `<a href="./html/dashboard.html"><i class="fa-solid fa-user"></i>${hold_logedin}</a>`}
+    let logedinWell = document.getElementById("logedin");
+    let logedout = document.getElementById("logedout")
+    let hold_logedin = localStorage.getItem('logedIn') || "";
+    if(hold_logedin != ""){
+        // logedinWell.innerHTML = localStorage.getItem('logedIn');
+    //     logedinWell.innerHTML = `<a href="./html/dashboard.html"><i class="fa-solid fa-user"></i>${hold_logedin}</a>`
+    }else{
+        logedout.innerHTML = "login";
+    }
     // else{loged.innerHTML = `<a href="#login">login</a>`}
 let currentDisplayImage,currentDisplayParagraph,blogId;
 for(let i = 0;i < displayImage1.length;i++){
@@ -152,3 +166,4 @@ function github() {
 
 
 // =========================================end of display blogs===========================================
+// console.log("nfjdksnbv")
