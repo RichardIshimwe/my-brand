@@ -1,3 +1,4 @@
+
 let add_title = document.getElementById("add_title");
 let add_textarea = document.getElementById("add_textarea");
 let add_image = document.getElementById("add_image");
@@ -42,9 +43,9 @@ function updateBlog(){
 
 // =====================add blog whenever the new blog is appended==========================
 let loged = document.getElementById("logedin");
-    let hold_logedin = localStorage.getItem('logedIn') || "";
-    if(hold_logedin != ""){loged.innerHTML = `<a href="./html/dashboard.html"><i class="fa-solid fa-user"></i>${hold_logedin}</a>`}
-    else{loged.innerHTML = `<a href="#login">login</a>`}
+    // let hold_logedin = localStorage.getItem('logedIn') || "";
+    // if(hold_logedin != ""){loged.innerHTML = `<a href="./html/dashboard.html"><i class="fa-solid fa-user"></i>${hold_logedin}</a>`}
+    // else{loged.innerHTML = `<a href="#login">login</a>`}
 let currentDisplayImage,currentDisplayParagraph,blogId;
 for(let i = 0;i < displayImage1.length;i++){
     let button = document.createElement("button");
@@ -151,13 +152,3 @@ function github() {
 
 
 // =========================================end of display blogs===========================================
-
-
-
-
-
-
-
-
-
-
