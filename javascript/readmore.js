@@ -9,3 +9,8 @@ readmoreCont.appendChild(readmoreImage);
 readmoreDescription.innerHTML = storedReadmore.description;
 readmore_title.innerHTML = storedReadmore.title;
 console.log(storedReadmore);
+// ========================================pre-loader===========
+window.addEventListener('load',function(){
+    let loader = document.querySelector('.holder_wave');
+    loader.className += " hidden";
+  });

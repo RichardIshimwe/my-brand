@@ -16,22 +16,22 @@ navLinks.forEach((navLinks) => {
   });
 });
 
-const scrollToTopBtn = document.getElementById('scroll-to-top-btn');
+// const scrollToTopBtn = document.getElementById('scroll-to-top-btn');
 
-window.onscroll = function() {
-  console.log(document.body.scrollTop)
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        scrollToTopBtn.style.display = "block";
-    } else {
-        scrollToTopBtn.style.display = "none";
-    }
-};
+// window.onscroll = function() {
+//   console.log(document.body.scrollTop)
+//     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+//         scrollToTopBtn.style.display = "block";
+//     } else {
+//         scrollToTopBtn.style.display = "none";
+//     }
+// };
 
-scrollToTopBtn.onclick = function() {
-  window.location.href = '#home';
-    // document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-};
+// scrollToTopBtn.onclick = function() {
+//   window.location.href = '#home';
+//     // document.body.scrollTop = 0;
+//     document.documentElement.scrollTop = 0;
+// };
 
 
 

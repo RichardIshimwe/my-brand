@@ -1,115 +1,18 @@
-
 let add_title = document.getElementById("add_title");
 let add_textarea = document.getElementById("add_textarea");
 let add_image = document.getElementById("add_image");
 let error_addblog = document.getElementById("errorAdd_title");
-let blog_text1 = document.getElementById("blog_text1");
-let manage_paragraph = document.querySelectorAll('.imgcont12')
-let manage_image = document.querySelectorAll('.imgcont');
-let blogNumber = document.getElementById("blogNumber");
-let displayImage1 = document.querySelectorAll('.blogOne');
-let displayParagraph = document.querySelectorAll('.blogTwo');
-let allBlogDisplay = document.querySelectorAll('.blogAll');
-let displayButton = document.querySelector('.blog_button');
-let created_paragraph = document.createElement("p");
-let blogsDisplay = document.querySelectorAll('.manage');
-let blogButtonAnchor = document.querySelectorAll('#openBlog')
-// for(let i = 0;i < allButton;i++){
-//     // console.log(allButton[i])
-// }
+
 let dispalyBlog_array = [];
-// blogButtonAnchor[1].innerHTML = "helooo"
+// ========================================pre-loader===========
+window.addEventListener('load',function(){
+    let loader = document.querySelector('.holder_wave');
+    loader.className += " hidden";
+  });
 // ==================================blog number==========================================
 let storedBlogs = JSON.parse(localStorage.getItem('hold_blogs')) || [];
-function updateBlog(){
-    blogNumber.innerHTML = storedBlogs.length;
-}
-// ==================================manage blog===========================================
-  function manageBlog(){
-    let manage_image_state,manage_paragraph_state;
-    let get_icondiv = document.querySelectorAll('.imgcont13');
-    let alledit = document.querySelectorAll('#heloo');
 
-    for(let i = 0;i < storedBlogs.length;i++){
-        let icon = document.createElement("i");
-        let para = document.createElement("p");
-        icon.className = "fa-solid fa-pen-to-square";
-        icon.setAttribute("id","heloo");
-        manage_paragraph_state = manage_paragraph[i];
-        para.innerHTML = storedBlogs[i].title;
-        let imageManage = new Image();
-        imageManage.src = storedBlogs[i].image;
-        manage_image_state = manage_image[i];
-        blogsDisplay[i].style.display = "flex";
-        manage_image_state.appendChild(imageManage)
-        manage_paragraph_state.appendChild(para);
-        get_icondiv[i].appendChild(icon);
-        
-    }}
-    // console.log("everything is workin")
-// ========================================================================================
-
-// =====================add blog whenever the new blog is appended==========================
-    let logedinWell = document.getElementById("logedin");
-    let logedout = document.getElementById("logedout")
-    let hold_logedin = localStorage.getItem('logedIn') || "";
-    if(hold_logedin != ""){
-        // logedinWell.innerHTML = localStorage.getItem('logedIn');
-    //     logedinWell.innerHTML = `<a href="./html/dashboard.html"><i class="fa-solid fa-user"></i>${hold_logedin}</a>`
-    }else{
-        logedout.innerHTML = "login";
-    }
-    // else{loged.innerHTML = `<a href="#login">login</a>`}
-let currentDisplayImage,currentDisplayParagraph,blogId;
-for(let i = 0;i < displayImage1.length;i++){
-    let button = document.createElement("button");
-    button.setAttribute("class", "addedButton")
-    button.setAttribute("id", i)
-    button.textContent = "Read More"
-    let displayImage = new Image();
-    currentDisplayImage = displayImage1[i];
-    currentDisplayParagraph = displayParagraph[i];
-    displayImage.src = storedBlogs[i].image;
-    blogButtonAnchor[i].appendChild(button)
-    console.log(button)
-    currentDisplayImage.appendChild(displayImage);
-    allBlogDisplay[i].style.display = "flex";
-    currentDisplayParagraph.innerHTML = `<a href="./html/readmore.html">${storedBlogs[i].title}</a>`
-}
-let allBlogButton = document.querySelectorAll('.addedButton');
-console.log("number of buttons:"+allBlogButton.length)
-for(let i = 0;i < allBlogButton.length;i++){
-    allBlogButton[i].addEventListener('click',function(){
-        // console.log("one of added buttons is clicked");
-        let id = this.getAttribute("id");
-        localStorage.setItem('readmore',    JSON.stringify(storedBlogs[id]));
-    })
-}
-function logMeout(){
-    localStorage.setItem('logedIn',"")
-}
-
-
-// =========================================end=============================================
-let hold_blogs = [];
-let blogs = {
-    title: "",
-    description: "",
-    image: ""
-};
-let addImage_holder;
-add_image.addEventListener('change', function () {
-    let imageHolder = new FileReader();
-    imageHolder.readAsDataURL(add_image.files[0]);
-    imageHolder.addEventListener('load', () => {
-        const url = imageHolder.result;
-        localStorage.setItem('image', url);
-    })
-});
-// ===========================end of login=======================
-// +++++++++++++++++++++++++++add blog+++++++++++++++++++++++++++
 function addblog() {
-//  window.alert("add blog button clicked");
     if (add_title.value == "" && add_textarea.value == "") {
         add_title.style.border = "2px solid red"
         add_textarea.style.border = "2px solid red";
@@ -161,9 +64,3 @@ function github() {
     window.open('https://github.com/rich26638', '_blank');
 }
 // ===================================================end of socialmedia===================================
-// ===========================================display blogs================================================
-
-
-
-// =========================================end of display blogs===========================================
-// console.log("nfjdksnbv")
