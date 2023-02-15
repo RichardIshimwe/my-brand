@@ -928,7 +928,7 @@ textarea:focus {
 
 .blogAll {
   background-color: #2A2E35;
-  margin: 30px;
+  margin: 70px 30px;
   border-radius: 20px;
   display: flex;
   justify-content: center;
