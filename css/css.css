@@ -979,7 +979,7 @@ textarea:focus {
   color: #E1E1E1;
 }
 
-#blog_btn {
+.blogThree > a > button {
   background-color: transparent;
   border: 2px solid #27AE60;
   color: #27AE60;
@@ -988,7 +988,7 @@ textarea:focus {
   border-radius: 10px;
 }
 
-#blog_btn:hover {
+.blogThree > a > button:hover {
   background-color: #27AE60;
   color: white;
   font-weight: bolder;

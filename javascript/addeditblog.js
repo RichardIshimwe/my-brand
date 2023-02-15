@@ -12,7 +12,12 @@ let allBlogDisplay = document.querySelectorAll('.blogAll');
 let displayButton = document.querySelector('.blog_button');
 let created_paragraph = document.createElement("p");
 let blogsDisplay = document.querySelectorAll('.manage');
+let blogButtonAnchor = document.querySelectorAll('#openBlog')
+// for(let i = 0;i < allButton;i++){
+//     // console.log(allButton[i])
+// }
 let dispalyBlog_array = [];
+// blogButtonAnchor[1].innerHTML = "helooo"
 // ==================================blog number==========================================
 let storedBlogs = JSON.parse(localStorage.getItem('hold_blogs')) || [];
 function updateBlog(){
@@ -37,21 +42,33 @@ function updateBlog(){
 
 // =====================add blog whenever the new blog is appended==========================
 let loged = document.getElementById("logedin");
-
-function displayBlogs(){
     let hold_logedin = localStorage.getItem('logedIn') || "";
     if(hold_logedin != ""){loged.innerHTML = `<a href="#login"><i class="fa-solid fa-user"></i>${hold_logedin}</a>`}
     else{loged.innerHTML = `<a href="#login">login</a>`}
-let currentDisplayImage,currentDisplayParagraph;
+let currentDisplayImage,currentDisplayParagraph,blogId;
 for(let i = 0;i < displayImage1.length;i++){
+    let button = document.createElement("button");
+    button.setAttribute("class", "addedButton")
+    button.setAttribute("id", i)
+    button.textContent = "Read More"
     let displayImage = new Image();
     currentDisplayImage = displayImage1[i];
     currentDisplayParagraph = displayParagraph[i];
     displayImage.src = storedBlogs[i].image;
+    blogButtonAnchor[i].appendChild(button)
+    console.log(button)
     currentDisplayImage.appendChild(displayImage);
     allBlogDisplay[i].style.display = "flex";
     currentDisplayParagraph.innerHTML = `<a href="./html/readmore.html">${storedBlogs[i].title}</a>`
 }
+let allBlogButton = document.querySelectorAll('.addedButton');
+console.log("number of buttons:"+allBlogButton.length)
+for(let i = 0;i < allBlogButton.length;i++){
+    allBlogButton[i].addEventListener('click',function(){
+        // console.log("one of added buttons is clicked");
+        let id = this.getAttribute("id");
+        localStorage.setItem('readmore',    JSON.stringify(storedBlogs[id]));
+    })
 }
 function logMeout(){
     localStorage.setItem('logedIn',"")
