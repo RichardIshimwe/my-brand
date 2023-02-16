@@ -9,6 +9,13 @@ let allBlogDisplay = document.querySelectorAll('.blogAll');
 let displayImage1 = document.querySelectorAll('.blogOne');
 let displayParagraph = document.querySelectorAll('.blogTwo');
 let blogButtonAnchor = document.querySelectorAll('#openBlog');
+// let heart = document.querySelectorAll('.fa-heart');
+// for(let j = 0;j < heart.length;j++){
+//     heart[i].addEventListener('click',function(){
+//      window.alert(i);
+//     });
+// }
+// window.alert(heart.length);
 // let hold_logedin = localStorage.getItem('logedIn') || "";
 let contact_array = [],contact_object = {names:"",email:"",message:""};
 
