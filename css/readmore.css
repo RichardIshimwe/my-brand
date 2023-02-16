@@ -568,7 +568,6 @@ display: none;
 }
 .errorm{
     grid-area:errorm;
-    background-color: goldenrod;
 }
 .errorm > p{
     font-size: 20px;

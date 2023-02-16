@@ -36,7 +36,6 @@ function editblog(){
     console.log(JSON.parse(localStorage.getItem('hold_blogs')));
     return true;
 }
-
 // ========================================pre-loader===========
 window.addEventListener('load',function(){
     let loader = document.querySelector('.holder_wave');

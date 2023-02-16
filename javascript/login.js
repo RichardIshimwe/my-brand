@@ -6,7 +6,17 @@ let passcodeError_login = document.getElementById("errorPasscode_login");
 let checkEmail_login = document.getElementById("checkEmail_login");
 let xpasscode_login = document.getElementById("xpasscode_login");
 var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+let hold_logedin = localStorage.getItem('logedIn') || "";
+let logedout = document.getElementById("logedout");
+let logedin = document.getElementById("logedin");
 
+if(hold_logedin != ""){
+    logedin.innerHTML = `<i class="fa-solid fa-user"></i>${hold_logedin}`;
+    // logedinWell.innerHTML = localStorage.getItem('logedIn');
+//     logedinWell.innerHTML = `<a href="./html/dashboard.html"><i class="fa-solid fa-user"></i>${hold_logedin}</a>`
+}else{
+    logedout.innerHTML = "login";
+}
 function alerted(){
     document.querySelector(".hide").style.display = "flex";
   }
