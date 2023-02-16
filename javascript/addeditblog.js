@@ -14,7 +14,6 @@ let storedBlogs = JSON.parse(localStorage.getItem('hold_blogs')) || [];
 
 let addImage_holder;
 add_image.addEventListener('change', function () {
-    // window.alert("image selected");
     let imageHolder = new FileReader();
     imageHolder.readAsDataURL(add_image.files[0]);
     imageHolder.addEventListener('load', () => {

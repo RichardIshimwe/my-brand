@@ -1,19 +1,15 @@
-let manage_paragraph = document.querySelectorAll('.imgcont12')
+let manage_paragraph = document.querySelectorAll('.imgcont12');
 let manage_image = document.querySelectorAll('.imgcont');
 let blogsDisplay = document.querySelectorAll('.manage');
 let divisionState = 0;
 let dispalyBlog_array = [];
 
-
-window.addEventListener('all', function(e) {
-    console.log('Event type: ' + e.type);
-  });
 // ========================================pre-loader===========
 window.addEventListener('load',function(){
     let loader = document.querySelector('.holder_wave');
     loader.className += " hidden";
   });
-// ==================================blog number==========================================
+// ==================================blog number===========================================
 let storedBlogs = JSON.parse(localStorage.getItem('hold_blogs')) || [];
 // ==================================manage blog===========================================
 //   function manageBlog(){
@@ -30,6 +26,7 @@ let storedBlogs = JSON.parse(localStorage.getItem('hold_blogs')) || [];
         trash.className = "fa-solid fa-trash-can";
         trash.setAttribute("id",i);
         icon.setAttribute("id",i);
+        icon.setAttribute("href","./editblog.html")
         manage_paragraph_state = manage_paragraph[i];
         para.innerHTML = storedBlogs[i].title;
         let imageManage = new Image();
@@ -55,7 +52,24 @@ for(let i = 0;i < allblogs.length;i++){
         location.reload();
     });
 }
+let alledit = document.querySelectorAll(".fa-pen-to-square");
+console.log("edit cans:"+alledit.length);
+for(let i = 0;i < alledit.length;i++){
+    alledit[i].addEventListener('click',function(){
+    let edit = alledit[i].getAttribute("id");
+    localStorage.setItem('editId',edit);
+    window.location.href = "editblog.html";
+    console.log(localStorage.getItem('editId'));
+    });
+}
 
-console.log("all blogs length:"+allblogs.length);
+
+
+
+
+
+
+
+
 
 

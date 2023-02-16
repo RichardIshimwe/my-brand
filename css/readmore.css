@@ -559,7 +559,7 @@ display: none;
     height: 90%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "errorm errorm"
+    grid-template-areas:"errorm errorm"
                         "addOne addOne"
                         "addTwo addTwo"
                         "addThree addThree"
@@ -568,7 +568,11 @@ display: none;
 }
 .errorm{
     grid-area:errorm;
-    /* background-color: goldenrod; */
+    background-color: goldenrod;
+}
+.errorm > p{
+    font-size: 20px;
+    color: red;
 }
 .contOne{
     grid-area:addOne;

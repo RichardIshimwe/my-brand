@@ -73,8 +73,10 @@
     </div>
         <div class="holder_content"> 
         <div class="holderContent"> 
-              <div class="contents_holders">
-                <!-- <form action="./dashboard.html" class="contents_holders"> -->
+          <form action="./manage.html" class="contents_holders" onsubmit=" return editblog()">
+                <div class="errorm">
+                  <p id="errorm"></p>
+                </div>
                 <div class="contOne">
                 <input type="text" name="" id="edit_title"><br/>
                 </div>
@@ -82,14 +84,12 @@
                 <textarea name="" id="edit_textarea" cols="0" rows="0"></textarea><br/>
             </div>
             <div class="contThree">
-                <button id="btn" type="file">Replace blog image</button><br/>
-                <!-- <input type="file" name="" id=""> -->
+              <input type="file" name="file" id="add_image" ><br/>
             </div>
                 <div class="contSave">
-                <button><a href="./dashboard.html">Save blog</a></button>
+                <button type="submit">Save blog</button>
                 </div>
-              <!-- </form> -->
-            </div>
+          </form>
          </div> 
         </div>
         </div>
@@ -116,7 +116,7 @@
       </div>
 </div>
     </section>
-    <script src="../javascript/addeditblog.js"></script>
+    <script src="../javascript/edit.js"></script>
     <script src="../javascript/responsive.js"></script>
 </body>
 </html>
