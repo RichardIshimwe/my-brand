@@ -1,8 +1,13 @@
 let manage_paragraph = document.querySelectorAll('.imgcont12')
 let manage_image = document.querySelectorAll('.imgcont');
 let blogsDisplay = document.querySelectorAll('.manage');
-
+let divisionState = 0;
 let dispalyBlog_array = [];
+
+
+window.addEventListener('all', function(e) {
+    console.log('Event type: ' + e.type);
+  });
 // ========================================pre-loader===========
 window.addEventListener('load',function(){
     let loader = document.querySelector('.holder_wave');
@@ -16,6 +21,8 @@ let storedBlogs = JSON.parse(localStorage.getItem('hold_blogs')) || [];
     let get_icondiv = document.querySelectorAll('.imgcont13');
 
     for(let i = 0;i < storedBlogs.length;i++){
+        divisionState++;
+        localStorage.setItem('divisionState',divisionState);
         let icon = document.createElement("i");
         let trash = document.createElement("i");
         let para = document.createElement("p");
@@ -28,15 +35,28 @@ let storedBlogs = JSON.parse(localStorage.getItem('hold_blogs')) || [];
         let imageManage = new Image();
         imageManage.src = storedBlogs[i].image;
         manage_image_state = manage_image[i];
+        if(divisionState < 7){
         blogsDisplay[i].style.display = "flex";
         manage_image_state.appendChild(imageManage)
         manage_paragraph_state.appendChild(para);
         get_icondiv[i].appendChild(icon);
         get_icondiv[i].appendChild(trash);
+            }
     }
-// }
-
+//   }
 let allblogs = document.querySelectorAll(".fa-trash-can");
-console.log(allblogs.length)
+for(let i = 0;i < allblogs.length;i++){
+    allblogs[i].addEventListener('click',function(){
+        let id = allblogs[i].getAttribute("id");
+        console.log(id);
+        console.log(i)
+        storedBlogs.splice(id,1)
+        localStorage.setItem('hold_blogs',JSON.stringify(storedBlogs));
+        location.reload();
+        // console.log(storesplice);
+    });
+}
+
+console.log("all blogs length:"+allblogs.length);
 
 
