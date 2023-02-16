@@ -1,22 +1,40 @@
 let manage_paragraph = document.querySelectorAll('.imgcont12');
 let manage_image = document.querySelectorAll('.imgcont');
 let blogsDisplay = document.querySelectorAll('.manage');
-let divisionState = 0;
 let dispalyBlog_array = [];
-
+let logedIn = localStorage.getItem('logedIn') || "";
+if(logedIn === "richard"){}
+else{
+let admin = document.querySelectorAll('.admin');
+for(let i = 0;i < admin.length;i++){
+admin[i].style.display = "none";
+}
+}
+window.alert
 // ========================================pre-loader===========
 window.addEventListener('load',function(){
     let loader = document.querySelector('.holder_wave');
     loader.className += " hidden";
   });
 // ==================================blog number===========================================
-let storedBlogs = JSON.parse(localStorage.getItem('hold_blogs')) || [];
+let divisionState = 0;
+let storedBlogs = JSON.parse(localStorage.getItem('hold_blogs')) || [],holdStored = [];
+if(logedIn === "richard"){
+ holdStored = storedBlogs;
+}else{
+for(let i = 0;i < storedBlogs.length;i++){
+    if(storedBlogs[i].author === logedIn){
+        holdStored.push(storedBlogs[i]);
+    }
+}
+}
+console.log(holdStored);
 // ==================================manage blog===========================================
 //   function manageBlog(){
     let manage_image_state,manage_paragraph_state;
     let get_icondiv = document.querySelectorAll('.imgcont13');
 
-    for(let i = 0;i < storedBlogs.length;i++){
+    for(let i = 0;i < holdStored.length;i++){
         divisionState++;
         localStorage.setItem('divisionState',divisionState);
         let icon = document.createElement("i");
@@ -28,9 +46,9 @@ let storedBlogs = JSON.parse(localStorage.getItem('hold_blogs')) || [];
         icon.setAttribute("id",i);
         icon.setAttribute("href","./editblog.html")
         manage_paragraph_state = manage_paragraph[i];
-        para.innerHTML = storedBlogs[i].title;
+        para.innerHTML = holdStored[i].title;
         let imageManage = new Image();
-        imageManage.src = storedBlogs[i].image;
+        imageManage.src = holdStored[i].image;
         manage_image_state = manage_image[i];
         if(divisionState < 7){
         blogsDisplay[i].style.display = "flex";
@@ -38,7 +56,7 @@ let storedBlogs = JSON.parse(localStorage.getItem('hold_blogs')) || [];
         manage_paragraph_state.appendChild(para);
         get_icondiv[i].appendChild(icon);
         get_icondiv[i].appendChild(trash);
-            }
+        }
     }
 //   }
 let allblogs = document.querySelectorAll(".fa-trash-can");
@@ -47,8 +65,8 @@ for(let i = 0;i < allblogs.length;i++){
         let id = allblogs[i].getAttribute("id");
         console.log(id);
         console.log(i)
-        storedBlogs.splice(id,1)
-        localStorage.setItem('hold_blogs',JSON.stringify(storedBlogs));
+        holdStored.splice(id,1)
+        localStorage.setItem('hold_blogs',JSON.stringify(holdStored));
         location.reload();
     });
 }

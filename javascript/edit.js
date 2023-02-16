@@ -1,6 +1,14 @@
 let editTitle = document.getElementById('edit_title');
 let editTextarea = document.getElementById('edit_textarea');
 let errorm = document.getElementById('errorm');
+let logedIn = localStorage.getItem('logedIn') || "";
+if(logedIn === "richard"){}
+else{
+let admin = document.querySelectorAll('.admin');
+for(let i = 0;i < admin.length;i++){
+admin[i].style.display = "none";
+}
+}
 
 let storedBlogs = JSON.parse(localStorage.getItem('hold_blogs')) || [],editId = localStorage.getItem('editId') || 0;
 console.log(JSON.parse(localStorage.getItem('hold_blogs')));

@@ -6,13 +6,13 @@ let passcodeError_login = document.getElementById("errorPasscode_login");
 let checkEmail_login = document.getElementById("checkEmail_login");
 let xpasscode_login = document.getElementById("xpasscode_login");
 var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-let hold_logedin = localStorage.getItem('logedIn') || {};
+let hold_logedin = localStorage.getItem('logedIn') || "";
 let logedout = document.getElementById("logedout");
 let logedin = document.getElementById("logedin");
 
 console.log(hold_logedin);
 
-if(hold_logedin != null){
+if(hold_logedin != ""){
     logedin.innerHTML = `<i class="fa-solid fa-user"></i>${hold_logedin}`;
 }else{
     logedout.innerHTML = "login";
