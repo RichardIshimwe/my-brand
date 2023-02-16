@@ -12,6 +12,17 @@ window.addEventListener('load',function(){
 // ==================================blog number==========================================
 let storedBlogs = JSON.parse(localStorage.getItem('hold_blogs')) || [];
 
+let addImage_holder;
+add_image.addEventListener('change', function () {
+    // window.alert("image selected");
+    let imageHolder = new FileReader();
+    imageHolder.readAsDataURL(add_image.files[0]);
+    imageHolder.addEventListener('load', () => {
+    const url = imageHolder.result;
+    localStorage.setItem('image', url);
+    })
+});
+
 function addblog() {
     if (add_title.value == "" && add_textarea.value == "") {
         add_title.style.border = "2px solid red"
@@ -44,7 +55,7 @@ function addblog() {
         description: add_textarea.value,
         image: addImage_holder
         };
-    hold_blogs = JSON.parse(localStorage.getItem('hold_blogs')) || [];//find a way to concantinate dummy content in local storage
+    hold_blogs = JSON.parse(localStorage.getItem('hold_blogs')) || [];
     hold_blogs.unshift(blogs);
     localStorage.setItem('hold_blogs',JSON.stringify(hold_blogs));
     add_title.value = "";

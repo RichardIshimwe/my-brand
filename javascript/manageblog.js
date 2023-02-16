@@ -53,7 +53,6 @@ for(let i = 0;i < allblogs.length;i++){
         storedBlogs.splice(id,1)
         localStorage.setItem('hold_blogs',JSON.stringify(storedBlogs));
         location.reload();
-        // console.log(storesplice);
     });
 }
 
