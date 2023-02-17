@@ -17,7 +17,7 @@ let blogButtonAnchor = document.querySelectorAll('#openBlog');
 // }
 // window.alert(heart.length);
 // let hold_logedin = localStorage.getItem('logedIn') || "";
-let contact_array = [],contact_object = {names:"",email:"",message:""};
+let contact_array = JSON.parse(localStorage.getItem('messages')) || [],contact_object = {names:"",email:"",message:""};
 
 let storedBlogs = JSON.parse(localStorage.getItem('hold_blogs')) || [];
 
@@ -47,12 +47,12 @@ function chaeckContact(){
             textareaf_contact.value = "";
             },2000);
             contact_object = {
-                names:namesf_contact.value,
-                email:emailf_contact.value,
-                message:textareaf_contact
+                0:namesf_contact.value,
+                1:emailf_contact.value,
+                2:textareaf_contact.value
             }
-            contact_array.push(contact_object);    
-            localStorage.setItem("messages",)
+            contact_array.unshift(contact_object);    
+            localStorage.setItem("messages",JSON.stringify(contact_array));
             popupMessage.style.display = "flex";
             emailf_contact.style.border = "2px solid green";
             namesf_contact.style.border = "2px solid green"
