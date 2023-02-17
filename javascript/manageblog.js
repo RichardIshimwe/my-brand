@@ -58,16 +58,28 @@ console.log(holdStored);
         get_icondiv[i].appendChild(trash);
         }
     }
-//   }
+let popupMessagemanage = document.querySelector('.popupMessagemanage');
+let confirmDelete = document.getElementById("delete");
+let confirmcancel = document.getElementById("cancel");
+
+
 let allblogs = document.querySelectorAll(".fa-trash-can");
 for(let i = 0;i < allblogs.length;i++){
     allblogs[i].addEventListener('click',function(){
-        let id = allblogs[i].getAttribute("id");
-        console.log(id);
-        console.log(i)
-        holdStored.splice(id,1)
-        localStorage.setItem('hold_blogs',JSON.stringify(holdStored));
-        location.reload();
+        popupMessagemanage.style.display = "flex";
+        confirmDelete.addEventListener('click',function(){
+            popupMessagemanage.style.display = "";
+            let id = allblogs[i].getAttribute("id");
+            console.log(id);
+            console.log(i)
+            holdStored.splice(id,1)
+            localStorage.setItem('hold_blogs',JSON.stringify(holdStored));
+            location.reload();
+        })
+        confirmcancel.addEventListener('click',function(){
+            popupMessagemanage.style.display = "";
+        })
+     
     });
 }
 let alledit = document.querySelectorAll(".fa-pen-to-square");

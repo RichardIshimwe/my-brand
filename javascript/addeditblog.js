@@ -3,6 +3,10 @@ let add_textarea = document.getElementById("add_textarea");
 let add_image = document.getElementById("add_image");
 let error_addblog = document.getElementById("errorAdd_title");
 let logedIn = localStorage.getItem('logedIn') || "";
+let userToset = document.querySelector('.userToset');
+
+userToset.innerHTML = logedIn;
+
 if(logedIn === "richard"){}
 else{
 let admin = document.querySelectorAll('.admin');
@@ -10,7 +14,6 @@ for(let i = 0;i < admin.length;i++){
 admin[i].style.display = "none";
 }
 }
-
 
 let dispalyBlog_array = [];
 // ========================================pre-loader===========

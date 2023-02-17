@@ -35,30 +35,7 @@ for(let z = 0; z < allComments.length ;z++){
   commentDivision.appendChild(addComment);
 }
 
-// let item = "heloooo";
-// let comments = storedReadmore.comments
-// console.log(allStoredBlogs[0])
-// allStoredBlogs[0].comments.push(item);
-// console.log(allStoredBlogs);
-
-
-
-// console.log("this is comment"+storedReadmore.comments.commenter); 
-
 commentButton.addEventListener('click',function(){
-  // let comments = allStoredBlogs[storedid].comments || [];
-  // let about = {commenter:"",comment:""};
-  // let addComment = document.createElement("div");
-  // addComment.setAttribute("class", "readmoreComments");
-  // let header = document.createElement("h2");
-  // header.setAttribute("class", "commenterName");
-  // header.innerHTML = getuser;
-  // addComment.appendChild(header);
-  // let commentParagraph = document.createElement("p");
-  // commentParagraph.setAttribute("class", "commenterContent");
-  // commentParagraph.innerHTML = comment.value;
-  // addComment.appendChild(commentParagraph);
-  // commentDivision.appendChild(addComment);
   if(getuser != ""){
   about={
     commenter:getuser,
@@ -70,31 +47,9 @@ commentButton.addEventListener('click',function(){
   location.reload();}else{
     alert("please login");
   }
-  // console.log(about);
-  // console.log(allStoredBlogs[storedid].comments);
-  // console.log(storedid)
   });
 // ========================================pre-loader===========
 window.addEventListener('load',function(){
     let loader = document.querySelector('.holder_wave');
     loader.className += " hidden";
   });
-
-
-
-// let storedReadmore = JSON.parse(localStorage.getItem("readmore")) || [];
-// let readmore_title = document.getElementById("doit");
-// let readmoreDescription = document.getElementById("readmoreDescription");
-// let readmoreCont = document.querySelector('.contentOne');
-
-// let readmoreImage = new Image();
-// readmoreImage.src = storedReadmore.image;
-// readmoreCont.appendChild(readmoreImage);
-// readmoreDescription.innerHTML = storedReadmore.description;
-// readmore_title.innerHTML = storedReadmore.title;
-// console.log(storedReadmore);
-// // ========================================pre-loader===========
-// window.addEventListener('load',function(){
-//     let loader = document.querySelector('.holder_wave');
-//     loader.className += " hidden";
-//   });

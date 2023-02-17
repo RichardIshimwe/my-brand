@@ -37,7 +37,7 @@ function chaeckContact(){
             emailf_contact.value = "";
             namesf_contact.value = "";
             textareaf_contact.value = "";
-            },2000);
+            },3000);
             contact_object = {
                 0:namesf_contact.value,
                 1:emailf_contact.value,
