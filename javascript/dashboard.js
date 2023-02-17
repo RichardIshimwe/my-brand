@@ -2,10 +2,14 @@ let logedinWell = document.getElementById("logedin");
 let blogNumber = document.getElementById("blogNumber");
 let commentCont = document.querySelector(".ad");
 
+
+
 let storedBlogs = JSON.parse(localStorage.getItem('hold_blogs')) || [],messages = JSON.parse(localStorage.getItem('messages')) || [];
 
 let logedIn = localStorage.getItem('logedIn') || "";
-if(logedIn === "richard"){}
+if(logedIn === "richard"){
+    
+}
 else{
 let admin = document.querySelectorAll('.admin');
 for(let i = 0;i < admin.length;i++){

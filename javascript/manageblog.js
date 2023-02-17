@@ -81,7 +81,9 @@ for(let i = 0;i < alledit.length;i++){
     });
 }
 
-
+function logout(){
+    localStorage.setItem('logedIn',"")
+}
 
 
 

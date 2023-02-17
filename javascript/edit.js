@@ -49,3 +49,6 @@ window.addEventListener('load',function(){
     let loader = document.querySelector('.holder_wave');
     loader.className += " hidden";
   });
+  function logout(){
+    localStorage.setItem('logedIn',"")
+}

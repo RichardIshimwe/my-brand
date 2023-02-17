@@ -60,3 +60,6 @@ function github() {
     window.open('https://github.com/rich26638', '_blank');
 }
 // ===================================================end of socialmedia===================================
+function logout(){
+    localStorage.setItem('logedIn',"")
+}
