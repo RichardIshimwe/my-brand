@@ -20,6 +20,8 @@ admin[i].style.display = "none";
     function logMeout(){
         localStorage.setItem('logedIn',"")
     }
+
+    
 window.addEventListener('load',function(){
     let loader = document.querySelector('.holder_wave');
     loader.className += " hidden";

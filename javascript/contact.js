@@ -9,14 +9,6 @@ let allBlogDisplay = document.querySelectorAll('.blogAll');
 let displayImage1 = document.querySelectorAll('.blogOne');
 let displayParagraph = document.querySelectorAll('.blogTwo');
 let blogButtonAnchor = document.querySelectorAll('#openBlog');
-// let heart = document.querySelectorAll('.fa-heart');
-// for(let j = 0;j < heart.length;j++){
-//     heart[i].addEventListener('click',function(){
-//      window.alert(i);
-//     });
-// }
-// window.alert(heart.length);
-// let hold_logedin = localStorage.getItem('logedIn') || "";
 let contact_array = JSON.parse(localStorage.getItem('messages')) || [],contact_object = {names:"",email:"",message:""};
 
 let storedBlogs = JSON.parse(localStorage.getItem('hold_blogs')) || [];
@@ -64,6 +56,7 @@ function chaeckContact(){
 }
 // =====================================================================
 let currentDisplayImage,currentDisplayParagraph,blogId;
+console.log(storedBlogs[0].image)
 for(let i = 0;i < displayImage1.length;i++){
 let button = document.createElement("button");
 button.setAttribute("class", "addedButton")
@@ -72,6 +65,7 @@ button.textContent = "Read More"
 let displayImage = new Image();
 currentDisplayImage = displayImage1[i];
 currentDisplayParagraph = displayParagraph[i];
+console.log(i);
 displayImage.src = storedBlogs[i].image;
 blogButtonAnchor[i].appendChild(button)
 console.log(button)
@@ -84,7 +78,8 @@ console.log("number of buttons:"+allBlogButton.length)
 for(let i = 0;i < allBlogButton.length;i++){
 allBlogButton[i].addEventListener('click',function(){
     let id = this.getAttribute("id");
-    localStorage.setItem('readmore',    JSON.stringify(storedBlogs[id]));
+    // localStorage.setItem('readmore',    JSON.stringify(storedBlogs[id]));
+    localStorage.setItem('readmore', id);
 })
 }
 function logMeout(){

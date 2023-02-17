@@ -38,6 +38,7 @@ function addblog() {
         title: add_title.value,
         description: add_textarea.value,
         image: addImage_holder,
+        comments:[],
         author: logedIn
         };
     hold_blogs = JSON.parse(localStorage.getItem('hold_blogs')) || [];
