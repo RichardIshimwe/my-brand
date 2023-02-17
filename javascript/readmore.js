@@ -59,6 +59,7 @@ commentButton.addEventListener('click',function(){
   // commentParagraph.innerHTML = comment.value;
   // addComment.appendChild(commentParagraph);
   // commentDivision.appendChild(addComment);
+  if(getuser != ""){
   about={
     commenter:getuser,
     comment:comment.value
@@ -66,7 +67,9 @@ commentButton.addEventListener('click',function(){
   allStoredBlogs[storedid].comments.push(about);
   console.log(allStoredBlogs[storedid].comments);
   localStorage.setItem('hold_blogs', JSON.stringify(allStoredBlogs));
-  location.reload();
+  location.reload();}else{
+    alert("please login");
+  }
   // console.log(about);
   // console.log(allStoredBlogs[storedid].comments);
   // console.log(storedid)
