@@ -57,7 +57,8 @@ function chaeckContact(){
 // =====================================================================
 let currentDisplayImage,currentDisplayParagraph,blogId;
 // for(let i = 0;i < displayImage1.length;i++){
-for(let i = 0; i < storedBlogs.length; i++){
+for(let i = 0; i < blogButtonAnchor.length; i++){
+let z = i;
 let button = document.createElement("button");
 button.setAttribute("class", "addedButton")
 button.setAttribute("id", i)
@@ -65,8 +66,9 @@ button.textContent = "Read More"
 let displayImage = new Image();
 currentDisplayImage = displayImage1[i];
 currentDisplayParagraph = displayParagraph[i];
+// console.log(.length);
 displayImage.src = storedBlogs[i].image;
-blogButtonAnchor[i].appendChild(button)
+blogButtonAnchor[i].appendChild(button);
 currentDisplayImage.appendChild(displayImage);
 allBlogDisplay[i].style.display = "flex";
 currentDisplayParagraph.innerHTML = `<a href="./html/readmore.html">${storedBlogs[i].title}</a>`

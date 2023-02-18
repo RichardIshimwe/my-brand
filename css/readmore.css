@@ -722,16 +722,14 @@ display: none;
     grid-area: content_para;
 }
 .content_s{
-    /* background-color: gold; */
     grid-area: contents_1;
-    width: 100%;
-    height: 100%;
-    /* display: grid;
-    justify-content: center; */
+    display: relative;
 }
 .content_s > img,.contents > img{
-    width:95%;
-    height:80%;
+ display: absolute;
+ width:270px;
+ padding-right: 10px;
+ height:150px;
  border-radius: 20px;
  margin-left: 5px;
 }
@@ -804,7 +802,7 @@ display: none;
     font-weight: 700;
     font-size: 20px;
 }
-.pbtn > button {
+.pbtn > a > button {
     background-color: transparent;
     color: #27AE60;
     font-weight: bolder;
@@ -817,7 +815,6 @@ display: none;
 
 .pbtn{
     margin-top: 20px;
-    /* background-color: #191D2B; */
     display: flex;
     justify-content: center;
 }
@@ -865,7 +862,7 @@ display: none;
     border-radius:5px;
 }
 #readBlog{
-    /* display: none; */
+    display: none;
 }
 
 
