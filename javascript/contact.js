@@ -21,7 +21,7 @@ window.addEventListener('load',function(){
 // =================================conatct page========================
 function chaeckContact(){
 
-    if (emailf_contact.value == "" && namesf_contact.value == "" && textareaf_contact.value == "" ) {
+    if (emailf_contact.value == "" || namesf_contact.value == "" || textareaf_contact.value == "" ) {
         emailf_contact.style.border = "2px solid red";
         namesf_contact.style.border = "2px solid red"
         textareaf_contact.style.border = "2px solid red";
@@ -37,7 +37,7 @@ function chaeckContact(){
             emailf_contact.value = "";
             namesf_contact.value = "";
             textareaf_contact.value = "";
-            },3000);
+            },2000);
             contact_object = {
                 0:namesf_contact.value,
                 1:emailf_contact.value,
@@ -52,7 +52,7 @@ function chaeckContact(){
             error_contact.style.color = "green";
             error_contact.innerHTML = "*message sent successful";
     }
-    return true;
+    return false;
 }
 // =====================================================================
 let currentDisplayImage,currentDisplayParagraph,blogId;

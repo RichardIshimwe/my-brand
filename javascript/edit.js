@@ -12,7 +12,6 @@ admin[i].style.display = "none";
 }
 
 receive_image.addEventListener('change', function () {
-    // alert("image selected");
     let imageHolder = new FileReader();
     imageHolder.readAsDataURL(receive_image.files[0]);
     imageHolder.addEventListener('load', () => {

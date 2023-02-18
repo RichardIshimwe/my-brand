@@ -14,6 +14,7 @@ let checkUsername_signup = document.getElementById("checkUsername_signup");
 let checkPasscode_signup = document.getElementById("checkPasscode_signup");
 let checkConfirm_signup = document.getElementById("checkConfirm_signup");
 let passcodeError_signup = document.getElementById("errorPasscode_signup");
+let popupmassageSignup = document.querySelector('.popupMessage');
 let signup_array = [];
 let signup_object ={email:"",username:"",passcode:"",confirmp:""};
 
@@ -74,8 +75,6 @@ function checkSignup() {
             return false;
         }
     }
-
-
 signup_object ={email: emailf_signup.value, 
                 username: usernamef_signup.value,
                 passcode: passcodef_signup.value,
@@ -89,12 +88,18 @@ if(hold){
 }else{
 signup_array.push(signup_object);
 localStorage.setItem('signupFormdata',JSON.stringify(signup_array));
+setTimeout(function(){
+    popupmassageSignup.style.display = "none";
+    emailf_signup.value = ""; 
+    usernamef_signup.value = "";
+    passcodef_signup.value = "";
+    confirmf_signup.value = "";
+    return true;
+    },2000);
+    popupmassageSignup.style.display = "flex";
 }
-emailf_signup.value = ""; 
-usernamef_signup.value = "";
-passcodef_signup.value = "";
-confirmf_signup.value = "";
-return true;
+
+    // return false;
 }
 
 
