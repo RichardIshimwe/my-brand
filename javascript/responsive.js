@@ -5,7 +5,6 @@ let navLinks = navBar.querySelectorAll("li");
 
 hamMenuIcon.addEventListener("click", () => {
   navBar.classList.toggle("active");
-  // window.alert("nav button is clicked");
   hamMenuIcon.classList.toggle("fa-times");
 });
 

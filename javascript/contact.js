@@ -56,8 +56,8 @@ function chaeckContact(){
 }
 // =====================================================================
 let currentDisplayImage,currentDisplayParagraph,blogId;
-console.log(storedBlogs[0].image)
-for(let i = 0;i < displayImage1.length;i++){
+// for(let i = 0;i < displayImage1.length;i++){
+for(let i = 0; i < storedBlogs.length; i++){
 let button = document.createElement("button");
 button.setAttribute("class", "addedButton")
 button.setAttribute("id", i)
@@ -65,20 +65,16 @@ button.textContent = "Read More"
 let displayImage = new Image();
 currentDisplayImage = displayImage1[i];
 currentDisplayParagraph = displayParagraph[i];
-console.log(i);
 displayImage.src = storedBlogs[i].image;
 blogButtonAnchor[i].appendChild(button)
-console.log(button)
 currentDisplayImage.appendChild(displayImage);
 allBlogDisplay[i].style.display = "flex";
 currentDisplayParagraph.innerHTML = `<a href="./html/readmore.html">${storedBlogs[i].title}</a>`
 }
 let allBlogButton = document.querySelectorAll('.addedButton');
-console.log("number of buttons:"+allBlogButton.length)
 for(let i = 0;i < allBlogButton.length;i++){
 allBlogButton[i].addEventListener('click',function(){
     let id = this.getAttribute("id");
-    // localStorage.setItem('readmore',    JSON.stringify(storedBlogs[id]));
     localStorage.setItem('readmore', id);
 })
 }
@@ -88,7 +84,6 @@ localStorage.setItem('logedIn',"")
 const scrollToTopBtn = document.getElementById('scroll-to-top-btn');
 
 window.onscroll = function() {
-  console.log(document.body.scrollTop)
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         scrollToTopBtn.style.display = "block";
     } else {

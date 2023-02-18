@@ -15,11 +15,7 @@ readmoreImage.src = allStoredBlogs[storedid].image;
 readmoreCont.appendChild(readmoreImage);
 readmoreDescription.innerHTML = allStoredBlogs[storedid].description;
 readmore_title.innerHTML = allStoredBlogs[storedid].title;
-// console.log(allStoredBlogs[storedid].comments.comment)
 let allComments = allStoredBlogs[storedid].comments || [];
-
-// console.log(allStoredBlogs[storedid].comments[storedid].commenter);
-console.log(allComments)
 
 for(let z = 0; z < allComments.length ;z++){
   let addComment = document.createElement("div");
@@ -42,7 +38,6 @@ commentButton.addEventListener('click',function(){
     comment:comment.value
   };
   allStoredBlogs[storedid].comments.push(about);
-  console.log(allStoredBlogs[storedid].comments);
   localStorage.setItem('hold_blogs', JSON.stringify(allStoredBlogs));
   location.reload();}else{
     alert("please login");

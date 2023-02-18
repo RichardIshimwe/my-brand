@@ -28,7 +28,6 @@ for(let i = 0;i < storedBlogs.length;i++){
     }
 }
 }
-console.log(holdStored);
 // ==================================manage blog===========================================
 //   function manageBlog(){
     let manage_image_state,manage_paragraph_state;
@@ -73,8 +72,6 @@ for(let i = 0;i < allblogs.length;i++){
 confirmDelete.addEventListener('click',function(){
     popupMessagemanage.style.display = "";
     let id = allblogs[localStorage.getItem('deleteId')].getAttribute("id");
-    console.log(id);
-    console.log(localStorage.getItem('deleteId'));
     holdStored.splice(id,1)
     localStorage.setItem('hold_blogs',JSON.stringify(holdStored));
     location.reload();
@@ -83,13 +80,11 @@ confirmcancel.addEventListener('click',function(){
     popupMessagemanage.style.display = "";
 })
 let alledit = document.querySelectorAll(".fa-pen-to-square");
-console.log("edit cans:"+alledit.length);
 for(let i = 0;i < alledit.length;i++){
     alledit[i].addEventListener('click',function(){
     let edit = alledit[i].getAttribute("id");
     localStorage.setItem('editId',edit);
     window.location.href = "editblog.html";
-    console.log(localStorage.getItem('editId'));
     });
 }
 

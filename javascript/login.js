@@ -10,7 +10,6 @@ let hold_logedin = localStorage.getItem('logedIn') || "";
 let logedout = document.getElementById("logedout");
 let logedin = document.getElementById("logedin");
 
-console.log(hold_logedin);
 
 if(hold_logedin != ""){
     logedin.innerHTML = `<i class="fa-solid fa-user"></i>${hold_logedin}`;
@@ -23,7 +22,6 @@ function alerted(){
 // ========================================pre-loader===========
 window.addEventListener('load',function(){
     let loader = document.querySelector('.holder_wave');
-    // console.log(loader);
     loader.className += " hidden";
   });
 
@@ -62,7 +60,6 @@ login_object = {
 };
 signup_array = JSON.parse(localStorage.getItem('signupFormdata')) || [];
 let logedIn = {};
-console.log(signup_array)
 let checkmail =signup_array.find(obj => obj.email === login_object.email)
 let hold = signup_array.find(object => object.email === login_object.email && object.passcode === login_object.passcode);
 if(hold){
@@ -89,3 +86,31 @@ else{
 }}
    return false;
 }
+let allHearts = document.querySelectorAll("#numberLikes");
+let allHeartsicon = document.querySelectorAll(".fa-heart");
+let object = {0:0,1:0,2:0,3:0,4:0,5:0,6:0};
+let holdlikes = localStorage.getItem('holdlikes') || {};
+
+for(let o = 0;o < allHearts.length;o++){
+    allHeartsicon[o].addEventListener('click',function(){
+        let l = JSON.parse(holdlikes);
+        let like = l.o+1;
+        object.o = like;
+       localStorage.setItem('holdlikes',JSON.stringify(object));
+       allHearts[o].innerHTML = 1;
+       allHeartsicon[o].style.color = "gold";
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

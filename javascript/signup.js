@@ -89,7 +89,6 @@ if(hold){
 }else{
 signup_array.push(signup_object);
 localStorage.setItem('signupFormdata',JSON.stringify(signup_array));
-console.log(JSON.parse(localStorage.getItem('signupFormdata')));
 }
 emailf_signup.value = ""; 
 usernamef_signup.value = "";

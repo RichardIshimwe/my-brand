@@ -36,8 +36,7 @@ for(let i = 0;i < messages.length;i++){
        division.appendChild(paragraph)
     }
     
-    console.log(division);
-    console.log(commentCont)
+  
     commentCont.appendChild(division)
 }
 
