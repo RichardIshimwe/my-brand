@@ -62,8 +62,10 @@ let currentDisplayImage,currentDisplayParagraph,blogId;
 // let i = 0;
 // while(storedBlogs.length < 3 && )
 // console.log(storedBlogs.length);
-
-
+let blogContainer = document.querySelector(".blog_content");
+let noblogs = document.querySelector('.noblogs');
+let readmoreBtn = document.querySelector('.blog_button');
+if(storedBlogs.length != 0){
 for(let i = 0; i < storedBlogs.length; i++){
 if(i < 3){
 let button = document.createElement("button");
@@ -79,6 +81,11 @@ currentDisplayImage.appendChild(displayImage);
 allBlogDisplay[i].style.display = "flex";
 currentDisplayParagraph.innerHTML = `<a href="./html/readmore.html">${storedBlogs[i].title}</a>`
 }
+}}else if(storedBlogs.length == 0){
+     noblogs.style.display = "grid";
+     readmoreBtn.style.display = "none";
+    // blogContainer.style.background = "green";
+    // blogContainer.innerHTML = "heloooooooooo"
 }
 
 

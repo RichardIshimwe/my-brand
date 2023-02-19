@@ -960,6 +960,16 @@ textarea:focus {
     "blog_btn blog_btn";
   grid-template-rows: 1fr 0.1fr;
 }
+.noblogs{
+position:absolute;
+height: 100vh;
+width: 100%;
+display: flex;
+align-items: center;
+text-align: center;
+display:none;
+}
+
 
 .blog_image {
   grid-area: image_blog;
