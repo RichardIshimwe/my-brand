@@ -3,6 +3,7 @@ let manage_image = document.querySelectorAll('.imgcont');
 let blogsDisplay = document.querySelectorAll('.manage');
 let dispalyBlog_array = [];
 let logedIn = localStorage.getItem('logedIn') || "";
+let dateToday = document.querySelectorAll('#dateToday');
 if(logedIn === "richard"){}
 else{
 let admin = document.querySelectorAll('.admin');
@@ -46,6 +47,7 @@ for(let i = 0;i < storedBlogs.length;i++){
         icon.setAttribute("href","./editblog.html")
         manage_paragraph_state = manage_paragraph[i];
         para.innerHTML = holdStored[i].title;
+        dateToday[i].innerHTML = `<i class="fa-regular fa-clock"></i>${holdStored[i].date}`;
         let imageManage = new Image();
         imageManage.src = holdStored[i].image;
         manage_image_state = manage_image[i];

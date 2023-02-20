@@ -8,12 +8,15 @@ let storedReadmore = JSON.parse(localStorage.getItem("readmore")) || [];
 let readmore_title = document.getElementById("doit");
 let readmoreDescription = document.getElementById("readmoreDescription");
 let readmoreCont = document.querySelector('.contentOne');
+let setTime = document.getElementById("setTime");
 
 
 let readmoreImage = new Image();
 readmoreImage.src = allStoredBlogs[storedid].image;
 readmoreCont.appendChild(readmoreImage);
 readmoreDescription.innerHTML = allStoredBlogs[storedid].description;
+setTime.innerHTML = `<i class="fa-regular fa-clock"></i>${allStoredBlogs[storedid].date}`;
+console.log(allStoredBlogs[storedid].date)
 readmore_title.innerHTML = allStoredBlogs[storedid].title;
 let allComments = allStoredBlogs[storedid].comments || [];
 
@@ -39,7 +42,8 @@ commentButton.addEventListener('click',function(){
   };
   allStoredBlogs[storedid].comments.push(about);
   localStorage.setItem('hold_blogs', JSON.stringify(allStoredBlogs));
-  location.reload();}else{
+  location.reload();
+}else{
     alert("please login");
   }
   });

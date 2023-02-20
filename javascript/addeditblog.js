@@ -4,6 +4,13 @@ let add_image = document.getElementById("add_image");
 let error_addblog = document.getElementById("errorAdd_title");
 let logedIn = localStorage.getItem('logedIn') || "";
 let userToset = document.querySelector('.userToset');
+const date = new Date();
+let day = date.getDate();
+let month = date.getMonth();
+let year = date.getFullYear();
+
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
 
 userToset.innerHTML = logedIn;
 
@@ -35,15 +42,17 @@ add_image.addEventListener('change', function () {
 });
 
 function addblog() {
-
+    let actualDate = `${day}-${months[month]}-${year}`;
     addImage_holder = localStorage.getItem('image');
     blogs = {
         title: add_title.value,
         description: add_textarea.value,
         image: addImage_holder,
         comments:[],
-        author: logedIn
+        author: logedIn,
+        date:actualDate
         };
+    console.log(blogs);
     hold_blogs = JSON.parse(localStorage.getItem('hold_blogs')) || [];
     hold_blogs.unshift(blogs);
     localStorage.setItem('hold_blogs',JSON.stringify(hold_blogs));

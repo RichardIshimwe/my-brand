@@ -71,10 +71,16 @@ body{
     display: grid;
     text-align: center;
 }
+
+.controldiv{
+    display: grid;
+    grid-template-columns: 1fr 0.4fr;
+    font-size: 22px;
+    padding: 10px 0px;
+}
+
 #doit{
     color:white;
-    padding: 10px 0px;
-    font-size: 22px;
 }
 .readmore_nav > a{
     color: #27AE60;
@@ -400,15 +406,21 @@ padding: 10px;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas: "imgcont imgcont"
+                         "date    date"
                          "imgcont12 imgcont12"
                          "imgcont13 imgcont13";
-     grid-template-rows: 4fr 0.8fr 1.2fr;
+     grid-template-rows: 4fr 0.2fr 0.8fr 1fr;
      /* display: none; */
 }
+.dateCont{
+    margin-top:5px;
+    grid-area: date;
+}
 .imgcont{
-    /* background-color: brown; */
+    background-color: #27AE60;
     grid-area: imgcont;
     border-radius: 20px;
+    height: 240px;
 }
 .imgcont > img{
     border-radius: 20px;
@@ -416,6 +428,7 @@ padding: 10px;
     height: 100%;
 }
 .imgcont12{
+    /* background-color: #27AE60; */
     grid-area: imgcont12;
     display: flex;
     justify-content: center;
