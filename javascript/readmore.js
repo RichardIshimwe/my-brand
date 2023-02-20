@@ -1,5 +1,5 @@
 let storedid = localStorage.getItem("readmore") || "";
-let allStoredBlogs = JSON.parse(localStorage.getItem('hold_blogs'));
+let allStoredBlogs = JSON.parse(localStorage.getItem('hold_blogs')) || [];
 let getuser = localStorage.getItem("logedIn") || "";
 let comment = document.getElementById("comment");
 let commentButton = document.querySelector('.commentButton');
@@ -47,6 +47,52 @@ commentButton.addEventListener('click',function(){
     alert("please login");
   }
   });
+
+
+
+
+
+let paragraph = document.querySelectorAll('#p');
+let dates = document.querySelectorAll('#date');
+let allButton = document.querySelectorAll('#button');
+let imageTodisplay = document.querySelectorAll('.imagef');
+let imageDivision = document.querySelectorAll('#listRecentblogs');
+console.log(imageDivision.length);
+for(let i = 0;i < allStoredBlogs.length;i++){
+  let btn = document.createElement("button");
+  let imagetodisplay = new Image();
+  btn.textContent = "read more";
+  if(i<3){
+    imagetodisplay.src = allStoredBlogs[i].image;
+    imageTodisplay[i].appendChild(imagetodisplay);
+    btn.setAttribute("class","readbtns");
+    btn.setAttribute("id",i);
+    dates[i].innerHTML = allStoredBlogs[i].date;
+    paragraph[i].innerHTML = allStoredBlogs[i].title;
+    allButton[i].appendChild(btn);
+    imageDivision[i].style.display = "grid";
+  }
+}
+
+let readMoreadded = document.querySelectorAll('.readbtns');
+for(let i = 0;i < readMoreadded.length;i++){
+  readMoreadded[i].addEventListener('click',function(){
+    let id = this.getAttribute("id");
+    localStorage.setItem('readmore', id);
+    location.reload();
+})
+}
+
+
+
+
+
+
+
+
+
+
+
 // ========================================pre-loader===========
 window.addEventListener('load',function(){
     let loader = document.querySelector('.holder_wave');

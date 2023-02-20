@@ -84,11 +84,7 @@ currentDisplayParagraph.innerHTML = `<a href="./html/readmore.html">${storedBlog
 }}else if(storedBlogs.length == 0){
      noblogs.style.display = "grid";
      readmoreBtn.style.display = "none";
-    // blogContainer.style.background = "green";
-    // blogContainer.innerHTML = "heloooooooooo"
 }
-
-
 
 let allBlogButton = document.querySelectorAll('.addedButton');
 for(let i = 0;i < allBlogButton.length;i++){

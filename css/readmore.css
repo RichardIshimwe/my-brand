@@ -150,6 +150,14 @@ body{
     align-items: center;
     justify-content: center;
 }
+#listRecentblogs{
+    display:none;
+}
+.imagef > img{
+    border-radius: 20px;
+    width:80%;
+    height: 80%;
+}
 .contentOne{
     grid-area: contentOne;
 }
