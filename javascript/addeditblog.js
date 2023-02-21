@@ -42,6 +42,7 @@ add_image.addEventListener('change', function () {
 });
 
 function addblog() {
+    if(add_title.value != "" && add_textarea.value != ""){
     let actualDate = `${day}-${months[month]}-${year}`;
     addImage_holder = localStorage.getItem('image');
     blogs = {
@@ -58,7 +59,12 @@ function addblog() {
     localStorage.setItem('hold_blogs',JSON.stringify(hold_blogs));
     add_title.value = "";
     add_textarea.value = "";
-    return true;
+    return true;}
+    else{
+        add_title.style.border = "2px solid red" 
+        add_textarea.style.border = "2px solid red"
+    }
+    return false;
 }
 
 function edit() {
