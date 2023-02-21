@@ -34,31 +34,74 @@ for(let i = 0;i < storedBlogs.length;i++){
     let manage_image_state,manage_paragraph_state;
     let get_icondiv = document.querySelectorAll('.imgcont13');
 
-    for(let i = 0;i < holdStored.length;i++){
-        divisionState++;
-        localStorage.setItem('divisionState',divisionState);
-        let icon = document.createElement("i");
-        let trash = document.createElement("i");
-        let para = document.createElement("p");
-        icon.className = "fa-solid fa-pen-to-square";
-        trash.className = "fa-solid fa-trash-can";
-        trash.setAttribute("id",i);
-        icon.setAttribute("id",i);
-        icon.setAttribute("href","./editblog.html")
-        manage_paragraph_state = manage_paragraph[i];
-        para.innerHTML = holdStored[i].title;
-        dateToday[i].innerHTML = `<i class="fa-regular fa-clock"></i>${holdStored[i].date}`;
-        let imageManage = new Image();
-        imageManage.src = holdStored[i].image;
-        manage_image_state = manage_image[i];
-        if(divisionState < 7){
-        blogsDisplay[i].style.display = "flex";
-        manage_image_state.appendChild(imageManage)
-        manage_paragraph_state.appendChild(para);
-        get_icondiv[i].appendChild(icon);
-        get_icondiv[i].appendChild(trash);
-        }
-    }
+
+
+//     <div class="manage image1">
+//     <div class="imagew">
+//         <div class="imgcont">
+//         </div>
+//         <div class="dateCont">
+//             <p id="dateToday"></p>
+//         </div>
+//         <div class="imgcont12">
+//         </div>
+//         <div class="imgcont13">
+//         </div>
+//     </div>
+// </div>
+let blogDivision = document.querySelector('.add_content');
+
+
+
+for(let i = 0;i < storedBlogs.length;i++){
+blogDivision.innerHTML +=`
+   <div class="manage">
+    <div class="imagew">
+        <div class="imgcont">
+        <img src="${storedBlogs[i].image}" alt="" srcset="">
+        </div>
+        <div class="dateCont">
+            <p id="dateToday">
+            <i class="fa-regular fa-clock"></i>${holdStored[i].date}
+            </p>
+        </div>
+        <div class="imgcont12">
+        <p>${storedBlogs[i].title}</p>
+        </div>
+           <div class="imgcont13">
+    <i class="fa-solid fa-pen-to-square" id="${i}"></i>
+    <i class="fa-solid fa-trash-can" id="${i}"></i>
+            </div>
+           </div>
+             </div>
+   `
+}
+    // for(let i = 0;i < holdStored.length;i++){
+
+    //     divisionState++;
+    //     localStorage.setItem('divisionState',divisionState);
+    //     let icon = document.createElement("i");
+    //     let trash = document.createElement("i");
+    //     let para = document.createElement("p");
+    //     icon.className = "fa-solid fa-pen-to-square";
+    //     trash.className = "fa-solid fa-trash-can";
+    //     trash.setAttribute("id",i);
+    //     icon.setAttribute("id",i);
+    //     icon.setAttribute("href","./editblog.html")
+    //     manage_paragraph_state = manage_paragraph[i];
+    //     para.innerHTML = holdStored[i].title;
+    //     dateToday[i].innerHTML = `<i class="fa-regular fa-clock"></i>${holdStored[i].date}`;
+    //     let imageManage = new Image();
+    //     imageManage.src = holdStored[i].image;
+    //     manage_image_state = manage_image[i];
+    //     if(divisionState < 7){
+    //     blogsDisplay[i].style.display = "flex";
+    //     manage_image_state.appendChild(imageManage)
+    //     manage_paragraph_state.appendChild(para);
+    //     get_icondiv[i].appendChild(icon);
+    //     get_icondiv[i].appendChild(trash);
+    //     }
+    // }
 let popupMessagemanage = document.querySelector('.popupMessagemanage');
 let confirmDelete = document.getElementById("delete");
 let confirmcancel = document.getElementById("cancel");

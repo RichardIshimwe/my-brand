@@ -48,10 +48,6 @@ commentButton.addEventListener('click',function(){
   }
   });
 
-
-
-
-
 let paragraph = document.querySelectorAll('#p');
 let dates = document.querySelectorAll('#date');
 let allButton = document.querySelectorAll('#button');
@@ -82,16 +78,6 @@ for(let i = 0;i < readMoreadded.length;i++){
     location.reload();
 })
 }
-
-
-
-
-
-
-
-
-
-
 
 // ========================================pre-loader===========
 window.addEventListener('load',function(){
