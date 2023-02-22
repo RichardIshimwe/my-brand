@@ -9,12 +9,13 @@ let readmore_title = document.getElementById("doit");
 let readmoreDescription = document.getElementById("readmoreDescription");
 let readmoreCont = document.querySelector('.contentOne');
 let setTime = document.getElementById("setTime");
-
+let author = document.getElementById("author");
 
 let readmoreImage = new Image();
 readmoreImage.src = allStoredBlogs[storedid].image;
 readmoreCont.appendChild(readmoreImage);
 readmoreDescription.innerHTML = allStoredBlogs[storedid].description;
+author.innerHTML = allStoredBlogs[storedid].author;
 setTime.innerHTML = `<i class="fa-regular fa-clock"></i>${allStoredBlogs[storedid].date}`;
 console.log(allStoredBlogs[storedid].date)
 readmore_title.innerHTML = allStoredBlogs[storedid].title;

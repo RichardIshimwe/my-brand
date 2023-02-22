@@ -80,7 +80,9 @@ body{
 }
 
 #doit{
+    text-align: center;
     color:white;
+    font-size: 18px;
 }
 .readmore_nav > a{
     color: #27AE60;
@@ -440,8 +442,6 @@ padding: 10px;
 .author{
     grid-area: author;
     font-size: 20px;
-    /* color: green; */
-    /* background-color: brown; */
 }
 .dateCont{
     margin-top:5px;
