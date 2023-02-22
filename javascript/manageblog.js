@@ -4,7 +4,9 @@ let blogsDisplay = document.querySelectorAll('.manage');
 let dispalyBlog_array = [];
 let logedIn = localStorage.getItem('logedIn') || "";
 let dateToday = document.querySelectorAll('#dateToday');
-if(logedIn === "richard"){}
+if(logedIn === "richard"){
+
+}
 else{
 let admin = document.querySelectorAll('.admin');
 for(let i = 0;i < admin.length;i++){
@@ -35,25 +37,11 @@ for(let i = 0;i < storedBlogs.length;i++){
     let get_icondiv = document.querySelectorAll('.imgcont13');
 
 
-
-//     <div class="manage image1">
-//     <div class="imagew">
-//         <div class="imgcont">
-//         </div>
-//         <div class="dateCont">
-//             <p id="dateToday"></p>
-//         </div>
-//         <div class="imgcont12">
-//         </div>
-//         <div class="imgcont13">
-//         </div>
-//     </div>
-// </div>
 let blogDivision = document.querySelector('.add_content');
 
 
 
-for(let i = 0;i < storedBlogs.length;i++){
+for(let i = 0;i < holdStored.length;i++){
 blogDivision.innerHTML +=`
    <div class="manage">
     <div class="imagew">
@@ -65,6 +53,7 @@ blogDivision.innerHTML +=`
             <i class="fa-regular fa-clock"></i>${holdStored[i].date}
             </p>
         </div>
+        <div class="author">Author: ${storedBlogs[i].author}</div>
         <div class="imgcont12">
         <p>${storedBlogs[i].title}</p>
         </div>

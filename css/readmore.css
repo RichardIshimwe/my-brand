@@ -431,10 +431,17 @@ padding: 10px;
     grid-template-columns: 1fr;
     grid-template-areas: "imgcont imgcont"
                          "date    date"
+                         "author  author"
                          "imgcont12 imgcont12"
                          "imgcont13 imgcont13";
-     grid-template-rows: 4fr 0.2fr 0.8fr 1fr;
+     grid-template-rows: 4fr 0.2fr 0.4fr 0.4fr 1fr;
      /* display: none; */
+}
+.author{
+    grid-area: author;
+    font-size: 20px;
+    /* color: green; */
+    /* background-color: brown; */
 }
 .dateCont{
     margin-top:5px;

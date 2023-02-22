@@ -29,7 +29,7 @@ let invalidCommand = () =>{
   p_message.innerHTML = "invalid command please try ~help to view more commands";
   help_terminal.appendChild(p_message)
 }
-document.addEventListener("keydown", function(event) {
+document.addEventListener("keydown", (event) => {
   if (event.keyCode === 13) {
     if(inputCommand.value.includes("open")){
     let commandHolder = inputCommand.value.split(" ");
