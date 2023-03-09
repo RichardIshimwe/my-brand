@@ -11,12 +11,47 @@ let displayParagraph = document.querySelectorAll('.blogTwo');
 let blogButtonAnchor = document.querySelectorAll('#openBlog');
 let contact_array = JSON.parse(localStorage.getItem('messages')) || [],contact_object = {names:"",email:"",message:""};
 
-let storedBlogs = JSON.parse(localStorage.getItem('hold_blogs')) || [];
+let currentDisplayImage,currentDisplayParagraph,blogId;
+let blogContainer = document.querySelector(".blog_content");
+let noblogs = document.querySelector('.noblogs');
+let readmoreBtn = document.querySelector('.blog_button');
+
+let storedBlogs = [];
 
 // ========================================pre-loader===========
 window.addEventListener('load',function(){
     let loader = document.querySelector('.holder_wave');
     loader.className += " hidden";
+    fetch('https://puce-helpful-xerus.cyclic.app/blogs',)
+    .then(response => response.json())
+    .then(async (resp) =>{
+        storedBlogs = await resp.data;
+    if(storedBlogs.length != 0){
+        let iterate = storedBlogs.length -1;
+        for(let i = 0; i < storedBlogs.length; i++){
+        if(i < 3){
+        let button = document.createElement("button");
+        button.setAttribute("class", "addedButton")
+        button.setAttribute("id", iterate)
+        button.textContent = "Read More"
+        let displayImage = new Image();
+        currentDisplayImage = displayImage1[i];
+        currentDisplayParagraph = displayParagraph[i];
+        displayImage.src = storedBlogs[iterate].image;
+        console.log(storedBlogs[iterate].image)
+        blogButtonAnchor[i].appendChild(button);
+        currentDisplayImage.appendChild(displayImage);
+        allBlogDisplay[i].style.display = "flex";
+        currentDisplayParagraph.innerHTML = `<a href="./html/readmore.html">${storedBlogs[iterate].title}</a>`
+        }
+        iterate--;
+        }}else if(storedBlogs.length == 0){
+             noblogs.style.display = "grid";
+             readmoreBtn.style.display = "none";
+        }
+        return resp;
+    })
+    
   });
 // =================================conatct page========================
 function chaeckContact(){
@@ -55,44 +90,54 @@ function chaeckContact(){
     return false;
 }
 // =====================================================================
-let currentDisplayImage,currentDisplayParagraph,blogId;
-// for(let i = 0;i < displayImage1.length;i++){
-// if
 
-// let i = 0;
-// while(storedBlogs.length < 3 && )
-// console.log(storedBlogs.length);
-let blogContainer = document.querySelector(".blog_content");
-let noblogs = document.querySelector('.noblogs');
-let readmoreBtn = document.querySelector('.blog_button');
-if(storedBlogs.length != 0){
-for(let i = 0; i < storedBlogs.length; i++){
-if(i < 3){
-let button = document.createElement("button");
-button.setAttribute("class", "addedButton")
-button.setAttribute("id", i)
-button.textContent = "Read More"
-let displayImage = new Image();
-currentDisplayImage = displayImage1[i];
-currentDisplayParagraph = displayParagraph[i];
-displayImage.src = storedBlogs[i].image;
-blogButtonAnchor[i].appendChild(button);
-currentDisplayImage.appendChild(displayImage);
-allBlogDisplay[i].style.display = "flex";
-currentDisplayParagraph.innerHTML = `<a href="./html/readmore.html">${storedBlogs[i].title}</a>`
-}
-}}else if(storedBlogs.length == 0){
-     noblogs.style.display = "grid";
-     readmoreBtn.style.display = "none";
-}
 
+
+
+
+// if(storedBlogs.length != 0){
+// for(let i = 0; i < storedBlogs.length; i++){
+// if(i < 3){
+//     console.log("blogs after displaying them",storedBlogs)
+//     console.log("you can add blog here");
+// let button = document.createElement("button");
+// button.setAttribute("class", "addedButton")
+// button.setAttribute("id", i)
+// button.textContent = "Read More"
+// let displayImage = new Image();
+// currentDisplayImage = displayImage1[i];
+// currentDisplayParagraph = displayParagraph[i];
+// displayImage.src = storedBlogs[i].image;
+// blogButtonAnchor[i].appendChild(button);
+// currentDisplayImage.appendChild(displayImage);
+// allBlogDisplay[i].style.display = "flex";
+// currentDisplayParagraph.innerHTML = `<a href="./html/readmore.html">${storedBlogs[i].title}</a>`
+// }
+// }}else if(storedBlogs.length == 0){
+//      noblogs.style.display = "grid";
+//      readmoreBtn.style.display = "none";
+// }
+
+let waitforReadingButtons = false;
+console.log(waitforReadingButtons);
+setTimeout(function(arg1, arg2) {
+    // code to be executed after a delay
+    console.log(arg1, arg2);
+    waitforReadingButtons = true;
+    console.log(waitforReadingButtons);
+  }, 3000, "Hello", "World");
+  if(waitforReadingButtons){
 let allBlogButton = document.querySelectorAll('.addedButton');
-for(let i = 0;i < allBlogButton.length;i++){
+for(let i = 0;i < allBlogButton.length;i++)
+for(let i = 0;i < 3;i++){
+console.log(allBlogButton[i])
 allBlogButton[i].addEventListener('click',function(){
     let id = this.getAttribute("id");
+    alert(id);
     localStorage.setItem('readmore', id);
 })
-}
+}}
+
 function logMeout(){
 localStorage.setItem('logedIn',"")
 }

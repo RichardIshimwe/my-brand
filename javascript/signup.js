@@ -1,8 +1,4 @@
 var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-let emailf_signup = document.getElementById("emailf_signup");
-let usernamef_signup = document.getElementById("usernamef_signup");
-let passcodef_signup = document.getElementById("passcodef_signup");
-let confirmf_signup = document.getElementById("confirmf_signup");
 let passcode_signup = document.getElementById("passcodef_signup");
 let emailCheck_signup = document.getElementById("emailCheckLogin");
 let errorEmail_signup = document.getElementById("errorEmail_signup");
@@ -16,9 +12,15 @@ let checkConfirm_signup = document.getElementById("checkConfirm_signup");
 let passcodeError_signup = document.getElementById("errorPasscode_signup");
 let popupmassageSignup = document.querySelector('.popupMessage');
 let signup_array = [];
-let signup_object ={email:"",username:"",passcode:"",confirmp:""};
+// let signup_object ={email:"",username:"",passcode:"",confirmp:""};
+let signupForm = document.getElementById("sigupform")
 
-function checkSignup() {
+signupForm.addEventListener('submit', (event) =>{
+  event.preventDefault();
+let emailf_signup = document.getElementById("emailf_signup");
+let usernamef_signup = document.getElementById("usernamef_signup");
+let passcodef_signup = document.getElementById("passcodef_signup");
+let confirmf_signup = document.getElementById("confirmf_signup");
     if (emailf_signup.value == "" && usernamef_signup.value == "" && passcodef_signup.value == "" && confirmf_signup.value == "") {
         emailf_signup.style.border = "2px solid red"
         usernamef_signup.style.border = "2px solid red";
@@ -47,7 +49,7 @@ function checkSignup() {
             errorUsername_signup.innerHTML = "*please enter the valid username";
             return false;
         }
-        if (passcodef_signup.value.length > 4) {
+        if (passcodef_signup.value.length > 2) {
             passcodef_signup.style.border = "2px solid green";
             checkPasscode_signup.style.display = "flex";
             passcodeError_signup.innerHTML = "";
@@ -75,31 +77,59 @@ function checkSignup() {
             return false;
         }
     }
-signup_object ={email: emailf_signup.value, 
-                username: usernamef_signup.value,
-                passcode: passcodef_signup.value,
-                confirmp: confirmf_signup.value};
-signup_array = JSON.parse(localStorage.getItem('signupFormdata')) || [];
-let hold = signup_array.find(object => object.username === signup_object.username);
-if(hold){
-    errorEmail_signup.style.color = "green";
-    errorEmail_signup.innerHTML = "The username is taken";
-    return false;
-}else{
-signup_array.push(signup_object);
-localStorage.setItem('signupFormdata',JSON.stringify(signup_array));
-setTimeout(function(){
-    popupmassageSignup.style.display = "none";
+let signup_object ={email: emailf_signup.value, 
+    username: usernamef_signup.value,
+    password: passcodef_signup.value,
+    confirmPassword: confirmf_signup.value};
+
+console.log(signup_object);
+ fetch('https://puce-helpful-xerus.cyclic.app/signup', {
+     method: 'POST',
+     headers: {
+       'Content-Type': 'application/json'
+     },
+     body: JSON.stringify(signup_object)
+   })
+   .then( response => response.json())
+   .then(resp =>{
+    console.log(resp)
+    if(resp.data){
+     console.log("signup complete")   
+    //  location.href = 'http://127.0.0.1:5500/index.html#login'
+     location.href = 'https://my-brand-richard.netlify.app/index.html#login'
     emailf_signup.value = ""; 
     usernamef_signup.value = "";
     passcodef_signup.value = "";
     confirmf_signup.value = "";
-    return true;
-    },2000);
-    popupmassageSignup.style.display = "flex";
+    }else{
+        errorEmail_signup.innerHTML = resp.message;
+    }
+    return resp
 }
+   )
+
+
+// signup_array = JSON.parse(localStorage.getItem('signupFormdata')) || [];
+// let hold = signup_array.find(object => object.username === signup_object.username);
+// if(hold){
+//     errorEmail_signup.style.color = "green";
+//     errorEmail_signup.innerHTML = "The username is taken";
+//     return false;
+// }else{
+// signup_array.push(signup_object);
+// localStorage.setItem('signupFormdata',JSON.stringify(signup_array));
+// setTimeout(function(){
+//     popupmassageSignup.style.display = "none";
+//     emailf_signup.value = ""; 
+//     usernamef_signup.value = "";
+//     passcodef_signup.value = "";
+//     confirmf_signup.value = "";
+//     return true;
+//     },2000);
+//     popupmassageSignup.style.display = "flex";
+// }
 
     // return false;
-}
+})
 
 
