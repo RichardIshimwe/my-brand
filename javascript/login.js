@@ -1,5 +1,3 @@
-let emailf_login = document.getElementById("emailf_login");
-let passcode_login = document.getElementById("passcodef_login");
 let emailCheck_login = document.getElementById("emailCheckLogin");
 let emailError_login = document.getElementById("emailLogin_error");
 let passcodeError_login = document.getElementById("errorPasscode_login");
@@ -9,7 +7,7 @@ var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 let hold_logedin = localStorage.getItem('logedIn') || "";
 let logedout = document.getElementById("logedout");
 let logedin = document.getElementById("logedin");
-
+let loginForm = document.getElementById("loginForm");
 
 if(hold_logedin != ""){
     logedin.innerHTML = `<i class="fa-solid fa-user"></i>${hold_logedin}`;
@@ -25,7 +23,10 @@ window.addEventListener('load',function(){
     loader.className += " hidden";
   });
 
-function checkLogin() {
+loginForm.addEventListener('submit', (event) =>{
+ event.preventDefault();
+let emailf_login = document.getElementById("emailf_login");
+let passcode_login = document.getElementById("passcodef_login");
     let state = 0;
     if (emailf_login.value == "" && passcode_login.value == "") {
         emailError_login.innerHTML = "*fields can not be empty";
@@ -35,7 +36,6 @@ function checkLogin() {
     } else {
         if (regex.test(emailf_login.value)) {
             emailf_login.style.border = "2px solid green"
-            checkEmail_login.style.display = "block";
             emailError_login.innerHTML = "";
             passcode_login.style.border = "none";
             state = 10;
@@ -54,38 +54,38 @@ function checkLogin() {
             } 
         }
     }
-login_object = {
-    email: emailf_login.value,
-    passcode: passcode_login.value
-};
-signup_array = JSON.parse(localStorage.getItem('signupFormdata')) || [];
-let logedIn = {};
-let checkmail =signup_array.find(obj => obj.email === login_object.email)
-let hold = signup_array.find(object => object.email === login_object.email && object.passcode === login_object.passcode);
-if(hold){
-    localStorage.setItem('logedIn',hold.username);
-    emailf_login.value ="";
-    passcode_login.value ="";
-    return true;
-}
-else{
-    if(checkmail){
-        passcode_login.style.border = "none";
-        checkEmail_login.style.display = "none";
-        emailError_login.innerHTML = "";
-        emailf_login.border = "none";
-        passcodeError_login.innerHTML = "";
-        emailError_login.innerHTML = "*incorrect email or password";
-    }else{
-    passcode_login.style.border = "none";
-    checkEmail_login.style.display = "none";
-    emailError_login.innerHTML = "";
-    emailf_login.border = "none";
-    passcodeError_login.innerHTML = "";
-    emailError_login.innerHTML = "*do a signup with the below link";
-}}
-   return false;
-}
+    let data = {
+        email: emailf_login.value,
+        password: passcode_login.value
+    };
+    fetch('https://puce-helpful-xerus.cyclic.app/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(response => response.json())
+      .then(resp => {
+        console.log(resp);
+        if(resp.data){
+         console.log(resp.data)
+         localStorage.setItem('token',resp.message.token);
+        //  location.href = 'http://127.0.0.1:5500/html/addblog.html'
+         location.href = 'https://my-brand-richard.netlify.app/html/addblog.html'
+        }else{
+            console.log(resp.message)
+            emailf_login.style.border = "2px solid red"
+            passcode_login.style.border = "2px solid red";
+            emailError_login.innerHTML = resp.message
+        };
+        return resp; 
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      }); 
+})
+
 let allHearts = document.querySelectorAll("#numberLikes");
 let allHeartsicon = document.querySelectorAll(".fa-heart");
 let object = {0:0,1:0,2:0,3:0,4:0,5:0,6:0};
