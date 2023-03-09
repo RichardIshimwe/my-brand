@@ -69,8 +69,9 @@ let passcode_login = document.getElementById("passcodef_login");
       .then(resp => {
         console.log(resp);
         if(resp.data){
-         console.log(resp.data)
-         localStorage.setItem('token',resp.message.token);
+         localStorage.setItem('token',resp.data.token);
+         localStorage.setItem('logedIn',resp.data.username);
+         console.log(resp.data.username)
         //  location.href = 'http://127.0.0.1:5500/html/addblog.html'
          location.href = 'https://my-brand-richard.netlify.app/html/addblog.html'
         }else{
