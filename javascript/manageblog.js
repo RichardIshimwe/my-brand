@@ -2,18 +2,24 @@ let manage_paragraph = document.querySelectorAll('.imgcont12');
 let manage_image = document.querySelectorAll('.imgcont');
 let blogsDisplay = document.querySelectorAll('.manage');
 let dispalyBlog_array = [];
-let logedIn = localStorage.getItem('logedIn') || "";
+let token = localStorage.getItem('token') || "";
+let logedIn = localStorage.getItem('logedIn');
+let user = false;
+user = JSON.parse(localStorage.getItem('status'));
 let dateToday = document.querySelectorAll('#dateToday');
-if(logedIn === "richard"){
-
+let getAdmin = document.querySelector('.admin');
+let white = document.getElementById('.white');
+const myDiv = document.getElementById("myDiv");
+if(user == false){
+    myDiv.style.display = "none";
+    console.log(user)
 }
-else{
-let admin = document.querySelectorAll('.admin');
-for(let i = 0;i < admin.length;i++){
-admin[i].style.display = "none";
-}
-}
-window.alert
+fetch('https://puce-helpful-xerus.cyclic.app/blogs')
+.then(response => response.json())
+.then(async (resp) =>{
+    storedBlogs = await resp.data;
+    console.log(storedBlogs)
+    localStorage.setItem('hold_blogs',JSON.stringify(storedBlogs))})
 // ========================================pre-loader===========
 window.addEventListener('load',function(){
     let loader = document.querySelector('.holder_wave');
@@ -32,65 +38,66 @@ for(let i = 0;i < storedBlogs.length;i++){
 }
 }
 // ==================================manage blog===========================================
-//   function manageBlog(){
     let manage_image_state,manage_paragraph_state;
     let get_icondiv = document.querySelectorAll('.imgcont13');
 
-
 let blogDivision = document.querySelector('.add_content');
 
-
-
-for(let i = 0;i < holdStored.length;i++){
-blogDivision.innerHTML +=`
-   <div class="manage">
-    <div class="imagew">
-        <div class="imgcont">
-        <img src="${storedBlogs[i].image}" alt="" srcset="">
-        </div>
-        <div class="dateCont">
-            <p id="dateToday">
-            <i class="fa-regular fa-clock"></i>${holdStored[i].date}
-            </p>
-        </div>
-        <div class="author">Author: ${storedBlogs[i].author}</div>
-        <div class="imgcont12">
-        <p>${storedBlogs[i].title}</p>
-        </div>
-           <div class="imgcont13">
-    <i class="fa-solid fa-pen-to-square" id="${i}"></i>
-    <i class="fa-solid fa-trash-can" id="${i}"></i>
-            </div>
-           </div>
-             </div>
-   `
+fetch('https://puce-helpful-xerus.cyclic.app/blogs')
+.then(response => response.json())
+.then(async (resp) =>{
+    storedBlogs = await resp.data;
+    console.log(storedBlogs);
+    let userBlogs = [];
+    console.log("userblogs",userBlogs)
+    console.log("userblog length",userBlogs.length) 
+    if(user == true) {
+        userBlogs = storedBlogs;
+    }else if(user == false){
+        for(let p = 0; p < storedBlogs.length; p++){
+            if(storedBlogs[p].author == logedIn){
+                console.log("my blog")
+                userBlogs.push(storedBlogs[p]);
+            }
+        }
+    }
+    for(let i = 0;i < userBlogs.length;i++){
+        const date = new Date(userBlogs[i].createdAt);
+        const blogDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`
+        blogDivision.innerHTML +=`
+           <div class="manage">
+            <div class="imagew">
+                <div class="imgcont">
+                <img src="${userBlogs[i].image}" alt="" srcset="">
+                </div>
+                <div class="dateCont">
+                    <p id="dateToday">
+                    <i class="fa-regular fa-clock"></i>${blogDate}
+                    </p>
+                </div>
+                <div class="author">Author: ${userBlogs[i].author}</div>
+                <div class="imgcont12">
+                <p>${userBlogs[i].title}</p>
+                </div>
+                   <div class="imgcont13">
+            <i class="fa-solid fa-pen-to-square" id="${userBlogs[i]._id}"></i>
+            <i class="fa-solid fa-trash-can" id="${userBlogs[i]._id}"></i>
+                    </div>
+                   </div>
+                     </div>
+           `
+        }
+        let alledit = document.querySelectorAll(".fa-pen-to-square");
+for(let i = 0;i < alledit.length;i++){
+    alledit[i].addEventListener('click',function(){
+    let edit = alledit[i].getAttribute("id");
+    console.log(edit)
+    let id = this.getAttribute("id");
+    location.href = `https://my-brand-richard.netlify.app/html/editblog.html?id=${id}`
+    });
 }
-    // for(let i = 0;i < holdStored.length;i++){
 
-    //     divisionState++;
-    //     localStorage.setItem('divisionState',divisionState);
-    //     let icon = document.createElement("i");
-    //     let trash = document.createElement("i");
-    //     let para = document.createElement("p");
-    //     icon.className = "fa-solid fa-pen-to-square";
-    //     trash.className = "fa-solid fa-trash-can";
-    //     trash.setAttribute("id",i);
-    //     icon.setAttribute("id",i);
-    //     icon.setAttribute("href","./editblog.html")
-    //     manage_paragraph_state = manage_paragraph[i];
-    //     para.innerHTML = holdStored[i].title;
-    //     dateToday[i].innerHTML = `<i class="fa-regular fa-clock"></i>${holdStored[i].date}`;
-    //     let imageManage = new Image();
-    //     imageManage.src = holdStored[i].image;
-    //     manage_image_state = manage_image[i];
-    //     if(divisionState < 7){
-    //     blogsDisplay[i].style.display = "flex";
-    //     manage_image_state.appendChild(imageManage)
-    //     manage_paragraph_state.appendChild(para);
-    //     get_icondiv[i].appendChild(icon);
-    //     get_icondiv[i].appendChild(trash);
-    //     }
-    // }
+
 let popupMessagemanage = document.querySelector('.popupMessagemanage');
 let confirmDelete = document.getElementById("delete");
 let confirmcancel = document.getElementById("cancel");
@@ -100,27 +107,36 @@ let allblogs = document.querySelectorAll(".fa-trash-can");
 for(let i = 0;i < allblogs.length;i++){
     allblogs[i].addEventListener('click',function(){
         popupMessagemanage.style.display = "flex";
-        localStorage.setItem('deleteId',i);    
+        localStorage.setItem('deleteId',allblogs[i].getAttribute("id"));    
     });
 }
 confirmDelete.addEventListener('click',function(){
     popupMessagemanage.style.display = "";
-    let id = allblogs[localStorage.getItem('deleteId')].getAttribute("id");
-    holdStored.splice(id,1)
-    localStorage.setItem('hold_blogs',JSON.stringify(holdStored));
-    location.reload();
+    let _id = localStorage.getItem('deleteId')
+    console.log(_id);
+    let tokenTosend = {token:token};
+    fetch(`https://puce-helpful-xerus.cyclic.app/blogs/${_id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(tokenTosend)
+      })
+      .then(response => response.json())
+      .then(resp => {
+        console.log(resp)
+        location.reload();
+    })
+
 })
 confirmcancel.addEventListener('click',function(){
     popupMessagemanage.style.display = "";
 })
-let alledit = document.querySelectorAll(".fa-pen-to-square");
-for(let i = 0;i < alledit.length;i++){
-    alledit[i].addEventListener('click',function(){
-    let edit = alledit[i].getAttribute("id");
-    localStorage.setItem('editId',edit);
-    window.location.href = "editblog.html";
-    });
-}
+
+
+})
+
+
 
 function logout(){
     localStorage.setItem('logedIn',"")

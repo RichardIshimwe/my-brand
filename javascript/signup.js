@@ -81,8 +81,6 @@ let signup_object ={email: emailf_signup.value,
     username: usernamef_signup.value,
     password: passcodef_signup.value,
     confirmPassword: confirmf_signup.value};
-
-console.log(signup_object);
  fetch('https://puce-helpful-xerus.cyclic.app/signup', {
      method: 'POST',
      headers: {
@@ -93,10 +91,8 @@ console.log(signup_object);
    .then( response => response.json())
    .then(resp =>{
     console.log(resp)
-    if(resp.data){
-     console.log("signup complete")   
-    //  location.href = 'http://127.0.0.1:5500/index.html#login'
-     location.href = 'https://my-brand-richard.netlify.app/index.html#login'
+    if(resp.data){ 
+    location.href = 'https://my-brand-richard.netlify.app/index.html#login'
     emailf_signup.value = ""; 
     usernamef_signup.value = "";
     passcodef_signup.value = "";

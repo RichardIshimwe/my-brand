@@ -1,49 +1,65 @@
-let storedid = localStorage.getItem("readmore") || "";
+// let storedid = localStorage.getItem("readmore") || "";
 let allStoredBlogs = JSON.parse(localStorage.getItem('hold_blogs')) || [];
 let getuser = localStorage.getItem("logedIn") || "";
-let comment = document.getElementById("comment");
+let token = localStorage.getItem("token") || "";
+// let comment = document.getElementById("comment");
 let commentButton = document.querySelector('.commentButton');
 let commentDivision = document.querySelector('.contentThree');
-let storedReadmore = JSON.parse(localStorage.getItem("readmore")) || [];
+// let storedReadmore = 0;
+// // let storedReadmore = JSON.parse(localStorage.getItem("readmore")) || [];
 let readmore_title = document.getElementById("doit");
-let readmoreDescription = document.getElementById("readmoreDescription");
+// let readmoreDescription = document.getElementById("readmoreDescription");
 let readmoreCont = document.querySelector('.contentOne');
-let setTime = document.getElementById("setTime");
-let author = document.getElementById("author");
-
+// let setTime = document.getElementById("setTime");
+// let author = document.getElementById("author");
+let paramsId = new URLSearchParams(window.location.search);
+let _id = paramsId.get("id");
 let readmoreImage = new Image();
-readmoreImage.src = allStoredBlogs[storedid].image;
+fetch(`https://puce-helpful-xerus.cyclic.app/blogs/${_id}`)
+.then(response => response.json())
+.then(async (resp) =>{
+    let allStoredBlogs = await resp.data;
+    const date = new Date(allStoredBlogs.createdAt);
+    const blogDate = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`
+readmoreImage.src = allStoredBlogs.image;
 readmoreCont.appendChild(readmoreImage);
-readmoreDescription.innerHTML = allStoredBlogs[storedid].description;
-author.innerHTML = allStoredBlogs[storedid].author;
-setTime.innerHTML = `<i class="fa-regular fa-clock"></i>${allStoredBlogs[storedid].date}`;
-console.log(allStoredBlogs[storedid].date)
-readmore_title.innerHTML = allStoredBlogs[storedid].title;
-let allComments = allStoredBlogs[storedid].comments || [];
-
-for(let z = 0; z < allComments.length ;z++){
+readmoreDescription.innerHTML = allStoredBlogs.description;
+author.innerHTML = allStoredBlogs.author;
+setTime.innerHTML = `<i class="fa-regular fa-clock"></i>${blogDate}`;
+readmore_title.innerHTML = allStoredBlogs.title;
+let comments = allStoredBlogs.comments;
+for(let z = 0; z < comments.length ;z++){
   let addComment = document.createElement("div");
   addComment.setAttribute("class", "readmoreComments");
   let header = document.createElement("h2");
   header.setAttribute("class", "commenterName");
-  header.innerHTML = allComments[z].commenter;
+  header.innerHTML = comments[z].name;
   addComment.appendChild(header);
   let commentParagraph = document.createElement("p");
   commentParagraph.setAttribute("class", "commenterContent");
-  commentParagraph.innerHTML = allComments[z].comment;
+  commentParagraph.innerHTML = comments[z].comment;
   addComment.appendChild(commentParagraph);
   commentDivision.appendChild(addComment);
 }
+})
 
 commentButton.addEventListener('click',function(){
-  if(getuser != ""){
-  about={
-    commenter:getuser,
+  let blogComment ={
+    token:token,
     comment:comment.value
   };
-  allStoredBlogs[storedid].comments.push(about);
-  localStorage.setItem('hold_blogs', JSON.stringify(allStoredBlogs));
-  location.reload();
+  if(token != ""){
+    if(comment.value != ""){
+    fetch(`https://puce-helpful-xerus.cyclic.app/comment/${_id}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(blogComment)
+    })
+    .then( response => response.json())
+    .then(resp =>{location.reload();});
+  }else{comment.style.border = "2px solid red"}
 }else{
     alert("please login");
   }
@@ -54,17 +70,18 @@ let dates = document.querySelectorAll('#date');
 let allButton = document.querySelectorAll('#button');
 let imageTodisplay = document.querySelectorAll('.imagef');
 let imageDivision = document.querySelectorAll('#listRecentblogs');
-console.log(imageDivision.length);
 for(let i = 0;i < allStoredBlogs.length;i++){
   let btn = document.createElement("button");
   let imagetodisplay = new Image();
   btn.textContent = "read more";
   if(i<3){
+    const date = new Date(allStoredBlogs[i].createdAt);
+    const blogDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`
     imagetodisplay.src = allStoredBlogs[i].image;
     imageTodisplay[i].appendChild(imagetodisplay);
     btn.setAttribute("class","readbtns");
-    btn.setAttribute("id",i);
-    dates[i].innerHTML = allStoredBlogs[i].date;
+    btn.setAttribute("id", allStoredBlogs[i]._id);
+    dates[i].innerHTML = blogDate;
     paragraph[i].innerHTML = allStoredBlogs[i].title;
     allButton[i].appendChild(btn);
     imageDivision[i].style.display = "grid";
@@ -77,6 +94,7 @@ for(let i = 0;i < readMoreadded.length;i++){
     let id = this.getAttribute("id");
     localStorage.setItem('readmore', id);
     location.reload();
+    location.href = `https://my-brand-richard.netlify.app/html/readmore.html?id=${id}`
 })
 }
 

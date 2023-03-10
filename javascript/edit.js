@@ -2,8 +2,14 @@ let editTitle = document.getElementById('edit_title');
 let editTextarea = document.getElementById('edit_textarea');
 let errorm = document.getElementById('errorm');
 let logedIn = localStorage.getItem('logedIn') || "";
+let token = localStorage.getItem('token') || "";
+let checkUser = localStorage.getItem('token') || "";
 let receive_image = document.getElementById('receive_image');
-if(logedIn === "richard"){}
+let editForm = document.getElementById('editForm')
+let paramsId = new URLSearchParams(window.location.search);
+
+let _id = paramsId.get("id");
+if(checkUser == true){}
 else{
 let admin = document.querySelectorAll('.admin');
 for(let i = 0;i < admin.length;i++){
@@ -19,12 +25,16 @@ receive_image.addEventListener('change', function () {
     localStorage.setItem('image', url);
     })
 });
-let storedBlogs = JSON.parse(localStorage.getItem('hold_blogs')) || [],editId = localStorage.getItem('editId') || 0;
+let storedBlogs = JSON.parse(localStorage.getItem('hold_blogs')) || [];
+for(let i = 0;i < storedBlogs.length;i++){
+    if(storedBlogs[i]._id == _id){
+editTitle.value = storedBlogs[i].title;
+editTextarea.value = storedBlogs[i].description;
+    }
+}
 
-editTitle.value = storedBlogs[editId].title;
-editTextarea.value = storedBlogs[editId].description;
-
-function editblog(){
+ editForm.addEventListener('submit', (event) =>{
+event.preventDefault();
    let keepImage = localStorage.getItem('image');
    if(editTitle.value == "" && editTextarea.value == ""){
     editTitle.style.border = "2px solid red";
@@ -47,12 +57,25 @@ function editblog(){
         return false;
     }
    }
-    storedBlogs[editId].title = document.getElementById('edit_title').value;
-    storedBlogs[editId].description = document.getElementById('edit_textarea').value;
-    storedBlogs[editId].image = keepImage;
-    localStorage.setItem('hold_blogs',JSON.stringify(storedBlogs));
-    return true;
-}
+   let sendChanges = {
+    token:token,
+    title:editTitle.value,
+    description:editTextarea.value,
+    image: localStorage.getItem("image")
+   }
+    fetch(`http://localhost:4000/blogs/${_id}`, {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(sendChanges)
+          })
+          .then(response => response.json())
+          .then(resp => {
+            console.log(resp)
+            location.href = `https://my-brand-richard.netlify.app/html/manage.html`
+        })
+})
 // ========================================pre-loader===========
 window.addEventListener('load',function(){
     let loader = document.querySelector('.holder_wave');

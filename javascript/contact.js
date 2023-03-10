@@ -9,12 +9,14 @@ let allBlogDisplay = document.querySelectorAll('.blogAll');
 let displayImage1 = document.querySelectorAll('.blogOne');
 let displayParagraph = document.querySelectorAll('.blogTwo');
 let blogButtonAnchor = document.querySelectorAll('#openBlog');
+let contactForm = document.getElementById('contactForm')
 let contact_array = JSON.parse(localStorage.getItem('messages')) || [],contact_object = {names:"",email:"",message:""};
 
 let currentDisplayImage,currentDisplayParagraph,blogId;
 let blogContainer = document.querySelector(".blog_content");
 let noblogs = document.querySelector('.noblogs');
 let readmoreBtn = document.querySelector('.blog_button');
+var buttonState ;
 
 let storedBlogs = [];
 
@@ -22,40 +24,11 @@ let storedBlogs = [];
 window.addEventListener('load',function(){
     let loader = document.querySelector('.holder_wave');
     loader.className += " hidden";
-    fetch('https://puce-helpful-xerus.cyclic.app/blogs',)
-    .then(response => response.json())
-    .then(async (resp) =>{
-        storedBlogs = await resp.data;
-    if(storedBlogs.length != 0){
-        let iterate = storedBlogs.length -1;
-        for(let i = 0; i < storedBlogs.length; i++){
-        if(i < 3){
-        let button = document.createElement("button");
-        button.setAttribute("class", "addedButton")
-        button.setAttribute("id", iterate)
-        button.textContent = "Read More"
-        let displayImage = new Image();
-        currentDisplayImage = displayImage1[i];
-        currentDisplayParagraph = displayParagraph[i];
-        displayImage.src = storedBlogs[iterate].image;
-        console.log(storedBlogs[iterate].image)
-        blogButtonAnchor[i].appendChild(button);
-        currentDisplayImage.appendChild(displayImage);
-        allBlogDisplay[i].style.display = "flex";
-        currentDisplayParagraph.innerHTML = `<a href="./html/readmore.html">${storedBlogs[iterate].title}</a>`
-        }
-        iterate--;
-        }}else if(storedBlogs.length == 0){
-             noblogs.style.display = "grid";
-             readmoreBtn.style.display = "none";
-        }
-        return resp;
-    })
-    
   });
-// =================================conatct page========================
-function chaeckContact(){
 
+// =================================conatct page========================
+  contactForm.addEventListener('submit', (e) =>{
+    e.preventDefault();
     if (emailf_contact.value == "" || namesf_contact.value == "" || textareaf_contact.value == "" ) {
         emailf_contact.style.border = "2px solid red";
         namesf_contact.style.border = "2px solid red"
@@ -73,13 +46,23 @@ function chaeckContact(){
             namesf_contact.value = "";
             textareaf_contact.value = "";
             },2000);
-            contact_object = {
-                0:namesf_contact.value,
-                1:emailf_contact.value,
-                2:textareaf_contact.value
-            }
-            contact_array.unshift(contact_object);    
-            localStorage.setItem("messages",JSON.stringify(contact_array));
+    let messageTosend = {
+        names:namesf_contact.value,
+        email:emailf_contact.value,
+        message:textareaf_contact.value,
+    }
+
+    fetch('https://puce-helpful-xerus.cyclic.app/message/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(messageTosend)
+      })
+      .then( response => response.json())
+      .then(resp =>{
+       console.log(resp)})
+
             popupMessage.style.display = "flex";
             emailf_contact.style.border = "2px solid green";
             namesf_contact.style.border = "2px solid green"
@@ -88,55 +71,51 @@ function chaeckContact(){
             error_contact.innerHTML = "*message sent successful";
     }
     return false;
-}
+})
 // =====================================================================
 
-
-
-
-
-// if(storedBlogs.length != 0){
-// for(let i = 0; i < storedBlogs.length; i++){
-// if(i < 3){
-//     console.log("blogs after displaying them",storedBlogs)
-//     console.log("you can add blog here");
-// let button = document.createElement("button");
-// button.setAttribute("class", "addedButton")
-// button.setAttribute("id", i)
-// button.textContent = "Read More"
-// let displayImage = new Image();
-// currentDisplayImage = displayImage1[i];
-// currentDisplayParagraph = displayParagraph[i];
-// displayImage.src = storedBlogs[i].image;
-// blogButtonAnchor[i].appendChild(button);
-// currentDisplayImage.appendChild(displayImage);
-// allBlogDisplay[i].style.display = "flex";
-// currentDisplayParagraph.innerHTML = `<a href="./html/readmore.html">${storedBlogs[i].title}</a>`
-// }
-// }}else if(storedBlogs.length == 0){
-//      noblogs.style.display = "grid";
-//      readmoreBtn.style.display = "none";
-// }
-
-let waitforReadingButtons = false;
-console.log(waitforReadingButtons);
-setTimeout(function(arg1, arg2) {
-    // code to be executed after a delay
-    console.log(arg1, arg2);
-    waitforReadingButtons = true;
-    console.log(waitforReadingButtons);
-  }, 3000, "Hello", "World");
-  if(waitforReadingButtons){
-let allBlogButton = document.querySelectorAll('.addedButton');
-for(let i = 0;i < allBlogButton.length;i++)
-for(let i = 0;i < 3;i++){
-console.log(allBlogButton[i])
-allBlogButton[i].addEventListener('click',function(){
-    let id = this.getAttribute("id");
-    alert(id);
-    localStorage.setItem('readmore', id);
-})
-}}
+fetch('https://puce-helpful-xerus.cyclic.app/blogs')
+.then(response => response.json())
+.then(async (resp) =>{
+    storedBlogs = await resp.data;
+    console.log(storedBlogs)
+    localStorage.setItem('hold_blogs',JSON.stringify(storedBlogs))
+    document.addEventListener('click',() =>{
+        console.log("event")
+    })
+if(storedBlogs.length != 0){
+    let iterate = storedBlogs.length -1;
+    for(let i = 0; i < storedBlogs.length; i++){
+    if(i < 3){
+    let button = document.createElement("button");
+    button.setAttribute("class", "addedButton")
+    button.setAttribute("id", storedBlogs[iterate]._id)
+    button.textContent = "Read More"
+    let displayImage = new Image();
+    currentDisplayImage = displayImage1[i];
+    currentDisplayParagraph = displayParagraph[i];
+    displayImage.src = storedBlogs[iterate].image;
+    console.log(storedBlogs[iterate].image)
+    blogButtonAnchor[i].appendChild(button);
+    currentDisplayImage.appendChild(displayImage);
+    allBlogDisplay[i].style.display = "flex";
+    currentDisplayParagraph.innerHTML = `<a href="./html/readmore.html">${storedBlogs[iterate].title}</a>`
+    }
+    iterate--;
+    }
+    let allBlogButton = document.querySelectorAll('.addedButton');
+    for(let i = 0;i < 3;i++){
+    allBlogButton[i].addEventListener('click',function(){
+        let id = this.getAttribute("id");
+        location.href = `https://my-brand-richard.netlify.app/html/readmore.html?id=${id}`
+    })
+    }
+    }else if(storedBlogs.length == 0){
+             noblogs.style.display = "grid";
+             readmoreBtn.style.display = "none";
+        }
+        return resp;
+    })
 
 function logMeout(){
 localStorage.setItem('logedIn',"")
