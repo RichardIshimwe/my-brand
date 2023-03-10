@@ -17,7 +17,7 @@ fetch('https://puce-helpful-xerus.cyclic.app/message')
   .then(response => response.json())
   .then(resp => {
     let allMessages = resp.data;
-    for(let i = 0;i < allMessages.length;i++){
+    for(let i = allMessages.length - 1;i >= 0;i++){
         let division = document.createElement("div");
         division.setAttribute('id', 'recent_comments');
         for(let j = 0;j < 5;j++){
