@@ -50,10 +50,11 @@ fetch('https://puce-helpful-xerus.cyclic.app/blogs')
     console.log(storedBlogs);
     let userBlogs = [];
     console.log("userblogs",userBlogs)
-    console.log("userblog length",userBlogs.length) 
     if(user == true) {
+        console.log("admin",userBlogs.length) 
         userBlogs = storedBlogs;
     }else if(user == false){
+        console.log("not an admin",userBlogs.length) 
         for(let p = 0; p < storedBlogs.length; p++){
             if(storedBlogs[p].author == logedIn){
                 console.log("my blog")
