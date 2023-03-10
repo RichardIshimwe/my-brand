@@ -8,6 +8,7 @@ let user = false;
 user = JSON.parse(localStorage.getItem('status'));
 if(user == false){
   myDiv.style.display = "none";
+  location.href = 'https://my-brand-richard.netlify.app/index.html#login'
 }
 fetch('https://puce-helpful-xerus.cyclic.app/message')
   .then(response => response.json())
