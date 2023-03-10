@@ -1,9 +1,12 @@
 let add_title = document.getElementById("add_title");
 let add_textarea = document.getElementById("add_textarea");
-let add_image = document.getElementById("add_image");
+// let fileInput = document.getElementById("add_image");
+// let add_image = document.getElementById("add_image");
 let error_addblog = document.getElementById("errorAdd_title");
+let token = localStorage.getItem('token');
 let logedIn = localStorage.getItem('logedIn') || "";
 let userToset = document.querySelector('.userToset');
+let addBlog = document.getElementById('addBlog')
 const date = new Date();
 let day = date.getDate();
 let month = date.getMonth();
@@ -12,14 +15,13 @@ let year = date.getFullYear();
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 userToset.innerHTML = logedIn;
+let checkIn = JSON.parse(localStorage.getItem('status'));
+console.log(checkIn)
+const myDiv = document.getElementById("myDiv");
+if(checkIn == false){
+    myDiv.style.display = "none";
+}
 
-if(logedIn === "richard"){}
-else{
-let admin = document.querySelectorAll('.admin');
-for(let i = 0;i < admin.length;i++){
-admin[i].style.display = "none";
-}
-}
 
 let dispalyBlog_array = [];
 // ========================================pre-loader===========
@@ -40,34 +42,39 @@ add_image.addEventListener('change', function () {
     })
 });
 
-function addblog() {
+    addBlog.addEventListener('submit', (event) =>{
+    event.preventDefault();
     if(add_title.value != "" && add_textarea.value != ""){
     let actualDate = `${day}-${months[month]}-${year}`;
-    addImage_holder = localStorage.getItem('image');
-    blogs = {
+    // const file = fileInput.files[0];
+    const file = localStorage.getItem('image')
+    let blogsTosend = {
+        token: token,
+        image: file,
         title: add_title.value,
         description: add_textarea.value,
-        image: addImage_holder,
-        comments:[],
-        author: logedIn,
-        date:actualDate
         };
-    console.log(blogs);
-    hold_blogs = JSON.parse(localStorage.getItem('hold_blogs')) || [];
-    hold_blogs.unshift(blogs);
-    localStorage.setItem('hold_blogs',JSON.stringify(hold_blogs));
-    add_title.value = "";
-    add_textarea.value = "";
-    return true;}
+        console.log(blogsTosend)
+        fetch('https://puce-helpful-xerus.cyclic.app/blogs', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(blogsTosend)
+          })
+          .then(response => response.json())
+          .then(resp => {
+            location.href = 'https://my-brand-richard.netlify.app/html/manage.html'
+        })
+}
     else{
         add_title.style.border = "2px solid red" 
         add_textarea.style.border = "2px solid red"
     }
-    return false;
-}
+})
 
 function edit() {
-    window.location.href = 'editblog.html';
+    window.location.href = 'https://my-brand-richard.netlify.app/html/editblog.html';
 }
 // ======================================================social medias=====================================
 function linkedin() {
