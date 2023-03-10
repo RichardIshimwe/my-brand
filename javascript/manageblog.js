@@ -61,7 +61,7 @@ fetch('https://puce-helpful-xerus.cyclic.app/blogs')
             }
         }
     }
-    for(let i = 0;i < userBlogs.length;i++){
+    for(let i = userBlogs.length - 1;i >= 0 ;i--){
         const date = new Date(userBlogs[i].createdAt);
         const blogDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`
         blogDivision.innerHTML +=`
