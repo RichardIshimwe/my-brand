@@ -13,11 +13,12 @@ if(user == false){
   location.href = '../index.html'
   myDiv.style.display = "none";
 }
+if(logedIn != 'Richard'){adminButton.style.display = "none"}
 fetch('https://puce-helpful-xerus.cyclic.app/message')
   .then(response => response.json())
   .then(resp => {
     let allMessages = resp.data;
-    for(let i = allMessages.length - 1;i >= 0;i++){
+    for(let i = allMessages.length - 1;i >= 0;i--){
         let division = document.createElement("div");
         division.setAttribute('id', 'recent_comments');
         for(let j = 0;j < 5;j++){
@@ -49,7 +50,6 @@ adminButton.addEventListener('submit', (e) =>{
   let adminInput = document.getElementById('adminInput');
   let adminPara = document.getElementById('adminPara');
     if(regex.test(adminInput.value)){
-     if(logedIn == 'Richard'){
       console.log(logedIn)
       let userTobeAdmin ={token:token,email: adminInput.value};
      fetch('https://puce-helpful-xerus.cyclic.app/makeAdmin', {
@@ -64,10 +64,7 @@ adminButton.addEventListener('submit', (e) =>{
         console.log(resp);
         adminPara.innerHTML = resp.message;
       })
-     }else{
-      adminPara.innerHTML = "...you are restricted to this action........."
-      adminInput.style.border = "2px solid red"
-     }}else{
+      }else{
         adminPara.innerHTML = "*validid email is repuired"
      }
 })
