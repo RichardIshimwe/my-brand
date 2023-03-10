@@ -66,7 +66,7 @@ adminButton.addEventListener('submit', (e) =>{
       })
      }else{
       adminPara.innerHTML = "...you are restricted to this action........."
-      adminButton.style.background = "red";
+      adminButton.style.color = "red";
       adminInput.style.border = "2px solid red"
      }}else{
         adminPara.innerHTML = "*validid email is repuired"
