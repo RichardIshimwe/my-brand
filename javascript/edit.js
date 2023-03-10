@@ -63,7 +63,7 @@ event.preventDefault();
     description:editTextarea.value,
     image: localStorage.getItem("image")
    }
-    fetch(`http://localhost:4000/blogs/${_id}`, {
+    fetch(`https://puce-helpful-xerus.cyclic.app/blogs/${_id}`, {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json'
