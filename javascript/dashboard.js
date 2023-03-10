@@ -42,7 +42,8 @@ adminButton.addEventListener('submit', (e) =>{
   let adminInput = document.getElementById('adminInput');
   let adminPara = document.getElementById('adminPara');
     if(regex.test(adminInput.value)){
-     if(logedIn == "Richard"){
+     if(logedIn == 'Richard'){
+      console.log(logedIn)
       let userTobeAdmin ={token:token,email: adminInput.value};
      fetch('https://puce-helpful-xerus.cyclic.app/makeAdmin', {
          method: 'POST',
@@ -57,6 +58,7 @@ adminButton.addEventListener('submit', (e) =>{
         adminPara.innerHTML = resp.message;
       })
      }else{
+      adminPara.innerHTML = "...you are restricted to this action........."
       adminButton.style.background = "red";
       adminInput.style.border = "2px solid red"
      }}else{
