@@ -20,7 +20,6 @@ logoutUser.addEventListener('click',() =>{
   localStorage.setItem('token',"");
   localStorage.setItem('logedIn',"");
   localStorage.setItem('status',"");
-  alert("cleared")
 });
 // const scrollToTopBtn = document.getElementById('scroll-to-top-btn');
 
