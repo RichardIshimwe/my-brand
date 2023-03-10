@@ -4,6 +4,11 @@ let totalMessages = document.getElementById("newBlog");
 let commentCont = document.querySelector(".ad");
 let token = localStorage.getItem('token');
 let tokenTosend = {token:token}
+let user = false;
+user = JSON.parse(localStorage.getItem('status'));
+if(user == false){
+  myDiv.style.display = "none";
+}
 fetch('https://puce-helpful-xerus.cyclic.app/message')
   .then(response => response.json())
   .then(resp => {

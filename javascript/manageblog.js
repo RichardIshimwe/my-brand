@@ -12,7 +12,7 @@ let white = document.getElementById('.white');
 const myDiv = document.getElementById("myDiv");
 if(user == false){
     myDiv.style.display = "none";
-    console.log(user)
+    location.href = 'https://my-brand-richard.netlify.app/index.html#login'
 }
 fetch('https://puce-helpful-xerus.cyclic.app/blogs')
 .then(response => response.json())
