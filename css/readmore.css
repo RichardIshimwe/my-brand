@@ -263,8 +263,32 @@ justify-content: center;
 .dash_content{
     grid-area:dash_content;
     display: grid;
-    grid-template-rows: 0.2fr 1fr;
+    grid-template-rows: 0.2fr 1fr 0.095fr;
 }
+
+#adminForm > input{
+    border: none;
+    border-radius: 15px;
+    padding: 7px 15px;
+    width: 40%;
+    background-color: #898B91;
+}
+#adminForm > button{
+    font-size: 20px;
+    font-weight: bolder;
+    border: none;
+    margin: 0;
+    border-radius: 15px;
+    padding: 10px 15px;
+    background-color: #898B91;
+}
+#adminForm > button:hover{
+    font-size: 22px;
+    background-color: #0cd53b;
+}
+/* .makeAdmin{
+    background-color: brown;
+} */
 .dash_side{
     grid-area:dash_side;
     display: flex;
