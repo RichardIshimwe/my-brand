@@ -71,7 +71,6 @@ let passcode_login = document.getElementById("passcodef_login");
         if(resp.data){
          localStorage.setItem('token',resp.data.token);
          localStorage.setItem('logedIn',resp.data.username);
-        //  localStorage.setItem('status',true);
          localStorage.setItem('status',JSON.stringify(resp.data.admin));
          location.href = 'https://my-brand-richard.netlify.app/html/addblog.html'
         }else{

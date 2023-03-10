@@ -10,8 +10,8 @@ let tokenTosend = {token:token}
 let user = false;
 user = JSON.parse(localStorage.getItem('status'));
 if(user == false){
+  location.href = '../index.html'
   myDiv.style.display = "none";
-  location.href = 'https://my-brand-richard.netlify.app/addblog.html'
 }
 fetch('https://puce-helpful-xerus.cyclic.app/message')
   .then(response => response.json())
@@ -63,7 +63,6 @@ adminButton.addEventListener('submit', (e) =>{
         adminPara.innerHTML = "*validid email is repuired"
      }
 })
-
     
 window.addEventListener('load',function(){
     let loader = document.querySelector('.holder_wave');

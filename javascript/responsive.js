@@ -2,6 +2,7 @@
 let hamMenuIcon = document.getElementById("ham-menu");
 let navBar = document.getElementById("nav-bar");
 let navLinks = navBar.querySelectorAll("li");
+let logoutUser = document.getElementById("logoutUser")
 
 hamMenuIcon.addEventListener("click", () => {
   navBar.classList.toggle("active");
@@ -14,7 +15,13 @@ navLinks.forEach((navLinks) => {
     hamMenuIcon.classList.toggle("fa-times");
   });
 });
-
+// window.alert("iubdjknvfrd")
+logoutUser.addEventListener('click',() =>{
+  localStorage.setItem('token',"");
+  localStorage.setItem('logedIn',"");
+  localStorage.setItem('status',"");
+  alert("cleared")
+});
 // const scrollToTopBtn = document.getElementById('scroll-to-top-btn');
 
 // window.onscroll = function() {
