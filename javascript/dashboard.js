@@ -20,12 +20,13 @@ fetch('https://puce-helpful-xerus.cyclic.app/message')
     for(let i = 0;i < allMessages.length;i++){
         let division = document.createElement("div");
         division.setAttribute('id', 'recent_comments');
-        for(let j = 0;j < 4;j++){
+        for(let j = 0;j < 5;j++){
             let date = new Date(allMessages[i].createdAt);
             let blogDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`
            let paragraph = document.createElement("p");
            if(j == 0)paragraph.innerHTML = allMessages[i].names;
            if(j == 3)paragraph.innerHTML = blogDate;
+           if(j == 4)paragraph.innerHTML = `<i class="fa-solid fa-check-to-slot id= "${allMessages[i]._id}"></i>`;
            if(j == 1)paragraph.innerHTML = allMessages[i].message;
            if(j == 2)paragraph.innerHTML = allMessages[i].email;
            division.appendChild(paragraph)
@@ -35,6 +36,12 @@ fetch('https://puce-helpful-xerus.cyclic.app/message')
     blogNumber.innerHTML = storedBlogs.length;
     totalMessages.innerHTML = allMessages.length;
     }
+            let messagebutton = document.querySelectorAll(".fa-check-to-slot");
+            for(let i = 0;i < messagebutton.length;i++){
+              messagebutton[i].addEventListener('click',function(){
+              console.log(messagebutton[i].getAttribute("id"));
+              });
+          }
 })
 
 adminButton.addEventListener('submit', (e) =>{
