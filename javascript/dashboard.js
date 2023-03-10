@@ -43,7 +43,7 @@ adminButton.addEventListener('submit', (e) =>{
   let adminPara = document.getElementById('adminPara');
     if(regex.test(adminInput.value)){
      if(logedIn == "Richard"){
-      let userTobeAdmin ={email: adminInput.value};
+      let userTobeAdmin ={token:token,email: adminInput.value};
      fetch('https://puce-helpful-xerus.cyclic.app/makeAdmin', {
          method: 'POST',
          headers: {
