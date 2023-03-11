@@ -107,8 +107,8 @@ if(storedBlogs.length != 0){
     for(let i = 0;i < 3;i++){
     allBlogButton[i].addEventListener('click',function(){
         let id = this.getAttribute("id");
-        location.href = `http://127.0.0.1:5501/html/readmore.html?id=${id}`
-        // location.href = `https://my-brand-richard.netlify.app/html/readmore.html?id=${id}`
+        // location.href = `http://127.0.0.1:5501/html/readmore.html?id=${id}`
+        location.href = `https://my-brand-richard.netlify.app/html/readmore.html?id=${id}`
     })
     }
     }else if(storedBlogs.length == 0){
