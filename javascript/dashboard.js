@@ -27,12 +27,12 @@ fetch('https://puce-helpful-xerus.cyclic.app/message')
            let paragraph = document.createElement("p");
            if(j == 0)paragraph.innerHTML = allMessages[i].names;
            if(j == 3)paragraph.innerHTML = blogDate;
-           if(j == 4)paragraph.innerHTML = `<i class="fa-solid fa-check-to-slot id= "${allMessages[i]._id}"></i>`;
+           if(j == 4)paragraph.innerHTML = `<i class="fa-solid fa-check-to-slot id="${allMessages[i]._id}"></i>`;
            if(j == 1)paragraph.innerHTML = allMessages[i].message;
            if(j == 2)paragraph.innerHTML = allMessages[i].email;
            division.appendChild(paragraph)
         }
-        commentCont.appendChild(division)
+    commentCont.appendChild(division)
     let storedBlogs = JSON.parse(localStorage.getItem('hold_blogs'));
     blogNumber.innerHTML = storedBlogs.length;
     totalMessages.innerHTML = allMessages.length;
@@ -40,7 +40,9 @@ fetch('https://puce-helpful-xerus.cyclic.app/message')
             let messagebutton = document.querySelectorAll(".fa-check-to-slot");
             for(let i = 0;i < messagebutton.length;i++){
               messagebutton[i].addEventListener('click',function(){
-              console.log(messagebutton[i].getAttribute("id"));
+              console.log(messagebutton[i]);
+              let id = this.getAttribute("id");
+              console.log({id})
               });
           }
 })

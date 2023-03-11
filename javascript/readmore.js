@@ -95,6 +95,7 @@ for(let i = 0;i < readMoreadded.length;i++){
     localStorage.setItem('readmore', id);
     location.reload();
     location.href = `https://my-brand-richard.netlify.app/html/readmore.html?id=${id}`
+    // location.href = `http://127.0.0.1:5501/html/readmore.html?id=${id}`
 })
 }
 

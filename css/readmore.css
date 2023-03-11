@@ -82,7 +82,11 @@ body{
 #doit{
     text-align: center;
     color:white;
-    font-size: 18px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 35px;
+}
+#readmoreDescription{
+    font-size: 20px;
 }
 .readmore_nav > a{
     color: #27AE60;
