@@ -57,24 +57,23 @@ event.preventDefault();
         return false;
     }
    }
-   let sendChanges = {
-    token:token,
-    title:editTitle.value,
-    description:editTextarea.value,
-    image: localStorage.getItem("image")
-   }
-    fetch(`https://puce-helpful-xerus.cyclic.app/blogs/${_id}`, {
-            method: 'PUT',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(sendChanges)
-          })
-          .then(response => response.json())
-          .then(resp => {
-            console.log(resp)
-            location.href = `https://my-brand-richard.netlify.app/html/manage.html`
-        })
+
+   let fileToget = document.getElementById('receive_image').files[0];
+   const formData = new FormData();
+   formData.append('image', fileToget);
+   formData.append('title', editTitle.value);
+   formData.append('description', editTextarea.value);
+   formData.append('author',logedIn)
+       fetch(`https://puce-helpful-xerus.cyclic.app/blogs/${_id}`, {
+           method: 'PUT',
+           body: formData,
+           mode: 'no-cors'
+         })
+         .then(response => {
+           location.href = 'https://my-brand-richard.netlify.app/html/manage.html'
+       })
+         .then(resp => {
+       }).catch(err => console.log(err))
 })
 // ========================================pre-loader===========
 window.addEventListener('load',function(){
