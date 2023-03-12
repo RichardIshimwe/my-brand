@@ -60,13 +60,23 @@ event.preventDefault();
 
    let fileToget = document.getElementById('receive_image').files[0];
    const formData = new FormData();
-   formData.append('image', fileToget);
-   formData.append('title', editTitle.value);
-   formData.append('description', editTextarea.value);
-   formData.append('author',logedIn)
+//    formData.append('image', fileToget);
+//    formData.append('title', editTitle.value);
+//    formData.append('description', editTextarea.value);
+//    formData.append('author',logedIn)
+let editJson = {
+    title: editTitle.value,
+    description: editTextarea.value
+}
+
        fetch(`https://puce-helpful-xerus.cyclic.app/blogs/${_id}`, {
+        // fetch(`http://localhost:4000/blogs/${_id}`, {
            method: 'PUT',
-           body: formData
+           headers: {
+            'Authorization': token,
+            'Content-Type': 'application/json'
+           },
+           body: JSON.stringify(editJson)
          })
          .then(response => {
             console.log("blog edited successfull")

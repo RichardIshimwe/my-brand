@@ -1,7 +1,5 @@
 let add_title = document.getElementById("add_title");
 let add_textarea = document.getElementById("add_textarea");
-// let fileInput = document.getElementById("add_image");
-// let add_image = document.getElementById("add_image");
 let error_addblog = document.getElementById("errorAdd_title");
 let token = localStorage.getItem('token');
 let logedIn = localStorage.getItem('logedIn') || "";
@@ -58,11 +56,16 @@ addBlog.addEventListener('submit', (event) =>{
     formData.append('author',logedIn)
     console.log(title,fileToget)
         fetch('https://puce-helpful-xerus.cyclic.app/blogs', {
+            // fetch('http://localhost:4000/blogs', {
             method: 'POST',
+            headers: {
+                'Authorization': token,
+              },
             body: formData,
             // mode: 'no-cors'
           })
           .then(response => {
+            console.log("blog created")
             location.href = 'https://my-brand-richard.netlify.app/html/manage.html'
         })
           .then(resp => {
@@ -74,42 +77,6 @@ addBlog.addEventListener('submit', (event) =>{
         add_textarea.style.border = "2px solid red"
     }
 })
-
-
-
-
-
-
-//     addBlog.addEventListener('submit', (event) =>{
-//     event.preventDefault();
-//     if(add_title.value != "" && add_textarea.value != ""){
-//     let actualDate = `${day}-${months[month]}-${year}`;
-//     // const file = fileInput.files[0];
-//     const file = localStorage.getItem('image')
-//     let blogsTosend = {
-//         token: token,
-//         image: file,
-//         title: add_title.value,
-//         description: add_textarea.value,
-//         };
-//         console.log(blogsTosend)
-//         fetch('https://puce-helpful-xerus.cyclic.app/blogs', {
-//             method: 'POST',
-//             headers: {
-//               'Content-Type': 'application/json'
-//             },
-//             body: JSON.stringify(blogsTosend)
-//           })
-//           .then(response => response.json())
-//           .then(resp => {
-//             location.href = 'https://my-brand-richard.netlify.app/html/manage.html'
-//         })
-// }
-//     else{
-//         add_title.style.border = "2px solid red" 
-//         add_textarea.style.border = "2px solid red"
-//     }
-// })
 
 function edit() {
     window.location.href = 'https://my-brand-richard.netlify.app/html/editblog.html';

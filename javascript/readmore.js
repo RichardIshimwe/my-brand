@@ -45,14 +45,13 @@ for(let z = 0; z < comments.length ;z++){
 
 commentButton.addEventListener('click',function(){
   let blogComment ={
-    token:token,
     comment:comment.value
   };
-  if(token != ""){
     if(comment.value != ""){
     fetch(`https://puce-helpful-xerus.cyclic.app/comment/${_id}`, {
       method: 'POST',
       headers: {
+        'Authorization': token,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(blogComment)
@@ -60,9 +59,6 @@ commentButton.addEventListener('click',function(){
     .then( response => response.json())
     .then(resp =>{location.reload();});
   }else{comment.style.border = "2px solid red"}
-}else{
-    alert("please login");
-  }
   });
 
 let paragraph = document.querySelectorAll('#p');
