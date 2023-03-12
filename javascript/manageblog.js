@@ -93,7 +93,8 @@ for(let i = 0;i < alledit.length;i++){
     let edit = alledit[i].getAttribute("id");
     console.log(edit)
     let id = this.getAttribute("id");
-    location.href = `https://my-brand-richard.netlify.app/html/editblog.html?id=${id}`
+    location.href = `http://127.0.0.1:5501/html/editblog.html?id=${id}`
+    // location.href = `https://my-brand-richard.netlify.app/html/editblog.html?id=${id}`
     });
 }
 

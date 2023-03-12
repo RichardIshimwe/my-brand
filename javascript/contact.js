@@ -78,7 +78,7 @@ fetch('https://puce-helpful-xerus.cyclic.app/blogs')
     storedBlogs = await resp.data;
     localStorage.setItem('hold_blogs',JSON.stringify(storedBlogs))
     document.addEventListener('click',() =>{
-        console.log("event")
+        console.log("event");
     })
 if(storedBlogs.length != 0){
     let iterate = storedBlogs.length -1;

@@ -66,11 +66,11 @@ event.preventDefault();
    formData.append('author',logedIn)
        fetch(`https://puce-helpful-xerus.cyclic.app/blogs/${_id}`, {
            method: 'PUT',
-           body: formData,
-           mode: 'no-cors'
+           body: formData
          })
          .then(response => {
-           location.href = 'https://my-brand-richard.netlify.app/html/manage.html'
+            console.log("blog edited successfull")
+        //    location.href = 'https://my-brand-richard.netlify.app/html/manage.html'
        })
          .then(resp => {
        }).catch(err => console.log(err))
