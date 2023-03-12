@@ -63,8 +63,7 @@ addBlog.addEventListener('submit', (event) =>{
             // mode: 'no-cors'
           })
           .then(response => {
-            console.log("image uploaded")
-            // location.href = 'https://my-brand-richard.netlify.app/html/manage.html'
+            location.href = 'https://my-brand-richard.netlify.app/html/manage.html'
         })
           .then(resp => {
         }).catch(err => console.log(err))
