@@ -60,9 +60,7 @@ window.addEventListener('load',function(){
         body: JSON.stringify(messageTosend)
       })
       .then( response => response.json())
-      .then(resp =>{
-       console.log(resp)})
-
+      .then(resp =>{})
             popupMessage.style.display = "flex";
             emailf_contact.style.border = "2px solid green";
             namesf_contact.style.border = "2px solid green"
@@ -78,7 +76,6 @@ fetch('https://puce-helpful-xerus.cyclic.app/blogs')
 .then(response => response.json())
 .then(async (resp) =>{
     storedBlogs = await resp.data;
-    console.log(storedBlogs)
     localStorage.setItem('hold_blogs',JSON.stringify(storedBlogs))
     document.addEventListener('click',() =>{
         console.log("event")
@@ -95,7 +92,6 @@ if(storedBlogs.length != 0){
     currentDisplayImage = displayImage1[i];
     currentDisplayParagraph = displayParagraph[i];
     displayImage.src = storedBlogs[iterate].image;
-    console.log(storedBlogs[iterate].image)
     blogButtonAnchor[i].appendChild(button);
     currentDisplayImage.appendChild(displayImage);
     allBlogDisplay[i].style.display = "flex";
