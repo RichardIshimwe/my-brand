@@ -70,7 +70,7 @@ event.preventDefault();
          })
          .then(response => {
             console.log("blog edited successfull")
-        //    location.href = 'https://my-brand-richard.netlify.app/html/manage.html'
+           location.href = 'https://my-brand-richard.netlify.app/html/manage.html'
        })
          .then(resp => {
        }).catch(err => console.log(err))
