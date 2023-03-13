@@ -100,7 +100,7 @@ if(storedBlogs.length != 0){
     iterate--;
     }
     let allBlogButton = document.querySelectorAll('.addedButton');
-    for(let i = 0;i < 3;i++){
+    for(let i = 0;i < allBlogButton.length;i++){
     allBlogButton[i].addEventListener('click',function(){
         let id = this.getAttribute("id");
         // location.href = `http://127.0.0.1:5501/html/readmore.html?id=${id}`

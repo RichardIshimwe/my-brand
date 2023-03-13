@@ -1398,8 +1398,12 @@ input,textarea {
 ,#errorPasscode_signup,#errorUsername_signup{
   color: red;
 }
-
-
+#capsLock{
+  color:red;
+  margin-top: 20px;
+  font-size: 20px;
+  display: none;
+}
 
 
 

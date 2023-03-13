@@ -8,6 +8,17 @@ let hold_logedin = localStorage.getItem('logedIn') || "";
 let logedout = document.getElementById("logedout");
 let logedin = document.getElementById("logedin");
 let loginForm = document.getElementById("loginForm");
+let capsLock = document.getElementById("capsLock");
+
+document.addEventListener('keydown', (e) =>{
+  let capsLockKey = e.getModifierState('CapsLock');
+  if(capsLockKey){
+    capsLock.style.display = "block";
+  }else{
+    capsLock.style.display = "none";
+  }
+})
+
 
 if(hold_logedin != ""){
     logedin.innerHTML = `<i class="fa-solid fa-user"></i>${hold_logedin}`;
