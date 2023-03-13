@@ -26,10 +26,17 @@ fetch('https://puce-helpful-xerus.cyclic.app/message')
             let blogDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`
            let paragraph = document.createElement("p");
            if(j == 0)paragraph.innerHTML = allMessages[i].names;
-           if(j == 3)paragraph.innerHTML = blogDate;
-           if(j == 4)paragraph.innerHTML = `<i class="fa-solid fa-check-to-slot id="${allMessages[i]._id}"></i>`;
            if(j == 1)paragraph.innerHTML = allMessages[i].message;
            if(j == 2)paragraph.innerHTML = allMessages[i].email;
+           if(j == 3)paragraph.innerHTML = blogDate;
+           if(j == 4){
+            let color;
+            if(allMessages[i].check){
+              color = "green";
+             }
+            // paragraph.innerHTML = `<i class="fa-solid fa-check-to-slot" id=${allMessages[i]._id}></i>`
+            paragraph.innerHTML = `<i class="fa-solid fa-check-to-slot" id=${allMessages[i]._id} style="color:${color}"></i>`
+          };
            division.appendChild(paragraph)
         }
     commentCont.appendChild(division)
@@ -38,10 +45,22 @@ fetch('https://puce-helpful-xerus.cyclic.app/message')
     totalMessages.innerHTML = allMessages.length;
     }
             let messagebutton = document.querySelectorAll(".fa-check-to-slot");
+            console.log(messagebutton.length);
             for(let i = 0;i < messagebutton.length;i++){
               messagebutton[i].addEventListener('click',function(){
-              console.log(messagebutton[i]);
-              let id = this.getAttribute("id");
+              messagebutton[i].style.color = 'green';
+              console.log(messagebutton[i])
+              let id = messagebutton[i].getAttribute("id");
+              const _id = id;
+              fetch(`https://puce-helpful-xerus.cyclic.app/message/${_id}`,{
+                method: 'PUT',
+              })
+              .then(response => {
+                response.json();
+                console.log(response);
+              })
+              .then(message => message)
+              .catch(err => console.log(err))
               console.log({id})
               });
           }
