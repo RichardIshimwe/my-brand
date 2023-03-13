@@ -115,13 +115,13 @@ confirmDelete.addEventListener('click',function(){
     popupMessagemanage.style.display = "";
     let _id = localStorage.getItem('deleteId')
     console.log(_id);
-    let tokenTosend = {token:token};
-    fetch(`https://puce-helpful-xerus.cyclic.app/blogs/${_id}`, {
+    // fetch(`http://localhost:4000/blogs/${_id}`, {
+        fetch(`https://puce-helpful-xerus.cyclic.app/blogs/${_id}`, {
         method: 'DELETE',
         headers: {
+          'authorization':token,
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(tokenTosend)
       })
       .then(response => response.json())
       .then(resp => {
