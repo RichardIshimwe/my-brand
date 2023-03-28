@@ -54,7 +54,6 @@ addBlog.addEventListener('submit', (event) =>{
     formData.append('title', title);
     formData.append('description', description);
     formData.append('author',logedIn)
-    console.log(title,fileToget)
         fetch('https://puce-helpful-xerus.cyclic.app/blogs', {
             // fetch('http://localhost:4000/blogs', {
             method: 'POST',
