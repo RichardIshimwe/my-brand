@@ -60,6 +60,7 @@ event.preventDefault();
 
    let fileToget = document.getElementById('receive_image').files[0];
    const formData = new FormData();
+   //comment to test git squash
 //    formData.append('image', fileToget);
 //    formData.append('title', editTitle.value);
 //    formData.append('description', editTextarea.value);
